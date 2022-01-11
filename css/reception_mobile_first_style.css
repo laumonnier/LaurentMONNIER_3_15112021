@@ -1,0 +1,152 @@
+body {
+  font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
+}
+
+.header {
+  position: center;
+  text-align: center;
+  background-color: #e5e2e2;
+  border: 2px solid black;
+}
+.header__logo {
+  font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
+  font-size: 4rem;
+  margin-top: 2.5rem;
+}
+.header__location {
+  height: 6rem;
+  background: linear-gradient(180deg, #8b8a8a, white);
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+}
+.header__location .location__place {
+  font-size: 2rem;
+}
+.header__location i {
+  font-size: 1rem;
+  padding-right: 0.5rem;
+  padding-top: 2.6rem;
+}
+.header__intro {
+  font-size: 2.2rem;
+}
+
+.container {
+  border: 2px solid black;
+  box-sizing: border-box;
+  margin: 0 2rem 0 2rem;
+}
+
+.functions {
+  border: 2px solid black;
+}
+.functions__title {
+  font-size: 2.2rem;
+}
+.functions__progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 2rem;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.functions__progress li {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.functions__progress i {
+  color: grey;
+  margin-left: 2rem;
+}
+
+section {
+  border: 2px solid black;
+}
+
+.restaurants_block__title {
+  font-size: 2.2rem;
+}
+
+.restaurants_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  height: 25rem;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px black;
+}
+.card__image img {
+  width: 100%;
+  height: 20rem;
+  border-radius: 20px 20px 0 0;
+}
+.card a {
+  text-decoration: none;
+  color: black;
+}
+.card__descri {
+  display: flex;
+  justify-content: space-between;
+}
+.card__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  line-height: 0rem;
+  padding-left: 1rem;
+}
+.card__title {
+  font-size: 1.8rem;
+}
+.card__location {
+  font-size: 1.3rem;
+}
+.card__preference {
+  color: green;
+  font-size: 2rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+.card__preference--active:hover {
+  content: green;
+}
+
+.footer {
+  color: white;
+  padding-left: 1.3rem;
+  border: 0.1rem solid #424040;
+  background-color: #424040;
+}
+.footer__logo {
+  font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
+  font-size: 2rem;
+  padding-left: 1rem;
+  line-height: 0rem;
+}
+.footer__nav {
+  font-size: 1.5rem;
+  font-weight: 350;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 1rem;
+  line-height: 2.2rem;
+}
+.footer__nav .nav__proposal i {
+  margin-right: 1rem;
+}
+.footer__nav .nav__partnership i {
+  margin-right: 0.4rem;
+}
+
+/*# sourceMappingURL=reception_mobile_first_style.css.map */
