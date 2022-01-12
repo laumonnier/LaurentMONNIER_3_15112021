@@ -1,4 +1,6 @@
 *.tmp
-.json
+*.json
+*.map
+node_modules/
 
 
