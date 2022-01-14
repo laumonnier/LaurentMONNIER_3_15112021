@@ -1,34 +1,73 @@
-body{
-    font-family: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
-}
-
-$font-family_logo: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
+$font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
+$font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
 $font_title: 2.2rem;
-$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f2f0f0, ;
+$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f6f4f4, ;
 $purple_color:#f1ecfa;
 $primary_color: #9356dc;
 $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$font_weight: (category_title:300, food_title:500, food_subtitle:300, food_price:700, nav:300, link:500);
+$font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.9rem, food_subtitle:1.6rem, food_price:1.6rem, food_icon:1.6rem, footer_logo:2rem, footer_nav:1.5rem);
+@mixin text_transform {
+    text-transform: uppercase;
+}
+
+body{
+    font-family: $font-family_primary;
+}
 
 .header{
-    position: center;
-    text-align: center;
     background-color: white;
+    width: 100%;
+    height: 32rem;
+
     &__logo{
-        font-family: $font-family_logo;
-        font-size: 4rem;
-        margin-top: 2.5rem;
+        position: center;
+        text-align: center;
+        font-family: $font-family_particular;
+        font-size: map-get($font-size, header_logo);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         line-height: 0rem;
     }
+    &__icon{
+        position: absolute;
+        font-size: map-get($font-size, header_icon);
+        margin-left: 2rem;
+    }
+    &__image
+        img{
+        width: 100%;
+        }
+}
+
+.menu-block{
+    position: relative;
+    z-index: 1;
+    background-color: nth($grey_color, 5);
+    border-radius: 3rem 3rem 0 0;
+    border: 2px solid black;
 }
 
 .menu{
-    font-size: 2rem;
-
+    margin: 0 1.5rem 7rem 1.5rem;
+    &__title_box{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        &__title{
+            font-family: $font-family_particular;
+            font-size: map-get($font-size, title-box_title);
+        }
+        &__icon{
+            padding: 2rem 2rem 0 0;
+            font-size: map-get($font-size, title-box_icon);
+        }
+    }
     &__order{
         color: white;
-        font-size: 1.4rem;
+        font-size: map-get($font-size, menu_link);
         font-weight: 500;
         text-decoration: none;
         padding: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -39,20 +78,86 @@ $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($p
     }
 }
 
+.category
+    .title{
+        @include text_transform;
+        font-weight: map-get($font_weight, category_title);
+        padding-left: 0.7rem;
+        position: relative;
+        line-height: 3.7rem;
+        &:after{
+            content:"";
+            position: absolute;
+            width: 4.7rem;
+            height: 0.5rem;
+            bottom: 0;
+            left: 0.8rem;
+            border-bottom: 0.4rem solid $third_color;
+        }
+    }
+
+.food{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    border-radius: 1.6rem;
+    margin-bottom: 1.4rem;
+    background-color: white;
+    box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
+    &__title_box{
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        &__title{
+            font-size: map-get($font-size, food_title);
+            font-weight: map-get($font_weight, food_title);
+            line-height: 0rem;
+            padding-top: 1rem;
+        }
+        &__subtitle{
+            font-size: map-get($font-size, food_subtitle);
+            font-weight: map-get($font-weight, food_subtitle);
+            line-height: 0rem;
+            padding-bottom: 1rem;
+        }
+    }
+    &__specifications{
+        display:flex;
+        &__price{
+            font-size: map-get($font-size, food_price);
+            font-weight: map-get($font-weight, food_price);
+            padding: 2.2rem 1.5rem 0 0;
+        }
+        &__icon{
+            animation: 500ms linear 0 1 reverse forwards slidein; 
+            position: absolute;
+            font-size: map-get($font-size, food_icon);
+            padding-top: 2.5rem;
+            &:hover{
+                animation: 500ms linear 0 1 reverse forwards slidein;
+            }
+        }
+    }
+    
+    
+}
 .footer{
     color: white;
     padding-left: 1.3rem;
     border: 0.1rem solid nth($grey_color,1);
     background-color: nth($grey_color,1);
     &__logo{
-        font-family: $font-family_logo;
-        font-size: 2rem;
+        font-family: $font-family_particular;
+        font-size: map-get($font-size, footer_logo);
         padding-left: 1rem;
         line-height: 0rem;
     }
     &__nav{
-        font-size: 1.5rem;
-        font-weight: 350;
+        font-size: map-get($font-size, footer_nav);
+        font-weight: 300;
         list-style-type: none;
         margin-left: 0;
         padding-left: 1rem;

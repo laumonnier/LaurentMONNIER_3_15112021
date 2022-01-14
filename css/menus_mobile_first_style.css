@@ -3,19 +3,51 @@ body {
 }
 
 .header {
-  position: center;
-  text-align: center;
   background-color: white;
+  width: 100%;
+  height: 32rem;
 }
 .header__logo {
+  position: center;
+  text-align: center;
   font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
   font-size: 4rem;
-  margin-top: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   line-height: 0rem;
+}
+.header__icon {
+  position: absolute;
+  font-size: 1.7rem;
+  margin-left: 2rem;
+}
+.header__image img {
+  width: 100%;
+}
+
+.menu-block {
+  position: relative;
+  z-index: 1;
+  background-color: #f6f4f4;
+  border-radius: 3rem 3rem 0 0;
+  border: 2px solid black;
 }
 
 .menu {
-  font-size: 2rem;
+  margin: 0 1.5rem 7rem 1.5rem;
+}
+.menu__title_box {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.menu__title_box__title {
+  font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
+  font-size: 2.6rem;
+}
+.menu__title_box__icon {
+  padding: 2rem 2rem 0 0;
+  font-size: 2.4rem;
 }
 .menu__order {
   color: white;
@@ -27,6 +59,70 @@ body {
   border-radius: 3rem;
   background: linear-gradient(180deg, #ff79da, #9356dc);
   box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
+}
+
+.category .title {
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-left: 0.7rem;
+  position: relative;
+  line-height: 3.7rem;
+}
+.category .title:after {
+  content: "";
+  position: absolute;
+  width: 4.7rem;
+  height: 0.5rem;
+  bottom: 0;
+  left: 0.8rem;
+  border-bottom: 0.4rem solid #99e2d0;
+}
+
+.food {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 1.6rem;
+  margin-bottom: 1.4rem;
+  background-color: white;
+  box-shadow: 0.2rem 0.2rem 0.5rem #808080;
+}
+.food__title_box {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+.food__title_box__title {
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 0rem;
+  padding-top: 1rem;
+}
+.food__title_box__subtitle {
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 0rem;
+  padding-bottom: 1rem;
+}
+.food__specifications {
+  display: flex;
+}
+.food__specifications__price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 2.2rem 1.5rem 0 0;
+}
+.food__specifications__icon {
+  animation: 500ms linear 0 1 reverse forwards slidein;
+  position: absolute;
+  font-size: 1.6rem;
+  padding-top: 2.5rem;
+}
+.food__specifications__icon:hover {
+  animation: 500ms linear 0 1 reverse forwards slidein;
 }
 
 .footer {
@@ -43,7 +139,7 @@ body {
 }
 .footer__nav {
   font-size: 1.5rem;
-  font-weight: 350;
+  font-weight: 300;
   list-style-type: none;
   margin-left: 0;
   padding-left: 1rem;
