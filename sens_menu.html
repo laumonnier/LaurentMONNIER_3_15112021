@@ -17,91 +17,100 @@
     <!--alows a new font : "Roboto" Medium 500-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <!--Title of the menu-->
     <title>Menu le délice des sens</title>
 </head>
 <body>
     <header class="header">
-        <i class="fas return-icon fa-map-marker"></i>
+        <i class="fas header__icon fa-arrow-left"></i>
         <p class="header__logo">ohmyfood</p>
-        <div class="card__image">
+        <div class="header__image">
             <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="le_délice_des_sens_image"/>
-        </div>    
-        <h1 class="header__intro">Bienvenue sur "ohmyfood"</br>Réservez votre menus</h1>
-        <p class="header__explication">Commande de repas en ligne!</br> Préparez votre propre repas, </br>dans des restaurants d'exceptions.</p>
-        <a id="header__explore" href="#restaurants" >Explorer nos restaurants</a>
+        </div>
     </header>
 
-    <main class="container">
-        <aside id="functions">
-            <h1 class="functions__title">Fonctionnement</h1>
-            <div class="functions__progress">
-                <div class="functions__progress__first"><p class="function_number">1</p><p class="function_text"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p></div>
-                <div class="functions__progress__second"><p class="function_number">2</p><p class="function_text"><i class="fas fa-bars"></i>Composez votre menu</p></div>
-                <div class="functions__progress__third"><p class="function_number">3</p><p class="function_text_three"><i class="fas food_icon fa-concierge-bell"></i>Dégustez au restaurant</p></div>
+    <main class="menu-block">
+        <section class="menu">
+            <div class="menu__title_box">
+                <h1 class="menu__title_box__title">Le délice des sens</h1>
+                <i class="far menu__title_box__icon fa-heart"></i>
             </div>
-        </aside>
+        
+            <section class="entree">
+                <h1 class="entree__title">Entrées</h1>
+                <div class="entree__food">
+                    <article class="food entree__food__first">
+                        <h1 class="entree__food__first__title"></h1>
+                        <h2 class="entree__food__first__subtitle"></h2>
+                        <p class="entree__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
+                    </article>
+                    <article class="food entree__food__second">
+                        <h1 class="entree__food__first__title"></h1>
+                        <h2 class="entree__food__first__subtitle"></h2>
+                        <p class="entree__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
+                    </article>
+                    <article class="food entree__food__third">
+                        <h1 class="entree__food__first__title"></h1>
+                        <h2 class="entree__food__first__subtitle"></h2>
+                        <p class="entree__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
+                    </article>
+                </div>        
+            </section>
 
-        <section>
-            <div class="restaurants_block">
-                <h1 id="restaurants" class="restaurants_block__title">Restaurants</h1>
-                <div class="restaurants_box">
-                    <article class="card la_francaise_card">
-                        <a href="#francaise_menu">
-                            
-                            <div class="card__descri">
-                                <div class="card__description">
-                                    <h1 class="card__title">A la française</h1>
-                                    <p class="card__location">Cité Rouge</p>
-                                </div>
-                                <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
-                            </div>
-                        </a>
+            <section class="main-course">
+                <h1 class="main-course__title">Plats</h1>
+                <div class="main-course__food">
+                    <article class="food main-course__food__first">
+                        <h1 class="main-course__food__first__title"></h1>
+                        <h2 class="main-course__food__first__subtitle"></h2>
+                        <p class="main-course__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
                     </article>
-                    <article class="card gout_card">
-                        <a href="#palette_menu">
-                            <div class="card__image">
-                                <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="palette_d_gout_image"/>
-                            </div>
-                            <div class="card__descri">
-                                <div class="card__description">
-                                    <h1 class="card__title">La palette du goût</h1>
-                                    <p class="card__location">Ménilmontant</p>
-                                </div>
-                                <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
-                            </div>
-                        </a>
+                    <article class="food main-course__food__second">
+                        <h1 class="main-course__food__first__title"></h1>
+                        <h2 class="main-course__food__first__subtitle"></h2>
+                        <p class="main-course__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
                     </article>
-                    <article class="card note_enchantée_card">
-                        <a href="#enchantee_menu">
-                            <div class="card__image">
-                                <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La_note_enchantée_image"/>
-                            </div>
-                            <div class="card__descri">
-                                <div class="card__description">
-                                    <h1 class="card__title">La note enchantée</h1>
-                                    <p class="card__location">Charonne</p>
-                                </div>
-                                <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
-                            </div>
-                        </a>
+                    <article class="food main-course__food__third">
+                        <h1 class="main-course__food__first__title"></h1>
+                        <h2 class="main-course__food__first__subtitle"></h2>
+                        <p class="main-course__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
                     </article>
-                    <article class="card delice_sens_card">
-                        <a href="#delice_menu">
-                            
-                            <div class="card__descri">
-                                <div class="card__description">
-                                    <h1 class="card__title">Le délice des sens</h1>
-                                    <p class="card__location">Folie-Méricourt</p>
-                                </div>
-                                <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
-                            </div>
-                        </a>
+                </div>        
+            </section>
+
+            <section class="dessert">
+                <h1 class="dessert__title">Desserts</h1>
+                <div class="dessert__food">
+                    <article class="food dessert__food__first">
+                        <h1 class="dessert__food__first__title"></h1>
+                        <h2 class="dessert__food__first__subtitle"></h2>
+                        <p class="dessert__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
                     </article>
-                </div>    
-            </div>
-        </section>
+                    <article class="food dessert__food__second">
+                        <h1 class="dessert__food__first__title"></h1>
+                        <h2 class="dessert__food__first__subtitle"></h2>
+                        <p class="dessert__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
+                    </article>
+                    <article class="food dessert__food__third">
+                        <h1 class="dessert__food__first__title"></h1>
+                        <h2 class="dessert__food__first__subtitle"></h2>
+                        <p class="dessert__food__first__price"></p>
+                        <i class="fas ok_icon fa-check"></i>
+                    </article>
+                </div>        
+            </section>
+
+            <a class="menu__order" href="#" >Commander</a>
+        </section>            
     </main>
 
     <footer class="footer">
