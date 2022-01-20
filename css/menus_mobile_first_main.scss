@@ -8,7 +8,7 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
 $font_weight: (category_title:300, food_title:500, food_subtitle:300, food_price:700, nav:300, link:500);
-$font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.9rem, food_subtitle:1.6rem, food_price:1.6rem, food_icon:1.6rem, footer_logo:2rem, footer_nav:1.5rem);
+$font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.9rem, food_subtitle:1.6rem, food_price:1.6rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
 @mixin text_transform {
     text-transform: uppercase;
 }
@@ -85,10 +85,10 @@ body{
         padding-left: 0.7rem;
         position: relative;
         line-height: 3.7rem;
-        &:after{
+        &::after{
             content:"";
             position: absolute;
-            width: 4.7rem;
+            width: 5.6rem;
             height: 0.5rem;
             bottom: 0;
             left: 0.8rem;
@@ -103,10 +103,24 @@ body{
     text-decoration: none;
     color: black;
     border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
     border-radius: 1.6rem;
     margin-bottom: 1.4rem;
-    background-color: white;
     box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
+    &::after{
+        content:"\f00c";    
+        font-family: "FontAwesome"; 
+        font-size: map-get($font-size, food_icon);            
+        border-radius: 3rem;
+        padding: 0.75rem;
+        background-color: white;
+        color:$third_color;
+        opacity: 1;
+        border: 2px solid black;
+        z-index: 1;
+    }    
+
     &__title_box{
         display: flex;
         flex-direction: column;
@@ -125,25 +139,16 @@ body{
         }
     }
     &__specifications{
-        display:flex;
         &__price{
             font-size: map-get($font-size, food_price);
             font-weight: map-get($font-weight, food_price);
-            padding: 2.2rem 1.5rem 0 0;
-        }
-        &__icon{
-            animation: 500ms linear 0 1 reverse forwards slidein; 
-            position: absolute;
-            font-size: map-get($font-size, food_icon);
-            padding-top: 2.5rem;
-            &:hover{
-                animation: 500ms linear 0 1 reverse forwards slidein;
-            }
+            margin: 3.9rem 0 0 0;
+            border: 2px solid black;
         }
     }
-    
-    
 }
+    
+
 .footer{
     color: white;
     padding-left: 1.3rem;
