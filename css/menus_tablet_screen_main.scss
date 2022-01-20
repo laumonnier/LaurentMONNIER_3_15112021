@@ -1,0 +1,206 @@
+$font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
+$font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
+$font_title: 2.2rem;
+$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f6f4f4, ;
+$purple_color:#f1ecfa;
+$primary_color: #9356dc;
+$secondary_color: #ff79da;
+$third_color: #99e2d0;
+$background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$font_weight: (category_title:500, food_title:500, food_subtitle:300, food_price:700, nav:300, link:500);
+$font-size: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, category_title:2.4rem, menu_link:1.9rem, food_title:2.2rem, food_subtitle:1.9rem, food_price:1.6rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
+@mixin text_transform {
+    text-transform: uppercase;
+}
+@mixin space-icon($space) {
+    margin-right: $space;
+}
+
+body{
+    font-family: $font-family_primary;
+    box-sizing: border-box;
+}
+
+.header{
+    background-color: white;
+    width: 100%;
+    height: 32rem;
+
+    &__logo{
+        position: center;
+        text-align: center;
+        font-family: $font-family_particular;
+        font-size: map-get($font-size, header_logo);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: 0rem;
+    }
+    &__icon{
+        position: absolute;
+        font-size: map-get($font-size, header_icon);
+        margin-left: 2.2rem;
+        border: 0.1rem solid $secondary_color;
+        border-radius: 3rem;
+        padding: 0.4rem;
+        background: linear-gradient(180deg, $secondary_color, $primary_color);
+        transition: transform 350ms cubic-bezier(.33,.04,.17,.99) 100ms;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.09);
+        }
+    }
+    &__image
+        img{
+        width: 100%;
+        }
+}
+
+.menu-block{
+    position: relative;
+    z-index: 1;
+    background-color: nth($grey_color, 5);
+    border-radius: 3rem 3rem 0 0;
+    border: 0.2rem solid nth($grey_color, 2);
+    box-shadow: 0.5rem -0.5rem 0.5rem nth($grey_color, 2);
+}
+
+.menu{
+    margin: 0 1.5rem 7rem 1.5rem;
+    &__title_box{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        &__title{
+            font-family: $font-family_particular;
+            font-size: map-get($font-size, title-box_title);
+            text-decoration: underline;
+            letter-spacing: 0.04rem;
+        }
+        &__icon{
+            padding: 2rem 2rem 0 0;
+            font-size: map-get($font-size, title-box_icon);
+        }
+    }
+    &__order{
+        position: relative;
+        color: white;
+        font-size: map-get($font-size, menu_link);
+        font-weight: 500;
+        text-decoration: none;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        top: 3rem;
+        left: 36.5%;
+        line-height: 2rem;
+        border-radius: 3rem;
+        background: linear-gradient(180deg, $secondary_color, $primary_color);
+        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);        
+    }
+}
+
+.category
+    .title{
+        @include text_transform;
+        font-size: map-get($font-size, category_title);
+        text-align: center;
+        font-weight: map-get($font_weight, category_title);
+        position: relative;
+        margin-top: 3.75rem;
+        line-height: 3.7rem;
+        text-shadow: (0.5rem -0.4rem 0.4rem nth($grey_color,2));
+        &::after{
+            content:"";
+            position: absolute;
+            width: 5.6rem;
+            height: 0.5rem;
+            bottom: 0;
+            left: 45%;
+            border-bottom: 0.4rem solid $third_color;
+        }
+    }
+
+.food{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 1.6rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
+    transition: transform 500ms cubic-bezier(.42,.09,.47,.99) 150ms, background-color 550ms cubic-bezier(.33,.04,.17,.99) 250ms, box-shadow 450ms cubic-bezier(.33,.04,.17,.99) 250ms;
+    &:hover{
+        transform: scale(1.03);
+        background-color: $third_color;
+        box-shadow: 0.4rem 0.4rem 0.7rem nth($grey_color,2);
+    }    
+
+    &__title_box{
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        &__title{
+            font-size: map-get($font-size, food_title);
+            font-weight: map-get($font_weight, food_title);
+            line-height: 0rem;
+            padding-top: 1rem;
+        }
+        &__subtitle{
+            font-size: map-get($font-size, food_subtitle);
+            font-weight: map-get($font-weight, food_subtitle);
+            line-height: 0rem;
+            padding-bottom: 1rem;
+        }
+    }
+    &__specifications{
+        &__price{
+            font-size: map-get($font-size, food_price);
+            font-weight: map-get($font-weight, food_price);
+            margin: 3.9rem 0 0 0;
+            border: 2px solid black;
+        }
+    }
+}
+    
+
+.footer{
+    color: white;
+    padding-left: 1.3rem;
+    border: 0.1rem solid nth($grey_color,1);
+    background-color: nth($grey_color,1);
+    &__logo{
+        font-family: $font-family_particular;
+        font-size: map-get($font-size, footer_logo);
+        padding-left: 1rem;
+        line-height: 0rem;
+    }
+    &__nav{
+        font-size: map-get($font-size, footer_nav);
+        font-weight: 300;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 1rem;
+        line-height: 2.2rem;
+        cursor: pointer;
+        &__proposal i{
+            @include space-icon(1rem);
+        }        
+        &__partnership i{
+            @include space-icon(0.4rem);
+        }    
+        &__proposal, &__partnership, &__mentions{
+            &:hover{
+                color: $third_color;
+            }
+        }   
+        &__contact{
+            a{
+                color: white;
+            }
+            :hover{
+                color: $primary_color;
+            }
+        }
+    }
+}
