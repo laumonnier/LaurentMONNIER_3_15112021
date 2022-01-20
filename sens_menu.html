@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="(max-width: 767px)" href="css/menus_mobile_first_style.css"/>
-    <link rel="stylesheet" href="css/menus_style.css"/>
+    <link rel="stylesheet" media="(max-width: 991px) and (min-width: 768px)" href="css/menus_tablet_screen_style.css"/>
+    <link rel="stylesheet" media="(min-width: 992px)" href="css/menus_desktop_style.css"/>
     <!--implementation of normalize.css for the coherence between the navigators-->
     <link rel="stylesheet" href="css/normalize.css"/>
     <!--allows you to connect with the site "fontawesome"-->
@@ -17,19 +18,19 @@
     <!--alows a new font : "Roboto" Medium 500-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <!--Title of the menu-->
-    <title>Menu le délice des sens</title>
+    <title>Le délice des sens menus</title>
 </head>
 <body>
     <header class="header">
         <i class="fas header__icon fa-arrow-left"></i>
         <p class="header__logo">ohmyfood</p>
         <div class="header__image">
-            <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="le_délice_des_sens_image"/>
+            <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le_délice_des_sens_image"/>
         </div>
-    </header>
-
+    </header>    
+        
     <main class="menu-block">
         <section class="menu">
             <div class="menu__title_box">
@@ -37,80 +38,133 @@
                 <i class="far menu__title_box__icon fa-heart"></i>
             </div>
         
-            <section class="entree">
-                <h1 class="entree__title">Entrées</h1>
-                <div class="entree__food">
+            <section class="category entree">
+                <h1 class="title entree__title">Entrées</h1>
+                <div class="category_box entree__food">
                     <article class="food entree__food__first">
-                        <h1 class="entree__food__first__title"></h1>
-                        <h2 class="entree__food__first__subtitle"></h2>
-                        <p class="entree__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Tartare de thon</h1>
+                                <h2 class="food__title_box__subtitle">Assaisonné au yuzu</h2>
+                            </div>
+                            <div class="food__specifications">                            
+                                <p class="food__specifications__price">25€</p>
+                            </div>
+                            
                     </article>
-                    <article class="food entree__food__second">
-                        <h1 class="entree__food__first__title"></h1>
-                        <h2 class="entree__food__first__subtitle"></h2>
-                        <p class="entree__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+                    <article class="entree__food__second">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Bouchée de homard croustillant</h1>
+                                <h2 class="food__title_box__subtitle">Et sa farandole de petits légumes</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">35€</p>
+                                <i class="fas food__specifications__icon fa-check" ></i>
+                            </div>
+                        </a>
                     </article>
-                    <article class="food entree__food__third">
-                        <h1 class="entree__food__first__title"></h1>
-                        <h2 class="entree__food__first__subtitle"></h2>
-                        <p class="entree__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
-                    </article>
-                </div>        
-            </section>
-
-            <section class="main-course">
-                <h1 class="main-course__title">Plats</h1>
-                <div class="main-course__food">
-                    <article class="food main-course__food__first">
-                        <h1 class="main-course__food__first__title"></h1>
-                        <h2 class="main-course__food__first__subtitle"></h2>
-                        <p class="main-course__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
-                    </article>
-                    <article class="food main-course__food__second">
-                        <h1 class="main-course__food__first__title"></h1>
-                        <h2 class="main-course__food__first__subtitle"></h2>
-                        <p class="main-course__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
-                    </article>
-                    <article class="food main-course__food__third">
-                        <h1 class="main-course__food__first__title"></h1>
-                        <h2 class="main-course__food__first__subtitle"></h2>
-                        <p class="main-course__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+                    <article class="entree__food__third">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Velouté de cèpes</h1>
+                                <h2 class="food__title_box__subtitle">Aux truffes</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">20€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
                     </article>
                 </div>        
             </section>
 
-            <section class="dessert">
-                <h1 class="dessert__title">Desserts</h1>
-                <div class="dessert__food">
-                    <article class="food dessert__food__first">
-                        <h1 class="dessert__food__first__title"></h1>
-                        <h2 class="dessert__food__first__subtitle"></h2>
-                        <p class="dessert__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+            <section class="category main-course">
+                <h1 class="title main-course__title">Plats</h1>
+                <div class="category_box main-course__food">
+                    <article class="main-course__food__first">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Poulet rôti aux herbes de Provence</h1>
+                                <h2 class="food__title_box__subtitle">Et sa crème de truffe</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">40€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
                     </article>
-                    <article class="food dessert__food__second">
-                        <h1 class="dessert__food__first__title"></h1>
-                        <h2 class="dessert__food__first__subtitle"></h2>
-                        <p class="dessert__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+                    <article class="main-course__food__second">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Langouste rôtie</h1>
+                                <h2 class="food__title_box__subtitle">Et ses légumes de saison</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">35€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
                     </article>
-                    <article class="food dessert__food__third">
-                        <h1 class="dessert__food__first__title"></h1>
-                        <h2 class="dessert__food__first__subtitle"></h2>
-                        <p class="dessert__food__first__price"></p>
-                        <i class="fas ok_icon fa-check"></i>
+                    <article class="main-course__food__third">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Côte de boeuf Angus</h1>
+                                <h2 class="food__title_box__subtitle">Et sa purée de panais</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">44€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
                     </article>
                 </div>        
             </section>
 
+            <section class="category dessert">
+                <h1 class="title dessert__title">Desserts</h1>
+                <div class="category_box dessert__food">
+                    <article class="dessert__food__first">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Farandole de desserts</h1>
+                                <h2 class="food__title_box__subtitle">Du chef</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">18€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="dessert__food__second">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Crème brulée</h1>
+                                <h2 class="food__title_box__subtitle">Revisitée</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">22€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="dessert__food__third">
+                        <a class="food" href="#">
+                            <div class="food__title_box">
+                                <h1 class="food__title_box__title">Tiramisu</h1>
+                                <h2 class="food__title_box__subtitle">À la noisette</h2>
+                            </div>
+                            <div class="food__specifications">
+                                <p class="food__specifications__price">23€</p>
+                                <i class="fas food__specifications__icon fa-check"></i>
+                            </div>
+                        </a>
+                    </article>
+                </div>        
+            </section>
+            
             <a class="menu__order" href="#" >Commander</a>
-        </section>            
+        </section> 
+
     </main>
 
     <footer class="footer">
