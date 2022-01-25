@@ -1,3 +1,7 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
 }
@@ -50,11 +54,14 @@ body {
   font-size: 2.4rem;
 }
 .menu__order {
+  position: relative;
   color: white;
   font-size: 1.4rem;
   font-weight: 500;
   text-decoration: none;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  top: 3rem;
+  left: 31%;
   line-height: 2rem;
   border-radius: 3rem;
   background: linear-gradient(180deg, #ff79da, #9356dc);
@@ -68,63 +75,103 @@ body {
   position: relative;
   line-height: 3.7rem;
 }
-.category .title::after {
+.category .title::before {
   content: "";
   position: absolute;
-  width: 5.6rem;
-  height: 0.5rem;
-  bottom: 0;
-  left: 0.8rem;
-  border-bottom: 0.4rem solid #99e2d0;
+  width: 0.4rem;
+  height: 2.7rem;
+  bottom: 0.5rem;
+  left: 0rem;
+  border-left: 0.4rem solid #99e2d0;
+}
+
+.Mouna {
+  overflow: hidden;
+}
+.Mouna .check_menu {
+  color: white;
+  font-size: 2rem;
+  width: 8rem;
+  background-color: #99e2d0;
+  margin-right: -8rem;
+  transition: 50ms;
+}
+.Mouna i {
+  margin-top: 1.6rem;
+  margin-left: 1rem;
+}
+.Mouna:hover .check_menu {
+  margin-right: 0rem;
+}
+
+.Laurent {
+  display: flex;
+  justify-content: space-between;
 }
 
 .food {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
   text-decoration: none;
   color: black;
   border: 2px solid black;
-  background-color: white;
   cursor: pointer;
   border-radius: 1.6rem;
   margin-bottom: 1.4rem;
   box-shadow: 0.2rem 0.2rem 0.5rem #808080;
+  overflow: hidden;
 }
-.food::after {
-  content: "\f00c";
-  font-family: "FontAwesome";
-  font-size: 1.9rem;
-  border-radius: 3rem;
-  padding: 0.75rem;
-  background-color: white;
-  color: #99e2d0;
-  opacity: 1;
+.food__box {
+  display: flex;
+  justify-content: space-between;
+}
+.food__description {
+  width: 200px;
   border: 2px solid black;
-  z-index: 1;
-}
-.food__title_box {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding-left: 1rem;
+  line-height: 0;
 }
-.food__title_box__title {
-  font-size: 1.9rem;
+.food__description__title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 0rem;
   padding-top: 1rem;
 }
-.food__title_box__subtitle {
-  font-size: 1.6rem;
+.food__description__subtitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
   font-weight: 300;
-  line-height: 0rem;
-  padding-bottom: 1rem;
 }
-.food__specifications__price {
-  font-size: 1.6rem;
+.food__specif {
+  display: flex;
+}
+.food__specif__price {
+  font-size: 1.4rem;
   font-weight: 700;
-  margin: 3.9rem 0 0 0;
-  border: 2px solid black;
+  padding-top: 1.2rem;
+  padding-right: 1.2rem;
+  margin-left: 1rem;
+}
+.food__specif__check {
+  color: white;
+  font-size: 2.3rem;
+  width: 6.7rem;
+  background-color: #99e2d0;
+  margin-right: -7.1rem;
+  position: relative;
+  transition: 50ms;
+}
+.food__specif i {
+  margin-top: 1.7rem;
+  margin-left: 0rem;
+}
+.food:hover .food__specif__check {
+  margin-right: -0.4rem;
 }
 
 .footer {
