@@ -7,8 +7,8 @@ $primary_color: #9356dc;
 $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
-$font_weight: (category_title:300, food_title:500, food_subtitle:300, food_price:700, nav:300, link:500);
-$font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.6rem, food_subtitle:1.3rem, food_price:1.4rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
+$font_weight: (category_title:300, food_title:700, food_subtitle:500, food_price:700, nav:300, link:500);
+$font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.6rem, food_subtitle:1.4rem, food_price:1.4rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
 @mixin text_transform {
     text-transform: uppercase;
 }
@@ -55,6 +55,7 @@ body{
 
 .menu{
     margin: 0 1.5rem 7rem 1.5rem;
+    box-sizing: border-box;
     &__title_box{
         display: flex;
         justify-content: space-between;
@@ -129,6 +130,8 @@ body{
 
 .food{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     color: black;
     border: 2px solid black;
@@ -136,61 +139,67 @@ body{
     border-radius: 1.6rem;
     margin-bottom: 1.4rem;
     box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
-    overflow: hidden;
-    &__box{
-       display: flex;
-       justify-content: space-between;
-    }      
+    overflow: hidden;     
     &__description{
-        width: 200px;
-        border: 2px solid black;
+        width: 84%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding-left: 1rem;
-        line-height: 0;
+        text-align: left;
+        padding-left: 0.6rem;
+        padding-right: 0rem;
+        transition: width 350ms cubic-bezier(.02,.25,0,.58) 25ms;
         &__title{
-            white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
+            white-space: nowrap;
             font-size: map-get($font-size, food_title);
             font-weight: map-get($font_weight, food_title);
-            line-height: 0rem;
-            padding-top: 1rem;
         }
         
         &__subtitle{
-            white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
+            white-space: nowrap;
             font-size: map-get($font-size, food_subtitle);
-            font-weight: map-get($font-weight, food_subtitle);
+            font-weight: map-get($font-weight, food_subtitle);   
         }                
+    }
+    &:hover .food__description{
+        width:64%;
     }
     &__specif{
         display: flex;
         &__price{
             font-size: map-get($font-size, food_price);
             font-weight: map-get($font-weight, food_price);
-            padding-top: 1.2rem;
-            padding-right: 1.2rem;
-            margin-left: 1rem;
+            margin-top: 4.8rem;
+            padding-right: 0rem;
+            margin-right: 3rem;
+            border: 2px solid black;
 
         }
         &__check{
             color: white;
-            font-size: 2.3rem;
-            width: 6.7rem;
             background-color: $third_color;
+            font-size: 2.5rem;
+            height: 8.2rem;
+            width: 6.7rem;
             margin-right: -7.1rem;
+            padding-top: 2.7rem;
             position: relative;
-            transition: 50ms; 
+            transition: margin-right 350ms cubic-bezier(.02,.25,0,.58) 25ms;
+            & i{
+                transform: rotate(-360deg);
+                transition: transform 690ms;
+            }
         }
-        i{
-            margin-top: 1.7rem;
-            margin-left: 0rem;
-        }        
+
     }
     &:hover .food__specif__check{
         margin-right: -0.4rem;
+        & i{
+            transform: rotate(0deg);
+        }
     }   
 }
     

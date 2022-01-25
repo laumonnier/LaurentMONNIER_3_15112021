@@ -39,6 +39,7 @@ body {
 
 .menu {
   margin: 0 1.5rem 7rem 1.5rem;
+  box-sizing: border-box;
 }
 .menu__title_box {
   display: flex;
@@ -111,6 +112,8 @@ body {
 
 .food {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
   text-decoration: none;
   color: black;
   border: 2px solid black;
@@ -120,32 +123,31 @@ body {
   box-shadow: 0.2rem 0.2rem 0.5rem #808080;
   overflow: hidden;
 }
-.food__box {
-  display: flex;
-  justify-content: space-between;
-}
 .food__description {
-  width: 200px;
-  border: 2px solid black;
+  width: 84%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-left: 1rem;
-  line-height: 0;
+  text-align: left;
+  padding-left: 0.6rem;
+  padding-right: 0rem;
+  transition: width 350ms cubic-bezier(0.02, 0.25, 0, 0.58) 25ms;
 }
 .food__description__title {
-  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 0rem;
-  padding-top: 1rem;
+  font-weight: 700;
 }
 .food__description__subtitle {
-  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.3rem;
-  font-weight: 300;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.food:hover .food__description {
+  width: 64%;
 }
 .food__specif {
   display: flex;
@@ -153,25 +155,31 @@ body {
 .food__specif__price {
   font-size: 1.4rem;
   font-weight: 700;
-  padding-top: 1.2rem;
-  padding-right: 1.2rem;
-  margin-left: 1rem;
+  margin-top: 4.8rem;
+  padding-right: 0rem;
+  margin-right: 3rem;
+  border: 2px solid black;
 }
 .food__specif__check {
   color: white;
-  font-size: 2.3rem;
-  width: 6.7rem;
   background-color: #99e2d0;
+  font-size: 2.5rem;
+  height: 8.2rem;
+  width: 6.7rem;
   margin-right: -7.1rem;
+  padding-top: 2.7rem;
   position: relative;
-  transition: 50ms;
+  transition: margin-right 350ms cubic-bezier(0.02, 0.25, 0, 0.58) 25ms;
 }
-.food__specif i {
-  margin-top: 1.7rem;
-  margin-left: 0rem;
+.food__specif__check i {
+  transform: rotate(-360deg);
+  transition: transform 690ms;
 }
 .food:hover .food__specif__check {
   margin-right: -0.4rem;
+}
+.food:hover .food__specif__check i {
+  transform: rotate(0deg);
 }
 
 .footer {
