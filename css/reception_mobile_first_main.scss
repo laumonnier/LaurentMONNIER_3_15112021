@@ -4,12 +4,16 @@ body{
 
 $font-family_logo: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
 $font_title: 2.2rem;
-$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f2f0f0, ;
-$purple_color:#f1ecfa;
+$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #e9e8e8, ;
+$purple_color:#ece5f8;
 $primary_color: #9356dc;
 $secondary_color: #ff79da;
 $third_color: #99e2d0;
-$background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+@mixin button_brightness_change($color){
+    filter: brightness(1.08);
+    box-shadow: 0.4rem 0.4rem 0.3rem $color;
+} 
 
 /*extensions*/
 .functions_text{
@@ -18,6 +22,7 @@ $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($p
     margin: 2rem 2.3rem 2rem 1rem;
     border-radius: 2rem;
     box-shadow: 0.3rem 0.3rem 1.2rem nth($grey_color, 5);
+    border: 2px solid black;
 }
 /*End of extensions*/
 
@@ -58,17 +63,25 @@ $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($p
         font-weight: 400;
         margin-bottom: 4rem;
     }
-    a{
+    button{
         color: white;
         font-size: 1.4rem;
         font-weight: 500;
         text-decoration: none;
         padding: 1.5rem 1.5rem 1.5rem 1.5rem;
         line-height: 2rem;
+        border: 0rem;
         border-radius: 3rem;
         background: linear-gradient(180deg, $secondary_color, $primary_color);
-        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+        cursor: pointer;
     }    
+    button:hover{
+        @include button_brightness_change(nth($grey_color, 2))
+    }
+    
+    
+
 }
 
 .container{
@@ -90,53 +103,55 @@ aside{
         padding-left: 0;
         font-size: 1.4rem;
         font-weight: 600;
-        &__first{
-            i{
-                padding-right: 1.9rem;
+        &__button, &__button_third{
+            width: 93%;
+            height: 7rem;
+            padding: 0rem 1.5rem 0rem 0;
+            margin: 2rem 2.3rem 2rem 1rem;
+            border:0rem;
+            border-radius: 2rem;
+            background-color: map-get($background_color, button);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+            cursor: pointer;
+            &_third{
+                background-color: map-get($background_color, button_three);
             }
         }
-        &__second,&__third{
-            i{
-                padding-right: 1.8rem;
+        &__button:hover, &__button_third:hover{
+            @include button_brightness_change(nth($grey_color, 2))   
+        }            
+            .function_number{
+                position: absolute;
+                width: 2%;
+                font-size: 1rem;
+                font-weight: 400;
+                color: white;
+                border-radius: 3rem;
+                background-color: $primary_color;
+                padding: 0.4rem 0.5rem 0.3rem 0.5rem;
+                margin: 1.5rem 0 0 -0.8rem;
             }
-        }
-        .function_number{
-            position: absolute;
-            width: 2%;
-            font-size: 1rem;
-            font-weight: 400;
-            color: white;
-            border-radius: 3rem;
-            background-color: $primary_color;
-            padding: 0.4rem 0.3rem 0.3rem 0.6rem;
-            margin: 2.4rem 0 0 0;
-        }
-        .function_text{
-            @extend .functions_text;
-            background-color: map-get($background_color,function_text);
-        }
-        .function_text_three{
-            @extend .functions_text;
-            background-color: map-get($background_color,function_text_three);
-        }
-        li{
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        i{
-            color: nth($grey_color, 2);
-            margin-left: 2.5rem;
-            font-size: 1.7rem;
-        }
-        .food_icon{
-            color: $primary_color;
-            margin-left: 2.5rem;
-            font-size: 1.7rem;
-        }
+            .function_text{
+                background-color: map-get($background_color,function_text);
+            }
+            .function_text_three{
+                background-color: map-get($background_color,function_text_three);
+            }
+            li{
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            i{
+                color: nth($grey_color, 2);
+                padding-left: 0rem;
+                margin-right: 2rem;
+                font-size: 1.7rem;
+            }
+            .food_icon{
+                color: $primary_color;
+                font-size: 1.7rem;
+            }
         
-            
-        
-
     }
 }
 
@@ -201,10 +216,48 @@ section{
         font-size: 2rem;
         padding-right: 1rem;
         padding-top: 1rem;
-        &--active:hover{
-            content: $primary_color;
+    }
+    &__preference{
+        position: relative;
+        color: nth($grey_color, 2);
+        font-size: 2rem;
+        padding-right: 3rem;
+        padding-top: 1rem;
+        &--no-active{
+            position: absolute;
+            padding-bottom: 3rem;
+            z-index: 1;
+        }
+        &--active{
+            position:absolute;
+            padding-bottom: 3rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+        }
+        
+        &:hover .card__preference{
+            &--no-active{
+                position: absolute;
+                padding-bottom: 3rem;
+                z-index: -1;
+            }
+            &--active{
+                position:absolute;
+                padding-bottom: 3rem;
+                background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 1;                
+            }
         }
     }
+    
+    
 }
 
 .footer{

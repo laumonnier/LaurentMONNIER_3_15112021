@@ -30,16 +30,16 @@
             </div>
             <h1 class="header__intro">Bienvenue sur "ohmyfood"</br>Réservez votre menus</h1>
             <p class="header__explication">Commande de repas en ligne!</br> Préparez votre propre repas, dans des restaurants d'exceptions.</p>
-            <a id="header__explore" href="#restaurants" >Explorer nos restaurants</a>
+            <button id="header__explore" href="#restaurants" >Explorer nos restaurants</button>
         </header>
 
         <main class="container">
             <aside id="functions">
                 <h1 class="functions__title">Fonctionnement</h1>
                 <div class="functions__progress">
-                    <div class="functions__progress__first"><p class="function_number">1</p><p class="function_text"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p></div>
-                    <div class="functions__progress__second"><p class="function_number">2</p><p class="function_text"><i class="fas fa-bars"></i>Composez votre menu</p></div>
-                    <div class="functions__progress__third"><p class="function_number">3</p><p class="function_text_three"><i class="fas food_icon fa-concierge-bell"></i>Dégustez au restaurant</p></div>
+                    <button class="functions__progress__button"><p class="function_number">1</p><p class="function_text"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p></button>
+                    <button class="functions__progress__button"><p class="function_number">2</p><p class="function_text"><i class="fas fa-bars"></i>Composez votre menu</p></button>
+                    <button class="functions__progress__button_third"><p class="function_number">3</p><p class="function_text_three"><i class="fas food_icon fa-concierge-bell"></i>Dégustez au restaurant</p></button>
                 </div>
             </aside>
 
@@ -57,7 +57,10 @@
                                         <h1 class="card__title">A la française</h1>
                                         <p class="card__location">Cité Rouge</p>
                                     </div>
-                                    <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference">
+                                        <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                        <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                    </div>
                                 </div>
                             </a>
                         </article>
@@ -71,7 +74,10 @@
                                         <h1 class="card__title">La palette du goût</h1>
                                         <p class="card__location">Ménilmontant</p>
                                     </div>
-                                    <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference">
+                                        <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                        <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                    </div>
                                 </div>
                             </a>
                         </article>
@@ -85,7 +91,10 @@
                                         <h1 class="card__title">La note enchantée</h1>
                                         <p class="card__location">Charonne</p>
                                     </div>
-                                    <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference">
+                                        <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                        <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                    </div>
                                 </div>
                             </a>
                         </article>
@@ -99,7 +108,10 @@
                                         <h1 class="card__title">Le délice des sens</h1>
                                         <p class="card__location">Folie-Méricourt</p>
                                     </div>
-                                    <div class="card__preference card__preference--active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference">
+                                        <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                        <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                    </div>
                                 </div>
                             </a>
                         </article>
