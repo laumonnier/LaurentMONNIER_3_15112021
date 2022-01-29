@@ -33,30 +33,18 @@
         
     <main class="menu-block">
         <section class="menu">
-            <div class="menu__title_box">
-                <h1 class="menu__title_box__title">À la française</h1>
-                <i class="far menu__title_box__icon fa-heart"></i>
+            <div class="menu__title-box">
+                <h1 class="menu__title-box__title">À la française</h1>
+                <div class="menu__title-box__preference">
+                    <div class="menu__title-box__preference--no-active"><i class="far fa-heart"></i></div>
+                    <div class="menu__title-box__preference--active"><i class="fas fa-heart"></i></div>
+                </div>
             </div>
         
             <section class="menu-box">
                 <section class="category entree">
                     <h1 class="title entree__title">Entrées</h1>
                     <div class="category_box entree__food">
-                        <div class="Mouna">
-                            
-                                <div class="Laurent">
-                                    <h1 class="title">Tartare de poulpe acidulé</h1>
-                                
-                               
-                                    <!-- <h2 class="food__description__specif__subtitle">Aux zests d'orange</h2>                           
-                                    <p class="food__description__specif__price">20€</p> -->
-                                    <div class="check_menu">
-                                        <i class="fas fa-check-circle"></i>
-                                    </div>
-                                </div>
-                            
-                            
-                        </div>
                         <button class="food entree__food__first" type="button">
                             <div class="food__description">                                
                                 <h1 class="food__description__title">Tartare de poulpe acidulé</h1>
@@ -180,7 +168,9 @@
                     </div>        
                 </section>
             </section>
-            <a class="menu__order" href="#" >Commander</a>
+            <button class="menu__order" href="#" >
+                Commander
+            </button>
         </section> 
 
     </main>

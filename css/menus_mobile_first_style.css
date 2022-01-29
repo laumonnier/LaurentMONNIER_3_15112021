@@ -9,7 +9,7 @@ body {
 .header {
   background-color: white;
   width: 100%;
-  height: 32rem;
+  height: 29rem;
 }
 .header__logo {
   position: center;
@@ -34,25 +34,57 @@ body {
   z-index: 1;
   background-color: #f6f4f4;
   border-radius: 3rem 3rem 0 0;
-  border: 2px solid black;
+  border: 0.15rem solid #808080;
 }
 
 .menu {
   margin: 0 1.5rem 7rem 1.5rem;
   box-sizing: border-box;
 }
-.menu__title_box {
+.menu__title-box {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
 }
-.menu__title_box__title {
+.menu__title-box__title {
   font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
   font-size: 2.6rem;
 }
-.menu__title_box__icon {
-  padding: 2rem 2rem 0 0;
+.menu__title-box__preference {
+  color: black;
   font-size: 2.4rem;
+  margin: 2rem 2.5rem 0 0;
+}
+.menu__title-box__preference {
+  position: relative;
+  color: black;
+}
+.menu__title-box__preference--no-active {
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
+}
+.menu__title-box__preference--active {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
+}
+.menu__title-box__preference:hover .menu__title-box__preference--no-active {
+  position: absolute;
+  opacity: 0;
+}
+.menu__title-box__preference:hover .menu__title-box__preference--active {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
 }
 .menu__order {
   position: relative;
@@ -60,13 +92,19 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
   text-decoration: none;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem;
+  border: 0rem;
   top: 3rem;
   left: 31%;
   line-height: 2rem;
   border-radius: 3rem;
   background: linear-gradient(180deg, #ff79da, #9356dc);
-  box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
+  box-shadow: 0.2rem 0.2rem 1rem #808080;
+  cursor: pointer;
+}
+.menu__order:hover {
+  filter: brightness(1.08);
+  box-shadow: 0.4rem 0.4rem 0.3rem #808080;
 }
 
 .category .title {
@@ -86,37 +124,13 @@ body {
   border-left: 0.4rem solid #99e2d0;
 }
 
-.Mouna {
-  overflow: hidden;
-}
-.Mouna .check_menu {
-  color: white;
-  font-size: 2rem;
-  width: 8rem;
-  background-color: #99e2d0;
-  margin-right: -8rem;
-  transition: 50ms;
-}
-.Mouna i {
-  margin-top: 1.6rem;
-  margin-left: 1rem;
-}
-.Mouna:hover .check_menu {
-  margin-right: 0rem;
-}
-
-.Laurent {
-  display: flex;
-  justify-content: space-between;
-}
-
 .food {
   width: 100%;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
   color: black;
-  border: 2px solid black;
+  border: 0.15rem solid #dbd8d8;
   cursor: pointer;
   border-radius: 1.6rem;
   margin-bottom: 1.4rem;
@@ -158,7 +172,6 @@ body {
   margin-top: 4.8rem;
   padding-right: 0rem;
   margin-right: 3rem;
-  border: 2px solid black;
 }
 .food__specif__check {
   color: white;

@@ -33,136 +33,143 @@
         
     <main class="menu-block">
         <section class="menu">
-            <div class="menu__title_box">
-                <h1 class="menu__title_box__title">La palette du goût</h1>
-                <i class="far menu__title_box__icon fa-heart"></i>
+            <div class="menu__title-box">
+                <h1 class="menu__title-box__title">La palette du goût</h1>
+                <div class="menu__title-box__preference">
+                    <div class="menu__title-box__preference--no-active"><i class="far fa-heart"></i></div>
+                    <div class="menu__title-box__preference--active"><i class="fas fa-heart"></i></div>
+                </div>
             </div>
             <section class="menu-box">
                 <section class="category entree">
                     <h1 class="title entree__title">Entrées</h1>
                     <div class="category_box entree__food">
-                        <article class="food entree__food__first">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Fricassée d'escargot</h1>
-                                <h2 class="food__title_box__subtitle">Au piment d'espelette</h2>
+                        <button class="food entree__food__first" type="button">
+                            <div class="food__description">                                
+                                <h1 class="food__description__title">Fricassée d'escargot</h1>
+                                <h2 class="food__description__subtitle">Au piment d'Espelette</h2>                               
                             </div>
-                            <div class="food__specifications">                            
-                                <p class="food__specifications__price">25€</p>
+                            <div class="food__specif">
+                                <p class="food__specif__price">25€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                                                        
+                        </button>                        
+                        <button class="food entree__food__second">
+                            <div class="food__description">
+                                <h1 class="food__description__title">Foie gras de canard mi-cuit</h1>
+                                <h2 class="food__description__subtitle">Et ses copeaux de truffe noire</h2>                               
                             </div>
-                            
-                        </article>
-                        <article class="entree__food__second">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Foie gras de canard mi-cuit</h1>
-                                <h2 class="food__title_box__subtitle">Et ses copeaux de truffe noire</h2>
+                            <div class="food__specif">
+                                <p class="food__specif__price">35€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
                             </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">35€</p>
-                                <i class="fas food__specifications__icon fa-check" ></i>
-                            </div>
-                            </a>
-                        </article>
-                        <article class="entree__food__third">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Oeauf au plat</h1>
-                                <h2 class="food__title_box__subtitle">Assaisonné à la truffe sur lit de caviar</h2>
-                            </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">20€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
-                            </div>
-                            </a>
-                        </article>
+                        </button>
+                        <button class="food entree__food__third">
+                            <div class="food__description">
+                                <h1 class="food__description__title">Oeuf au plat</h1>
+                                <h2 class="food__description__subtitle">Assaisonné à la truffe sur lit de caviar</h2>                               
+                            </div>                                
+                            <div class="food__specif">
+                                <p class="food__specif__price">20€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                                                        
+                        </button>
                     </div>        
                 </section>
 
                 <section class="category main-course">
                     <h1 class="title main-course__title">Plats</h1>
                     <div class="category_box main-course__food">
-                        <article class="main-course__food__first">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Filet de boeuf aux herbes</h1>
-                                <h2 class="food__title_box__subtitle">Accompagné de sa ribambelle de légumes</h2>
+                        <button class="food main-course__food__first">                           
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Filet de boeuf aux herbes</h1>
+                                <h2 class="food__description__subtitle">Accompagné de sa ribambelle de légumes</h2>                               
                             </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">40€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
+                            <div class="food__specif">
+                                <p class="food__specif__price">40€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                            
+                        </button>
+                        <button class="food main-course__food__second">                            
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Parmentier de queue de boeuf</h1>
+                                <h2 class="food__description__subtitle">À la truffe noire sur sa purée de panais</h2>                               
                             </div>
-                            </a>
-                        </article>
-                        <article class="main-course__food__second">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Parmentier de queue de boeuf</h1>
-                                <h2 class="food__title_box__subtitle">À la truffe noire sur sa purée de panais</h2>
+                            <div class="food__specif">
+                                <p class="food__specif__price">35€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                            
+                        </button>
+                        <button class="food main-course__food__third">                            
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Filet de turbot</h1>
+                                <h2 class="food__description__subtitle">Aux agrumes</h2>                                
                             </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">35€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
+                            <div class="food__specif">
+                                <p class="food__specif__price">44€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>                                
                             </div>
-                            </a>
-                        </article>
-                        <article class="main-course__food__third">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Filet de turbot</h1>
-                                <h2 class="food__title_box__subtitle">Aux agrumes</h2>
-                            </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">44€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
-                            </div>
-                            </a>
-                        </article>
+                        </button>
                     </div>        
                 </section>
 
                 <section class="category dessert">
                     <h1 class="title dessert__title">Desserts</h1>
                     <div class="category_box dessert__food">
-                        <article class="dessert__food__first">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Paris-Brest</h1>
-                                <h2 class="food__title_box__subtitle">Revisité</h2>
+                        <button class="food dessert__food__first">                            
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Paris-Brest</h1>
+                                <h2 class="food__description__subtitle">Revisité</h2>                               
                             </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">18€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
+                            <div class="food__specif">
+                                <p class="food__specif__price">18€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                            
+                        </button>
+                        <button class="food dessert__food__second">                            
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Macaron au chocolat d'exception</h1>
+                                <h2 class="food__description__subtitle">Et glace à la vanille de Madagascar</h2>                               
                             </div>
-                            </a>
-                        </article>
-                        <article class="dessert__food__second">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Macaron au chocolat d'exception</h1>
-                                <h2 class="food__title_box__subtitle">Et la glace à la vanille de Madagascar</h2>
+                            <div class="food__specif">
+                                <p class="food__specif__price">22€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                            
+                        </button>
+                        <button class="food dessert__food__third">                            
+                            <div class="food__description">                                    
+                                <h1 class="food__description__title">Mousse au chocolat </h1>
+                                <h2 class="food__description__subtitle">Au piment d'Espelette et à la truffe noire</h2>                               
                             </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">22€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
-                            </div>
-                            </a>
-                        </article>
-                        <article class="dessert__food__third">
-                            <a class="food" href="#">
-                            <div class="food__title_box">
-                                <h1 class="food__title_box__title">Mousse au chocolat</h1>
-                                <h2 class="food__title_box__subtitle">Au piment d'espelette et à la truffe noire</h2>
-                            </div>
-                            <div class="food__specifications">
-                                <p class="food__specifications__price">23€</p>
-                                <i class="fas food__specifications__icon fa-check"></i>
-                            </div>
-                            </a>
-                        </article>
+                            <div class="food__specif">
+                                <p class="food__specif__price">23€</p>
+                                <div class="food__specif__check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>                            
+                        </button>
                     </div>        
                 </section>
             </section>
-            <a class="menu__order" href="#" >Commander</a>
+            <button class="menu__order" href="#" >
+                Commander
+            </button>
         </section> 
 
     </main>

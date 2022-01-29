@@ -9,6 +9,10 @@ $third_color: #99e2d0;
 $background_color:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
 $font_weight: (category_title:300, food_title:700, food_subtitle:500, food_price:700, nav:300, link:500);
 $font-size: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, menu_link:1.4rem, food_title:1.6rem, food_subtitle:1.4rem, food_price:1.4rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
+@mixin button_brightness_change($color){
+    filter: brightness(1.08);
+    box-shadow: 0.4rem 0.4rem 0.3rem $color;
+}
 @mixin text_transform {
     text-transform: uppercase;
 }
@@ -23,7 +27,7 @@ body{
 .header{
     background-color: white;
     width: 100%;
-    height: 32rem;
+    height: 29rem;
 
     &__logo{
         position: center;
@@ -50,13 +54,13 @@ body{
     z-index: 1;
     background-color: nth($grey_color, 5);
     border-radius: 3rem 3rem 0 0;
-    border: 2px solid black;
+    border: 0.15rem solid nth($grey_color,2);
 }
 
 .menu{
     margin: 0 1.5rem 7rem 1.5rem;
     box-sizing: border-box;
-    &__title_box{
+    &__title-box{
         display: flex;
         justify-content: space-between;
         padding-top: 1rem;
@@ -64,9 +68,44 @@ body{
             font-family: $font-family_particular;
             font-size: map-get($font-size, title-box_title);
         }
-        &__icon{
-            padding: 2rem 2rem 0 0;
+        &__preference{
+            color: black;
             font-size: map-get($font-size, title-box_icon);
+            margin: 2rem 2.5rem 0 0;
+        }
+        &__preference{
+            position: relative;
+            color: black;
+            &--no-active{
+                position: absolute;
+                z-index: 1;
+                opacity: 1;
+                transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;
+            }
+            &--active{
+                position:absolute;
+                background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 0;
+                transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+            }
+            
+            &:hover .menu__title-box__preference{
+                &--no-active{
+                    position: absolute;
+                    opacity: 0;
+                }
+                &--active{
+                    position:absolute;
+                    background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    opacity: 1;                
+                }
+            }
         }
     }
     &__order{
@@ -75,13 +114,18 @@ body{
         font-size: map-get($font-size, menu_link);
         font-weight: 500;
         text-decoration: none;
-        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        padding: 1.5rem;
+        border: 0rem;
         top: 3rem;
         left: 31%;
         line-height: 2rem;
         border-radius: 3rem;
         background: linear-gradient(180deg, $secondary_color, $primary_color);
-        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+        cursor: pointer;
+    }    
+    &__order:hover{
+        @include button_brightness_change(nth($grey_color, 2))
     }
 }
 
@@ -103,38 +147,13 @@ body{
         }
     }
 
-
-.Mouna{
-    overflow: hidden;
-    
-    .check_menu{
-        color: white;
-        font-size: 2rem;
-        width: 8rem;
-        background-color: $third_color;
-        margin-right:-8rem;
-        transition:50ms 
-    }
-    i{  
-        margin-top: 1.6rem;
-        margin-left: 1rem;
-    }
-    &:hover .check_menu{
-        margin-right: 0rem;
-    } 
-}
-.Laurent{
-    display: flex;
-    justify-content: space-between;
-}
-
 .food{
     width: 100%;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
     color: black;
-    border: 2px solid black;
+    border: 0.15rem solid nth($grey_color, 4);
     cursor: pointer;
     border-radius: 1.6rem;
     margin-bottom: 1.4rem;
@@ -175,8 +194,6 @@ body{
             margin-top: 4.8rem;
             padding-right: 0rem;
             margin-right: 3rem;
-            border: 2px solid black;
-
         }
         &__check{
             color: white;

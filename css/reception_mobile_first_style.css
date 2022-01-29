@@ -2,6 +2,22 @@ body {
   font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
 }
 
+.page {
+  animation: page 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes page {
+  0% {
+    opacity: 0.65;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*extensions*/
 .functions_text {
   width: 93%;
@@ -13,6 +29,68 @@ body {
 }
 
 /*End of extensions*/
+.loading_spinner {
+  width: 20vmin;
+  height: 20vmin;
+  left: calc(50% - 10vmin);
+  top: calc(50% - 10vmin);
+  border: 0.8rem solid transparent;
+  border-radius: 50%;
+  border-right-color: #9356dc;
+  border-top-color: #9356dc;
+  box-sizing: border-box;
+  position: fixed;
+  background-size: cover;
+  z-index: 99;
+  animation: spin 3900ms 2 linear;
+  animation-fill-mode: forwards;
+  transition: transform 5s;
+}
+.loading_spinner::before {
+  content: "";
+  width: 16vmin;
+  height: 16vmin;
+  left: 0;
+  top: 0;
+  border: 0.8rem solid transparent;
+  border-radius: 50%;
+  border-right-color: #99e2d0;
+  border-top-color: #99e2d0;
+  box-sizing: border-box;
+  position: absolute;
+  animation: spin 3800ms 2 linear;
+  animation-fill-mode: forwards;
+}
+.loading_spinner::after {
+  content: "";
+  width: 12vmin;
+  height: 12vmin;
+  left: 2vmin;
+  top: 2vmin;
+  border: 0.8rem solid transparent;
+  border-radius: 50%;
+  border-right-color: #ff79da;
+  border-top-color: #ff79da;
+  box-sizing: border-box;
+  position: absolute;
+  animation: spin 4300ms 2 linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(300deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
 .header {
   border: 0.1rem solid #e9e8e8;
   position: center;
@@ -41,7 +119,7 @@ body {
 .header__location i {
   font-size: 2.5rem;
   padding-right: 1rem;
-  padding-top: 2.4rem;
+  padding-top: 1.6rem;
 }
 .header__intro {
   font-size: 2.2rem;
@@ -195,24 +273,20 @@ section {
 .card__preference {
   color: #808080;
   font-size: 2rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  margin: 1rem 3rem 3rem 0;
 }
 .card__preference {
   position: relative;
   color: #808080;
   font-size: 2rem;
-  padding-right: 3rem;
-  padding-top: 1rem;
+  margin: 1rem 3rem 3rem 0;
 }
 .card__preference--no-active {
   position: absolute;
-  padding-bottom: 3rem;
   z-index: 1;
 }
 .card__preference--active {
   position: absolute;
-  padding-bottom: 3rem;
   background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;

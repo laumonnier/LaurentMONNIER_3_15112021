@@ -1,5 +1,5 @@
 /*extensions*/
-.functions_text, .functions__progress .function_text_three, .functions__progress .function_text {
+.functions_text {
   width: 93%;
   padding: 2.4rem 1.5rem 2.4rem 0;
   margin: 2rem 2.3rem 2rem 1rem;
@@ -54,7 +54,7 @@ body {
   font-weight: 400;
   margin-bottom: 4rem;
 }
-.header a {
+.header button {
   color: white;
   font-size: 1.4rem;
   font-weight: 500;
@@ -62,13 +62,19 @@ body {
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   line-height: 2rem;
   border-radius: 3rem;
+  border: 0rem;
   background: linear-gradient(180deg, #ff79da, #9356dc);
   box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
   transform: scale(1);
   transition: transform 150ms cubic-bezier(0.02, 0.25, 0, 0.58) 150ms;
+  cursor: pointer;
 }
-.header a:active {
+.header button:active {
   transform: scale(0.85);
+}
+.header button:hover {
+  filter: brightness(1.08);
+  box-shadow: 0.4rem 0.4rem 0.3rem #808080;
 }
 
 .container {
@@ -91,11 +97,23 @@ aside {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.functions__progress__first i {
-  padding: 0 3.4rem 0 1rem;
+.functions__progress__button, .functions__progress__button_third {
+  width: 93%;
+  height: 7rem;
+  padding: 0rem 1.5rem 0rem 0;
+  margin: 2rem 2.3rem 2rem 1rem;
+  border: 0rem;
+  border-radius: 2rem;
+  background-color: #f2f0f0;
+  box-shadow: 0.2rem 0.2rem 1rem #808080;
+  cursor: pointer;
 }
-.functions__progress__second i, .functions__progress__third i {
-  padding: 0 3.3rem 0 1rem;
+.functions__progress__button_third, .functions__progress__button_third_third {
+  background-color: #f1ecfa;
+}
+.functions__progress__button:hover, .functions__progress__button_third:hover {
+  filter: brightness(1.08);
+  box-shadow: 0.4rem 0.4rem 0.3rem #808080;
 }
 .functions__progress .function_number {
   position: absolute;
@@ -105,8 +123,8 @@ aside {
   color: white;
   border-radius: 3rem;
   background-color: #9356dc;
-  padding: 0.4rem 0.3rem 0.3rem 0.6rem;
-  margin: 2.4rem 0 0 0;
+  padding: 0.4rem 0.4rem 0.3rem 0.4rem;
+  margin: 1.5rem 0 0 -0.8rem;
 }
 .functions__progress .function_text {
   background-color: #f2f0f0;
@@ -120,12 +138,13 @@ aside {
 }
 .functions__progress i {
   color: #808080;
-  margin-left: 2.5rem;
-  font-size: 1.9rem;
+  padding-left: 0rem;
+  margin-left: -6rem;
+  margin-right: 3rem;
+  font-size: 1.7rem;
 }
 .functions__progress .food_icon {
   color: #9356dc;
-  margin-left: 2.5rem;
   font-size: 1.7rem;
 }
 
@@ -199,8 +218,40 @@ section {
 .card__preference {
   color: #808080;
   font-size: 2rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
+  margin: 1rem 3rem 3rem 0;
+}
+.card__preference {
+  position: relative;
+  color: #808080;
+  font-size: 2rem;
+  margin: 1rem 3rem 3rem 0;
+}
+.card__preference--no-active {
+  position: absolute;
+  z-index: 1;
+}
+.card__preference--active {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
+}
+.card__preference:hover .card__preference--no-active {
+  position: absolute;
+  padding-bottom: 3rem;
+  z-index: -1;
+}
+.card__preference:hover .card__preference--active {
+  position: absolute;
+  padding-bottom: 3rem;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
 }
 
 .footer {
