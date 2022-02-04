@@ -1,0 +1,416 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/container";
+@import "./layout/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+
+$font-family_logo: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
+$font_title: 2.2rem;
+$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #e9e8e8, ;
+$purple_color:#ece5f8;
+$primary_color: #9356dc;
+$secondary_color: #ff79da;
+$third_color: #99e2d0;
+$background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
+function_text_three:nth($purple_color,1));
+@mixin button_brightness_change($color){
+    filter: brightness(1.08);
+    box-shadow: 0.4rem 0.4rem 0.3rem $color;
+} 
+*, ::after,::before{
+    box-sizing: border-box;
+}
+/*extensions*/
+.functions_text{
+    width: 93%;
+    padding: 2.4rem 1.5rem 2.4rem 0;
+    margin: 2rem 2.3rem 2rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 1.2rem nth($grey_color, 5);
+    border: 2px solid black;
+}
+/*End of extensions*/
+body{
+    font-family: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
+}
+.page{
+    animation: page 5000ms;
+    animation-fill-mode: forwards;
+}
+@keyframes page{
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.loading_spinner{
+    width: 10rem;
+    height: 10rem;
+    left: calc(50% - 5rem);
+    top: calc(50% - 5rem);
+    border: 0.8rem solid transparent;
+    border-radius: 50%;
+    border-right-color: $primary_color;
+    border-top-color: $primary_color;
+    box-sizing: border-box;
+    position: fixed;
+    animation: spin 4500ms 1 linear;
+    animation-fill-mode: forwards;
+    &::before{
+        content: "";
+        width: 8.4rem;
+        height: 8.4rem;
+        left: 0.1rem;
+        top: -0.1rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $third_color;
+        border-top-color: $third_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin-inv 2250ms 2 linear;
+        animation-fill-mode: forwards;
+    }
+    &::after{
+        content: "";
+        width: 6.87rem;
+        height: 6.87rem;
+        left: 0.88rem;
+        top: 0.67rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $secondary_color;
+        border-top-color: $secondary_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin 4800ms 1 linear;
+        animation-fill-mode: forwards;
+    }
+    &__center{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        left: calc(50% - 0.75rem);
+        top: calc(50% - 0.79rem);
+        background: linear-gradient(0deg, $third_color, $secondary_color, $primary_color);
+        border: 0.1rem solid nth($grey_color,2);
+        position: fixed;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    80%{
+        transform: rotate(300deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes spin-inv{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    80%{
+        transform: rotate(-300deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+
+
+.header{
+    border: 0.1rem solid nth($grey_color, 5);
+    position: center;
+    text-align: center;
+    background-color: nth($grey_color, 5);
+    padding-bottom: 6rem;
+    &__logo{
+        font-family: $font-family_logo;
+        font-size: 4rem;
+        margin-top: 2.5rem;
+        line-height: 0rem;
+    }
+    &__location{
+        color: nth($grey_color,1);
+        height: 6rem;
+        background: nth($grey_color, 4);
+        box-shadow:(inset 0 0.3rem  0.4rem nth($grey_color,3));
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        margin-bottom: 4rem;
+        .location__place{
+            font-size: 1.7rem;
+        }
+        i{
+            font-size: 1.8rem;
+            padding: 1.9rem 1rem 0 0;
+        }
+    }
+    &__intro{
+        font-size: $font_title;
+    }
+    &__explication{
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 4rem;
+    }
+    a{
+        button{
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.4rem;        
+            line-height: 2rem;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+            border: 0rem;
+            border-radius: 3rem;
+            background: linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+            cursor: pointer;
+        }
+    }    
+    button:hover{
+        @include button_brightness_change(nth($grey_color, 2))
+    }
+    
+    
+
+}
+
+.container{
+    box-sizing: border-box;
+}
+
+aside{
+    margin: 0 2rem 0 2rem;
+}
+
+.functions{
+    &__title{
+        font-size: $font_title;
+        margin-top: 2.6rem;
+    }
+    &__progress{
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 0;
+        font-size: 1.4rem;
+        font-weight: 600;
+        &__button, &__button_third{
+            width: 93%;
+            height: 7rem;
+            padding: 0rem 1.5rem 0rem 0;
+            margin: 2rem 2.3rem 2rem 1rem;
+            border:0rem;
+            border-radius: 2rem;
+            background-color: map-get($background_color, button);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+            cursor: pointer;
+            &_third{
+                background-color: map-get($background_color, button_three);
+            }
+        }
+        &__button:hover, &__button_third:hover{
+            @include button_brightness_change(nth($grey_color, 2))   
+        }            
+            .function_number{
+                position: absolute;
+                width: 2%;
+                font-size: 1rem;
+                font-weight: 400;
+                color: white;
+                border-radius: 3rem;
+                background-color: $primary_color;
+                padding: 0.4rem 0.5rem 0.3rem 0.5rem;
+                margin: 1.5rem 0 0 -0.8rem;
+            }
+            .function_text{
+                background-color: map-get($background_color,function_text);
+            }
+            .function_text_three{
+                background-color: map-get($background_color,function_text_three);
+            }
+            li{
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            i{
+                color: nth($grey_color, 2);
+                padding-left: 0rem;
+                margin-right: 2rem;
+                font-size: 1.7rem;
+            }
+            .food_icon{
+                color: $primary_color;
+                font-size: 1.7rem;
+            }
+        
+    }
+}
+
+section{
+    background-color: nth($grey_color, 5);
+    border: 0.1rem solid nth($grey_color,5);
+}
+
+.restaurants_block{
+    margin: 4rem 2rem 3rem 2rem;
+    &__title{
+        font-size: $font_title;
+    }
+}
+
+.restaurants_box{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card{
+    width: 100%;
+    height: 25rem;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px black;
+    &__image{ 
+        img{
+            width: 100%;
+            height: 20rem;
+            border-radius: 20px 20px 0 0 ;
+        }
+    }    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    &__descri{
+        display:flex;
+        justify-content: space-between;
+    }
+    &__description{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        line-height: 0rem;
+        padding-left: 1rem;
+    }
+    &__title{
+        font-size: 1.8rem;
+    }
+    &__location{
+        font-size: 1.3rem;
+    }
+    &__preference{
+        color: nth($grey_color, 2);
+        font-size: 2rem;
+        margin: 1rem 3rem 3rem 0;
+    }
+    &__preference{
+        position: relative;
+        color: nth($grey_color, 2);
+        font-size: 2rem;
+        margin: 1rem 3rem 3rem 0;
+        &--no-active{
+            position: absolute;
+            z-index: 1;
+        }
+        &--active{
+            position:absolute;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+        }
+        
+        &:hover .card__preference{
+            &--no-active{
+                position: absolute;
+                padding-bottom: 3rem;
+                z-index: -1;
+            }
+            &--active{
+                position:absolute;
+                padding-bottom: 3rem;
+                background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 1;                
+            }
+        }
+    }
+    
+    
+}
+
+.footer{
+    color: white;
+    padding-left: 1.3rem;
+    border: 0.1rem solid nth($grey_color,1);
+    background-color: nth($grey_color,1);
+    &__logo{
+        font-family: $font-family_logo;
+        font-size: 2rem;
+        padding-left: 1rem;
+        line-height: 0rem;
+    }
+    &__nav{
+        font-size: 1.5rem;
+        font-weight: 350;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 1rem;
+        line-height: 2.2rem;
+        &__proposal
+            i
+            {
+                margin-right: 1rem;
+            }
+        &__partnership
+            i
+            {
+                margin-right: 0.4rem;
+            }
+        &__contact{
+            a{
+                color: white;
+            }
+            :hover{
+                color: $primary_color;
+            }
+        }
+    }
+}

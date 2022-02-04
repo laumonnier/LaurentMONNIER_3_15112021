@@ -1,0 +1,485 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@import "./utils/extensions";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/container";
+@import "./layout/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+
+$font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
+$font-family_logo: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
+$grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f2f0f0, ;
+$purple_color:#f1ecfa;
+$primary_color: #9356dc;
+$secondary_color: #ff79da;
+$third_color: #99e2d0;
+$font_title: 2.6rem;
+$background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$font-size:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title,
+ header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title, functions_progress:1.6rem,
+  functions_number:1rem, functions_li:1.3rem, function_icon:2.2rem, food_icon:1.7rem, restaurants_block:$font_title,
+   card:0.9rem, card_title:1.8rem, card_location:1.3rem, card_preference:2rem, footer_logo:2.5rem, footer_nav:1.5rem);
+$button_funtion-dur: 10000ms;
+$button_function-delay: 1650ms;
+$button_function-number: 3;
+
+@mixin space-icon ($space){
+    margin-right: $space;
+}
+@mixin background-color_grey($number){
+    background-color: nth($grey_color,$number);
+}
+@mixin button_brightness_change($color){
+    filter: brightness(1.08);
+    box-shadow: 0.4rem 0.4rem 0.3rem $color;
+}
+*, ::after,::before{
+    box-sizing: border-box;
+} 
+/*extensions*/
+.functions_text{
+    width: 93%;
+    padding: 2.4rem 1.5rem 2.4rem 0;
+    margin: 2rem 2.3rem 2rem 1rem;
+    border-radius: 2rem;
+    border: 0.1rem solid nth($grey_color, 4);
+    box-shadow: 0.4rem 0.4rem 0.3rem nth($grey_color, 2);
+}
+.clickable_button{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: map-get($font-size, header_link);
+    padding: 1.5rem;
+    line-height: 2rem;
+    border-radius: 3rem;
+    border: 0rem;
+    background: linear-gradient(180deg, $secondary_color, $primary_color);
+    box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+    transform: scale(1);
+    transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+    cursor: pointer;
+    &:active{
+        transform: scale(0.85);
+    }
+}
+/*End of extensions*/
+body{
+    font-family: $font-family_primary;
+}
+.page{
+    animation: page 5000ms;
+    animation-fill-mode: forwards;
+}
+@keyframes page{
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.loading_spinner{
+    width: 10rem;
+    height: 10rem;
+    left: calc(50% - 5rem);
+    top: calc(50% - 5rem);
+    border: 0.8rem solid transparent;
+    border-radius: 50%;
+    border-right-color: $primary_color;
+    border-top-color: $primary_color;
+    box-sizing: border-box;
+    position: fixed;
+    animation: spin 4500ms 1 linear;
+    animation-fill-mode: forwards;
+    &::before{
+        content: "";
+        width: 8.4rem;
+        height: 8.4rem;
+        left: 0.1rem;
+        top: -0.1rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $third_color;
+        border-top-color: $third_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin-inv 2250ms 2 linear;
+        animation-fill-mode: forwards;
+    }
+    &::after{
+        content: "";
+        width: 6.87rem;
+        height: 6.87rem;
+        left: 0.88rem;
+        top: 0.67rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $secondary_color;
+        border-top-color: $secondary_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin 4800ms 1 linear;
+        animation-fill-mode: forwards;
+    }
+    &__center{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        left: calc(50% - 0.75rem);
+        top: calc(50% - 0.79rem);
+        background: linear-gradient(0deg, $third_color, $secondary_color, $primary_color);
+        border: 0.1rem solid nth($grey_color,2);
+        position: fixed;
+    }
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    80%{
+        transform: rotate(300deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes spin-inv{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    80%{
+        transform: rotate(-300deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+.header{
+    border: 0.1rem solid nth($grey_color, 5);
+    box-shadow: 0.6rem 0.6rem 0.3rem nth($grey_color, 3);
+    position: center;
+    text-align: center;
+    @include background-color_grey(5);
+    padding: 2rem 0 6rem 0;
+    &__logo{
+        font-family: $font-family_logo;
+        font-size: map-get($font-size, header_logo);
+        margin-top: 2.5rem;
+        line-height: 0rem;
+    }
+    &__location{
+        color: nth($grey_color,1);
+        height: 6rem;
+        font-weight: 500;
+        @include background-color_grey(4);
+        box-shadow:(inset 0 0.3rem  0.4rem nth($grey_color,3));
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        margin-bottom: 2rem;
+        .location__place{
+            font-size: map-get($font-size, location_place);
+        }
+        i{
+            font-size: map-get($font-size, location_icon);
+            padding-right: 1rem;
+            padding-top: 1.8rem;
+        }
+    }
+    &__intro{
+        font-size: map-get($font-size, header_intro);
+        text-shadow: 0.3rem 0.3rem 0.3rem nth($grey_color, 2);
+    }
+    &__explication{
+        font-size: map-get($font-size, header_explication);
+        font-weight: 400;
+        margin-bottom: 4rem;
+    }
+    a{
+        button{
+            @extend .clickable_button;
+            &:hover{
+                @include button_brightness_change(nth($grey_color, 2))
+            }        
+        }
+    }    
+}
+
+.container{
+    box-sizing: border-box;
+}
+
+aside{
+    margin: 0 2rem 0 2rem;
+}
+
+.functions{
+    &__title{
+        font-size: map-get($font-size, functions_title);
+        margin-top: 2.6rem;
+        text-decoration: underline $third_color;
+    }
+    &__progress{
+        text-align: center;
+        list-style-type: none;
+        margin-bottom: 2rem;
+        padding-left: 0;
+        font-size: map-get($font-size, functions_progress);
+        font-weight: 600;
+        &__anim{
+            width: 60%;
+            height: 7rem;
+            padding: 0rem 1.5rem 0rem 0;
+            margin: 2rem 2.3rem 2rem 1rem;
+            border:0rem;
+            border-radius: 2rem;
+            background-color: map-get($background_color, button);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+            cursor: pointer;
+            animation: button_function $button_funtion-dur forwards infinite cubic-bezier(1,-0.06,1,.17); 
+            @for $i from 1 through $button_function-number{
+                &--#{$i}{
+                    animation-delay: $button_function-delay*$i;
+                    @if $i == 3 {
+                        animation: button_function $button_funtion-dur forwards infinite cubic-bezier(1,-0.06,1,.17), blink-anim 5500ms both infinite linear;
+                        animation-delay: $button_function-delay*$i; 
+                    }
+                }
+            }
+        }
+        i{
+            padding: 0 2.3rem 0 1rem;
+        }
+        .function_number{
+            position: absolute;
+            width: 2%;
+            font-size: 1rem;
+            font-weight: 400;
+            color: white;
+            border-radius: 3rem;
+            background-color: $primary_color;
+            padding: 0.4rem 0.4rem 0.3rem 0.4rem;
+            margin: 1.5rem 0 0 -0.8rem;
+        }
+        .function_text{
+            text-align: center;
+            @include background-color_grey(5);
+        }
+        li{
+            font-size: map-get($font-size, functions_li);
+            font-weight: 600;
+        }
+        i{
+            color: nth($grey_color, 2);
+            padding-left: 0rem;
+            margin-left: 1.7rem;
+            font-size: 1.7rem;
+        }
+        .food_icon{
+            font-size: map-get($font-size, food_icon);
+        }
+    }
+}
+
+@keyframes button_function{
+    0%{
+        opacity: 1;
+        animation-duration: 5545ms;
+    }
+    60%{
+        opacity: 0;
+        animation-duration: 4450ms;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes blink-anim{
+    0%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    25%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    50%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    75%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    100%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+}
+
+section{
+    @include background-color_grey(5);
+    border: 0.1rem solid nth($grey_color,5);
+}
+
+.restaurants_block{
+    margin: 3rem 2rem 3rem 2rem;
+    &__title{
+        font-size: map-get($font-size, restaurants_block);
+        text-decoration: underline $third_color;
+    }
+}
+
+.restaurants_box{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card{
+    width: 100%;
+    height: 25rem;
+    font-size: map-get($font-size, card);
+    margin-bottom: 2.7rem;
+    background-color: white;
+    border-radius: 20px;
+    border: 0.2rem solid nth($grey_color, 3);
+    box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
+    transform: scale(1);
+    transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
+    &:hover{
+        transform: scale(1.05);
+        box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
+        border: 0.3rem solid $third_color;
+        &:active{
+            transform: scale(1.02);
+            box-shadow: 0.4rem 0.4rem 0.23rem nth($grey_color, 2);
+        }
+    }
+    &__image{ 
+        img{
+            width: 100%;
+            height: 20rem;
+            border-radius: 20px 20px 0 0 ;
+        }
+    }    
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    &__descri{
+        display:flex;
+        justify-content: space-between;
+    }
+    &__description{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        line-height: 0rem;
+        padding-left: 1rem;
+    }
+    &__title{
+        font-size: map-get($font-size, card_title);
+    }
+    &__location{
+        font-size: map-get($font-size, card_location);
+    }
+    &__preference{
+        color: nth($grey_color, 2);
+        font-size: 2rem;
+        margin: 1rem 3rem 3rem 0;
+    }
+    &__preference{
+        position: relative;
+        color: nth($grey_color, 2);
+        font-size: 2rem;
+        margin: 1rem 3rem 3rem 0;
+        &--no-active{
+            position: absolute;
+            z-index: 1;
+        }
+        &--active{
+            position:absolute;
+            background: linear-gradient(180deg, $secondary_color, $primary_color);
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+        }
+        
+        &:hover .card__preference{
+            &--no-active{
+                position: absolute;
+                padding-bottom: 3rem;
+                z-index: -1;
+            }
+            &--active{
+                position:absolute;
+                padding-bottom: 3rem;
+                background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                opacity: 1;                
+            }
+        }
+    }
+}
+
+.footer{
+    color: white;
+    padding-left: 1.3rem;
+    border: 0.1rem solid nth($grey_color,1);
+    @include background-color_grey(1);
+    &__logo{
+        font-family: $font-family_logo;
+        font-size: map-get($font-size, footer_logo);
+        padding-left: 1rem;
+        line-height: 0rem;
+    }
+    &__nav{
+        font-size: map-get($font-size, footer_nav);
+        font-weight: 350;
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 1rem;
+        line-height: 2.2rem;
+        cursor: pointer;
+        &__proposal i{
+            @include space-icon(1rem);
+        }
+        &__partnership i{
+            @include space-icon(0.4rem);
+        }
+        &__proposal, &__partnership, &__mentions{
+            &:hover{
+                color: $third_color;
+            }
+        }
+        &__contact{
+            a{
+                color: white;
+            }
+            :hover{
+                color: $primary_color;
+            }
+        }
+    }
+}

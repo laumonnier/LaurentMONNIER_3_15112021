@@ -1,0 +1,7 @@
+@mixin button_brightness_change($color){
+    filter: brightness(1.08);
+    box-shadow: 0.4rem 0.4rem 0.3rem $color;
+}
+@mixin text_transform {
+    text-transform: uppercase;
+}
