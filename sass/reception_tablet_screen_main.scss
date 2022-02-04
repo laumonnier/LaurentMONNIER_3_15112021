@@ -22,7 +22,8 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $font_title: 2.6rem;
 $background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
-$font-size:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title,
+$font-weight_rt: (card_title:900, );
+$font-size_rt:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title,
  header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title, functions_progress:1.6rem,
   functions_number:1rem, functions_li:1.3rem, function_icon:2.2rem, food_icon:1.7rem, restaurants_block:$font_title,
    card:0.9rem, card_title:1.8rem, card_location:1.3rem, card_preference:2rem, footer_logo:2.5rem, footer_nav:1.5rem);
@@ -56,7 +57,7 @@ $button_function-number: 3;
     color: white;
     font-weight: 500;
     text-decoration: none;
-    font-size: map-get($font-size, header_link);
+    font-size: map-get($font-size_rt, header_link);
     padding: 1.5rem;
     line-height: 2rem;
     border-radius: 3rem;
@@ -75,14 +76,14 @@ body{
     font-family: $font-family_primary;
 }
 .page{
-    animation: page 5000ms;
+    animation: page 3500ms cubic-bezier(.55,.07,.58,.99);
     animation-fill-mode: forwards;
 }
 @keyframes page{
     0%{
         opacity: 0;
     }
-    80%{
+    92%{
         opacity: 0;
     }
     100%{
@@ -101,7 +102,7 @@ body{
     border-top-color: $primary_color;
     box-sizing: border-box;
     position: fixed;
-    animation: spin 4500ms 1 linear;
+    animation: spin 3500ms 1 linear;
     animation-fill-mode: forwards;
     &::before{
         content: "";
@@ -115,7 +116,7 @@ body{
         border-top-color: $third_color;
         box-sizing: border-box;
         position: absolute;
-        animation: spin-inv 2250ms 2 linear;
+        animation: spin-inv 1750ms 2 linear;
         animation-fill-mode: forwards;
     }
     &::after{
@@ -130,7 +131,7 @@ body{
         border-top-color: $secondary_color;
         box-sizing: border-box;
         position: absolute;
-        animation: spin 4800ms 1 linear;
+        animation: spin 3800ms 1 linear;
         animation-fill-mode: forwards;
     }
     &__center{
@@ -150,8 +151,8 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    80%{
-        transform: rotate(300deg);
+    70%{
+        transform: rotate(230deg);
         opacity: 1;
     }
     100%{
@@ -164,8 +165,8 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    80%{
-        transform: rotate(-300deg);
+    50%{
+        transform: rotate(-180deg);
         opacity: 1;
     }
     100%{
@@ -183,7 +184,7 @@ body{
     padding: 2rem 0 6rem 0;
     &__logo{
         font-family: $font-family_logo;
-        font-size: map-get($font-size, header_logo);
+        font-size: map-get($font-size_rt, header_logo);
         margin-top: 2.5rem;
         line-height: 0rem;
     }
@@ -198,31 +199,33 @@ body{
         align-content: flex-start;
         margin-bottom: 2rem;
         .location__place{
-            font-size: map-get($font-size, location_place);
+            font-size: map-get($font-size_rt, location_place);
         }
         i{
-            font-size: map-get($font-size, location_icon);
+            font-size: map-get($font-size_rt, location_icon);
             padding-right: 1rem;
             padding-top: 1.8rem;
         }
     }
     &__intro{
-        font-size: map-get($font-size, header_intro);
+        font-size: map-get($font-size_rt, header_intro);
         text-shadow: 0.3rem 0.3rem 0.3rem nth($grey_color, 2);
     }
     &__explication{
-        font-size: map-get($font-size, header_explication);
+        font-size: map-get($font-size_rt, header_explication);
         font-weight: 400;
         margin-bottom: 4rem;
     }
     a{
-        button{
-            @extend .clickable_button;
-            &:hover{
-                @include button_brightness_change(nth($grey_color, 2))
-            }        
-        }
-    }    
+        @extend .clickable_button;
+        &:hover{
+            @include button_brightness_change(nth($grey_color, 2))
+        }     
+    }
+       
+        
+        
+        
 }
 
 .container{
@@ -235,7 +238,7 @@ aside{
 
 .functions{
     &__title{
-        font-size: map-get($font-size, functions_title);
+        font-size: map-get($font-size_rt, functions_title);
         margin-top: 2.6rem;
         text-decoration: underline $third_color;
     }
@@ -244,7 +247,7 @@ aside{
         list-style-type: none;
         margin-bottom: 2rem;
         padding-left: 0;
-        font-size: map-get($font-size, functions_progress);
+        font-size: map-get($font-size_rt, functions_progress);
         font-weight: 600;
         &__anim{
             width: 60%;
@@ -278,7 +281,7 @@ aside{
             color: white;
             border-radius: 3rem;
             background-color: $primary_color;
-            padding: 0.4rem 0.4rem 0.3rem 0.4rem;
+            padding: 0.4rem 1.1rem 0.3rem 0.7rem;
             margin: 1.5rem 0 0 -0.8rem;
         }
         .function_text{
@@ -286,7 +289,7 @@ aside{
             @include background-color_grey(5);
         }
         li{
-            font-size: map-get($font-size, functions_li);
+            font-size: map-get($font-size_rt, functions_li);
             font-weight: 600;
         }
         i{
@@ -296,7 +299,7 @@ aside{
             font-size: 1.7rem;
         }
         .food_icon{
-            font-size: map-get($font-size, food_icon);
+            font-size: map-get($font-size_rt, food_icon);
         }
     }
 }
@@ -340,7 +343,7 @@ section{
 .restaurants_block{
     margin: 3rem 2rem 3rem 2rem;
     &__title{
-        font-size: map-get($font-size, restaurants_block);
+        font-size: map-get($font-size_rt, restaurants_block);
         text-decoration: underline $third_color;
     }
 }
@@ -355,8 +358,8 @@ section{
 
 .card{
     width: 100%;
-    height: 25rem;
-    font-size: map-get($font-size, card);
+    height: 27rem;
+    font-size: map-get($font-size_rt, card);
     margin-bottom: 2.7rem;
     background-color: white;
     border-radius: 20px;
@@ -364,6 +367,7 @@ section{
     box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
     transform: scale(1);
     transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
+    position: relative;
     &:hover{
         transform: scale(1.05);
         box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
@@ -384,55 +388,66 @@ section{
         text-decoration: none;
         color: black;
     }
-    &__descri{
-        display:flex;
-        justify-content: space-between;
+    &__new{
+        width: 7.3rem;
+        height: 2.45rem;
+        background-color: $third_color;
+        position: absolute;
+        background-attachment: scroll;
+        color: darken($third_color,42%);
+        filter: brightness(110%);
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0.55rem 0 0 1rem;
+        border-radius: 0.3rem;
+        z-index: 10;
+        right: 1.5rem;
+        top: 0.2rem;
     }
     &__description{
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        line-height: 0rem;
+        line-height: 0.15rem;
         padding-left: 1rem;
     }
     &__title{
-        font-size: map-get($font-size, card_title);
+        font-size: map-get($font-size_rt, card_title);
+        font-weight: map-get($font-weight_rt, card_title);
     }
     &__location{
-        font-size: map-get($font-size, card_location);
+        font-size: map-get($font-size_rt, card_location);
     }
     &__preference{
         color: nth($grey_color, 2);
         font-size: 2rem;
-        margin: 1rem 3rem 3rem 0;
-    }
-    &__preference{
-        position: relative;
-        color: nth($grey_color, 2);
-        font-size: 2rem;
-        margin: 1rem 3rem 3rem 0;
+        cursor: pointer;
         &--no-active{
             position: absolute;
+            right: 1.5rem;
+            bottom: 1.9rem;
             z-index: 1;
         }
         &--active{
             position:absolute;
-            background: linear-gradient(180deg, $secondary_color, $primary_color);
+            right: 1.5rem;
+            bottom: 1.9rem; 
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
             opacity: 0;
-            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms; 
         }
         
-        &:hover .card__preference{
+        &:active .card__preference{
             &--no-active{
                 position: absolute;
-                padding-bottom: 3rem;
+                right: 1.5rem;
+                bottom: 1.9rem;
                 z-index: -1;
             }
             &--active{
                 position:absolute;
-                padding-bottom: 3rem;
+                right: 1.5rem;
+                bottom: 1.9rem;
                 background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -450,12 +465,12 @@ section{
     @include background-color_grey(1);
     &__logo{
         font-family: $font-family_logo;
-        font-size: map-get($font-size, footer_logo);
+        font-size: map-get($font-size_rt, footer_logo);
         padding-left: 1rem;
         line-height: 0rem;
     }
     &__nav{
-        font-size: map-get($font-size, footer_nav);
+        font-size: map-get($font-size_rt, footer_nav);
         font-weight: 350;
         list-style-type: none;
         margin-left: 0;

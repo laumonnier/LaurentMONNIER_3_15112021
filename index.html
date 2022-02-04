@@ -14,7 +14,7 @@
         <!--alows a new font : "Shrikhand"-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https : //fonts.googleapis.com/css2? family= Shrikhand & display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2? family= Shrikhand & display=swap" rel="stylesheet">
         <!--alows a new font : "Roboto" 100;300;400;500;700-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,93 +32,85 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <p class="location__place">Paris, Belleville</p>
                 </div>
-                <h1 class="header__intro">Bienvenue sur "ohmyfood"</br>Réservez votre menus</h1>
-                <p class="header__explication">Commande de repas en ligne!</br> Préparez votre propre repas, dans des restaurants d'exceptions.</p>
-                <a id="header__explore" href="#restaurants">
-                    <button> Explorer nos restaurants</button>
-                </a>
+                <h1 class="header__intro">Bienvenue sur "ohmyfood"<br>Réservez votre menus</h1>
+                <p class="header__explication">Commande de repas en ligne!<br> Préparez votre propre repas, dans des restaurants d'exceptions.</p>
+                <a id="header__explore" href="#restaurants"> Explorer nos restaurants</a>                
             </header>
             <main class="container">
                 <aside id="functions">
-                    <h1 class="functions__title">Fonctionnement</h1>
+                    <p class="functions__title">Fonctionnement</p>
                     <div class="functions__progress">
-                        <button class="functions__progress__anim functions__progress__anim--1 functions__progress__button"><p class="function_number">1</p><p class="function_text"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</p></button>
-                        <button class="functions__progress__anim functions__progress__anim--2 functions__progress__button"><p class="function_number">2</p><p class="function_text"><i class="fas fa-bars"></i>Composez votre menu</p></button>
-                        <button class="functions__progress__anim functions__progress__anim--3 functions__progress__button_third"><p class="function_number">3</p><p class="function_text_three"><i class="fas food_icon fa-concierge-bell"></i>Dégustez au restaurant</p></button>
+                        <button class="functions__progress__anim functions__progress__anim--1 functions__progress__button"><div class="function_number">1</div><div class="function_text"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</div></button>
+                        <button class="functions__progress__anim functions__progress__anim--2 functions__progress__button"><div class="function_number">2</div><div class="function_text"><i class="fas fa-bars"></i>Composez votre menu</div></button>
+                        <button class="functions__progress__anim functions__progress__anim--3 functions__progress__button_third"><div class="function_number">3</div><div class="function_text_three"><i class="fas food_icon fa-concierge-bell"></i>Dégustez au restaurant</div></button>
                     </div>
                 </aside>
 
                 <section>
                     <div class="restaurants_block">
-                        <h1 id="restaurants" class="restaurants_block__title">Restaurants</h1>
+                        <p id="restaurants" class="restaurants_block__title">Restaurants</p>
                         <div class="restaurants_box">
                             <article class="card la_francaise_card">
                                 <a href="france_menu.html">
                                     <div class="card__image">
                                         <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="la_francaise_image"/>
                                     </div>
-                                    <div class="card__descri">
-                                        <div class="card__description">
-                                            <h1 class="card__title">A la française</h1>
-                                            <p class="card__location">Cité Rouge</p>
-                                        </div>
-                                        <div class="card__preference">
-                                            <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
-                                            <div class="card__preference--active"><i class="fas fa-heart"></i></div>
-                                        </div>
+                                    <div class="card__description">
+                                        <p class="card__title">A la française</p>
+                                        <p class="card__location">Cité Rouge</p>
                                     </div>
                                 </a>
+                                <div class="card__preference">
+                                    <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                </div>
                             </article>
                             <article class="card gout_card">
                                 <a href="palette_menu.html">
+                                    <p class="card__new">Nouveau</p>
                                     <div class="card__image">
                                         <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="palette_d_gout_image"/>
                                     </div>
-                                    <div class="card__descri">
-                                        <div class="card__description">
-                                            <h1 class="card__title">La palette du goût</h1>
-                                            <p class="card__location">Ménilmontant</p>
-                                        </div>
-                                        <div class="card__preference">
-                                            <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
-                                            <div class="card__preference--active"><i class="fas fa-heart"></i></div>
-                                        </div>
+                                    <div class="card__description">
+                                        <p class="card__title">La palette du goût</p>
+                                        <p class="card__location">Ménilmontant</p>
                                     </div>
                                 </a>
+                                <div class="card__preference">
+                                    <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                </div>                               
                             </article>
                             <article class="card note_enchantée_card">
                                 <a href="enchante_menu.html">
+                                    <p class="card__new">Nouveau</p>
                                     <div class="card__image">
                                         <img src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La_note_enchantée_image"/>
                                     </div>
-                                    <div class="card__descri">
-                                        <div class="card__description">
-                                            <h1 class="card__title">La note enchantée</h1>
-                                            <p class="card__location">Charonne</p>
-                                        </div>
-                                        <div class="card__preference">
-                                            <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
-                                            <div class="card__preference--active"><i class="fas fa-heart"></i></div>
-                                        </div>
+                                    <div class="card__description">
+                                        <p class="card__title">La note enchantée</p>
+                                        <p class="card__location">Charonne</p>
                                     </div>
                                 </a>
+                                <div class="card__preference">
+                                    <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                </div>
                             </article>
                             <article class="card delice_sens_card">
                                 <a href="sens_menu.html">
                                     <div class="card__image">
                                         <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="le_délice_des_sens_image"/>
-                                    </div>
-                                    <div class="card__descri">
-                                        <div class="card__description">
-                                            <h1 class="card__title">Le délice des sens</h1>
-                                            <p class="card__location">Folie-Méricourt</p>
-                                        </div>
-                                        <div class="card__preference">
-                                            <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
-                                            <div class="card__preference--active"><i class="fas fa-heart"></i></div>
-                                        </div>
+                                    </div>                                    
+                                    <div class="card__description">
+                                        <p class="card__title">Le délice des sens</p>
+                                        <p class="card__location">Folie-Méricourt</p>
                                     </div>
                                 </a>
+                                <div class="card__preference">
+                                    <div class="card__preference--no-active"><i class="far fa-heart"></i></div>
+                                    <div class="card__preference--active"><i class="fas fa-heart"></i></div>
+                                </div>
                             </article>
                         </div>    
                     </div>

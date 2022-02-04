@@ -50,9 +50,6 @@ $button_function-number: 3;
     box-shadow: 0.4rem 0.4rem 0.3rem nth($grey_color, 2);
 }
 .clickable_button{
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
     font-size: map-get($font-size, header_link);
     padding: 1.5rem;
     line-height: 2rem;
@@ -72,7 +69,7 @@ body{
     font-family: $font-family_primary;
 }
 .page{
-    animation: page 5000ms;
+    animation: page 3500ms cubic-bezier(.55,.07,.58,.99);
     animation-fill-mode: forwards;
 }
 @keyframes page{
@@ -146,8 +143,8 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    80%{
-        transform: rotate(300deg);
+    60%{
+        transform: rotate(230deg);
         opacity: 1;
     }
     100%{
@@ -160,8 +157,8 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    80%{
-        transform: rotate(-300deg);
+    60%{
+        transform: rotate(-230deg);
         opacity: 1;
     }
     100%{
@@ -211,9 +208,12 @@ body{
         font-weight: 400;
         margin-bottom: 4rem;
     }
-    a{
-        button{
-            @extend .clickable_button;
+    button{
+        @extend .clickable_button;
+        a{
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
         }
     }    
 }
@@ -361,6 +361,7 @@ section{
     box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
     transform: scale(1);
     transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
+    position: relative;
     &:hover{
         transform: scale(1.05);
         box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
@@ -381,9 +382,21 @@ section{
         text-decoration: none;
         color: black;
     }
-    &__descri{
-        display:flex;
-        justify-content: space-between;
+    &__new{
+        width: 7.3rem;
+        height: 2.45rem;
+        background-color: $third_color;
+        position: absolute;
+        background-attachment: scroll;
+        color: darken($third_color,42%);
+        filter: brightness(110%);
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 0.55rem 0 0 1rem;
+        border-radius: 0.3rem;
+        z-index: 10;
+        right: 1.5rem;
+        top: 0.2rem;
     }
     &__description{
         display:flex;
@@ -401,36 +414,36 @@ section{
     &__preference{
         color: nth($grey_color, 2);
         font-size: 2rem;
-        margin: 1rem 3rem 3rem 0;
-    }
-    &__preference{
-        position: relative;
-        color: nth($grey_color, 2);
-        font-size: 2rem;
-        margin: 1rem 3rem 3rem 0;
+        cursor: pointer;
         &--no-active{
             position: absolute;
+            right: 1.5rem;
+            bottom: 1.2rem;
             z-index: 1;
         }
         &--active{
             position:absolute;
+            right: 1.5rem;
+            bottom: 1.2rem; 
             background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             opacity: 0;
-            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms; 
         }
         
-        &:hover .card__preference{
+        &:active .card__preference{
             &--no-active{
                 position: absolute;
-                padding-bottom: 3rem;
+                right: 1.5rem;
+                bottom: 1.2rem;
                 z-index: -1;
             }
             &--active{
                 position:absolute;
-                padding-bottom: 3rem;
+                right: 1.5rem;
+                bottom: 1.2rem;
                 background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
                 background-clip: text;
                 -webkit-background-clip: text;

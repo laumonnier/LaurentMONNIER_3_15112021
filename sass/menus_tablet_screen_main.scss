@@ -100,8 +100,7 @@ body{
     margin: 0 1.5rem 7rem 1.5rem;
     box-sizing: border-box;
     &__title-box{
-        display: flex;
-        justify-content: space-between;
+        position: relative;
         padding-top: 1rem;
         margin-bottom: 1rem;
         &__title{
@@ -110,21 +109,21 @@ body{
             padding-left: 1.5rem;
         }
         &__preference{
-            color: black;
             font-size: map-get($font-size_mt, title-box_icon);
-            margin: 2rem 3rem 0 0;
-        }
-        &__preference{
-            position: relative;
             color: black;
+            cursor: pointer;
             &--no-active{
                 position: absolute;
+                top: 2.4rem;
+                right: 2rem;
                 z-index: 1;
                 opacity: 1;
                 transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;
             }
             &--active{
                 position:absolute;
+                top: 2.4rem;
+                right: 2rem;
                 background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -132,13 +131,17 @@ body{
                 opacity: 0;
                 transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
             }
-            &:hover .menu__title-box__preference{
+            &:active .menu__title-box__preference{
                 &--no-active{
                     position: absolute;
+                    top: 2.4rem;
+                    right: 2rem;
                     opacity: 0;
                 }
                 &--active{
                     position:absolute;
+                    top: 2.4rem;
+                    right: 2rem;
                     background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
                     background-clip: text;
                     -webkit-background-clip: text;
@@ -219,7 +222,7 @@ body{
             font-weight: map-get($font-weight_mt, food_subtitle);
         }
     }
-    &:hover .food__description{
+    &:active .food__description{
         width:64%;
     }
     &__specif{
@@ -237,7 +240,7 @@ body{
             font-size: 2.5rem;
             height: 12.9rem;
             width: 6.7rem;
-            margin-right: -7.1rem;
+            margin-right: -7.7rem;
             padding-top: 3.5rem;
             position: relative;
             transition: margin-right 560ms cubic-bezier(.02,.25,0,.58) 25ms;
@@ -249,7 +252,7 @@ body{
         }
 
     }
-    &:hover .food__specif__check{
+    &:active .food__specif__check{
         margin-right: -0.4rem;
         & i{
             transform: rotate(0deg);
