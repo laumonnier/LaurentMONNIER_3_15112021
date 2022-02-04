@@ -1,23 +1,19 @@
+/*color variables*/
+/*background-color variables*/
+/*font variables*/
+/*animations variables*/
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
 }
 
-.page {
-  animation: page 5s;
-  animation-fill-mode: forwards;
+*, ::after, ::before {
+  box-sizing: border-box;
 }
 
-@keyframes page {
-  0% {
-    opacity: 0.65;
-  }
-  80% {
-    opacity: 0.65;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 /*extensions*/
 .functions_text {
   width: 93%;
@@ -29,52 +25,79 @@ body {
 }
 
 /*End of extensions*/
+body {
+  font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
+}
+
+.page {
+  animation: page 5000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes page {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .loading_spinner {
-  width: 20vmin;
-  height: 20vmin;
-  left: calc(50% - 10vmin);
-  top: calc(50% - 10vmin);
+  width: 10rem;
+  height: 10rem;
+  left: calc(50% - 5rem);
+  top: calc(50% - 5rem);
   border: 0.8rem solid transparent;
   border-radius: 50%;
   border-right-color: #9356dc;
   border-top-color: #9356dc;
   box-sizing: border-box;
   position: fixed;
-  background-size: cover;
-  z-index: 99;
-  animation: spin 3900ms 2 linear;
+  animation: spin 4500ms 1 linear;
   animation-fill-mode: forwards;
-  transition: transform 5s;
 }
 .loading_spinner::before {
   content: "";
-  width: 16vmin;
-  height: 16vmin;
-  left: 0;
-  top: 0;
+  width: 8.4rem;
+  height: 8.4rem;
+  left: 0.1rem;
+  top: -0.1rem;
   border: 0.8rem solid transparent;
   border-radius: 50%;
   border-right-color: #99e2d0;
   border-top-color: #99e2d0;
   box-sizing: border-box;
   position: absolute;
-  animation: spin 3800ms 2 linear;
+  animation: spin-inv 2250ms 2 linear;
   animation-fill-mode: forwards;
 }
 .loading_spinner::after {
   content: "";
-  width: 12vmin;
-  height: 12vmin;
-  left: 2vmin;
-  top: 2vmin;
+  width: 6.87rem;
+  height: 6.87rem;
+  left: 0.88rem;
+  top: 0.67rem;
   border: 0.8rem solid transparent;
   border-radius: 50%;
   border-right-color: #ff79da;
   border-top-color: #ff79da;
   box-sizing: border-box;
   position: absolute;
-  animation: spin 4300ms 2 linear;
+  animation: spin 4800ms 1 linear;
   animation-fill-mode: forwards;
+}
+.loading_spinner__center {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  left: calc(50% - 0.75rem);
+  top: calc(50% - 0.79rem);
+  background: linear-gradient(0deg, #99e2d0, #ff79da, #9356dc);
+  border: 0.1rem solid #808080;
+  position: fixed;
 }
 
 @keyframes spin {
@@ -91,6 +114,20 @@ body {
     opacity: 0;
   }
 }
+@keyframes spin-inv {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  80% {
+    transform: rotate(-300deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-360deg);
+    opacity: 1;
+  }
+}
 .header {
   border: 0.1rem solid #e9e8e8;
   position: center;
@@ -105,6 +142,7 @@ body {
   line-height: 0rem;
 }
 .header__location {
+  color: #424040;
   height: 6rem;
   background: #dbd8d8;
   box-shadow: inset 0 0.3rem 0.4rem #8b8a8a;
@@ -117,9 +155,8 @@ body {
   font-size: 1.7rem;
 }
 .header__location i {
-  font-size: 2.5rem;
-  padding-right: 1rem;
-  padding-top: 1.6rem;
+  font-size: 1.8rem;
+  padding: 1.9rem 1rem 0 0;
 }
 .header__intro {
   font-size: 2.2rem;
@@ -129,13 +166,13 @@ body {
   font-weight: 400;
   margin-bottom: 4rem;
 }
-.header button {
+.header a button {
   color: white;
-  font-size: 1.4rem;
   font-weight: 500;
   text-decoration: none;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  font-size: 1.4rem;
   line-height: 2rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   border: 0rem;
   border-radius: 3rem;
   background: linear-gradient(180deg, #ff79da, #9356dc);

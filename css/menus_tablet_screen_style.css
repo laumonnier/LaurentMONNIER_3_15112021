@@ -1,3 +1,28 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/*extensions*/
+.clickable_button, .menu__order {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.9rem;
+  padding: 1.5rem;
+  line-height: 2rem;
+  border-radius: 3rem;
+  border: 0rem;
+  background: linear-gradient(180deg, #ff79da, #9356dc);
+  box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
+  transform: scale(1);
+  transition: transform 150ms cubic-bezier(0.02, 0.25, 0, 0.58) 150ms;
+  cursor: pointer;
+}
+.clickable_button:active, .menu__order:active {
+  transform: scale(0.85);
+}
+
+/*End of extensions*/
 body {
   font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
   box-sizing: border-box;
@@ -6,7 +31,7 @@ body {
 .header {
   background-color: white;
   width: 100%;
-  height: 32rem;
+  height: 71vw;
 }
 .header__logo {
   position: center;
@@ -40,41 +65,65 @@ body {
   z-index: 1;
   background-color: #f6f4f4;
   border-radius: 3rem 3rem 0 0;
-  border: 0.2rem solid #808080;
-  box-shadow: 0.5rem -0.5rem 0.5rem #808080;
+  border: 0.1rem solid #8b8a8a;
+  box-shadow: 0.5rem -0.5rem 1rem #808080, -0.5rem -0.5rem 1rem #808080, inset -0.5rem 0rem 1rem #808080;
 }
 
 .menu {
   margin: 0 1.5rem 7rem 1.5rem;
+  box-sizing: border-box;
 }
-.menu__title_box {
+.menu__title-box {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
+  margin-bottom: 1rem;
 }
-.menu__title_box__title {
+.menu__title-box__title {
   font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
   font-size: 2.6rem;
-  text-decoration: underline;
-  letter-spacing: 0.04rem;
+  padding-left: 1.5rem;
 }
-.menu__title_box__icon {
-  padding: 2rem 2rem 0 0;
+.menu__title-box__preference {
+  color: black;
   font-size: 2.4rem;
+  margin: 2rem 3rem 0 0;
+}
+.menu__title-box__preference {
+  position: relative;
+  color: black;
+}
+.menu__title-box__preference--no-active {
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
+}
+.menu__title-box__preference--active {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
+}
+.menu__title-box__preference:hover .menu__title-box__preference--no-active {
+  position: absolute;
+  opacity: 0;
+}
+.menu__title-box__preference:hover .menu__title-box__preference--active {
+  position: absolute;
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 1;
 }
 .menu__order {
   position: relative;
-  color: white;
-  font-size: 1.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   top: 3rem;
   left: 36.5%;
-  line-height: 2rem;
-  border-radius: 3rem;
-  background: linear-gradient(180deg, #ff79da, #9356dc);
-  box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
 }
 
 .category .title {
@@ -99,6 +148,7 @@ body {
 
 .food {
   width: 100%;
+  height: 11.7rem;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
@@ -106,39 +156,101 @@ body {
   background-color: white;
   cursor: pointer;
   border-radius: 1.6rem;
-  margin-bottom: 1.4rem;
-  box-shadow: 0.2rem 0.2rem 0.5rem #808080;
-  transition: transform 500ms cubic-bezier(0.42, 0.09, 0.47, 0.99) 150ms, background-color 550ms cubic-bezier(0.33, 0.04, 0.17, 0.99) 250ms, box-shadow 450ms cubic-bezier(0.33, 0.04, 0.17, 0.99) 250ms;
+  margin-bottom: 1.9rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #8b8a8a;
+  transition: background-color 220ms cubic-bezier(0.33, 0.04, 0.17, 0.99) 100ms, box-shadow 450ms cubic-bezier(0.33, 0.04, 0.17, 0.99) 250ms;
+  overflow: hidden;
+  animation: button_food_mt 850ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
 }
 .food:hover {
-  transform: scale(1.03);
   background-color: #99e2d0;
   box-shadow: 0.4rem 0.4rem 0.7rem #808080;
 }
-.food__title_box {
+.food__description {
+  width: 84%;
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  text-align: left;
+  padding-left: 0.6rem;
+  padding-right: 0rem;
+  transition: width 350ms cubic-bezier(0.02, 0.25, 0, 0.58) 25ms;
 }
-.food__title_box__title {
+.food__description__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 2.2rem;
   font-weight: 500;
-  line-height: 0rem;
-  padding-top: 1rem;
 }
-.food__title_box__subtitle {
+.food__description__subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.9rem;
   font-weight: 300;
-  line-height: 0rem;
-  padding-bottom: 1rem;
 }
-.food__specifications__price {
+.food:hover .food__description {
+  width: 64%;
+}
+.food__specif {
+  display: flex;
+}
+.food__specif__price {
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 3.9rem 0 0 0;
-  border: 2px solid black;
+  margin: 6.3rem 3rem 0rem 0;
+}
+.food__specif__check {
+  color: #99e2d0;
+  background-color: white;
+  box-shadow: -0.8rem -0.8rem 1rem white, 0.8rem 0.8rem 1rem white, inset -0.8rem -0.8rem 1rem white, inset 0.8rem 0.8rem 1rem white;
+  font-size: 2.5rem;
+  height: 12.9rem;
+  width: 6.7rem;
+  margin-right: -7.1rem;
+  padding-top: 3.5rem;
+  position: relative;
+  transition: margin-right 560ms cubic-bezier(0.02, 0.25, 0, 0.58) 25ms;
+  overflow: hidden;
+}
+.food__specif__check i {
+  transform: rotate(-360deg);
+  transition: transform 850ms;
+}
+.food:hover .food__specif__check {
+  margin-right: -0.4rem;
+}
+.food:hover .food__specif__check i {
+  transform: rotate(0deg);
+}
+.food--1 {
+  animation-delay: 930ms;
+}
+.food--2 {
+  animation-delay: 1860ms;
+}
+.food--3 {
+  animation-delay: 2790ms;
+}
+.food--4 {
+  animation-delay: 3720ms;
 }
 
+@keyframes button_food_mt {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.8);
+    animation-timing-function: cubic-bezier(0.55, 0.07, 0.58, 0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .footer {
   color: white;
   padding-left: 1.3rem;
