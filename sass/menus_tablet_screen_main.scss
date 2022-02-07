@@ -7,11 +7,12 @@ $primary_color: #9356dc;
 $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background-color_mt:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
-$font-weight_mt: (category_title:500, food_title:500, food_subtitle:300, food_price:700, nav:300, link:500);
+$font-weight_mt: (category_title:500, menu_order:500, food_title:500, food_subtitle:300, food_price:700, footer_nav:300, 
+nav:300, link:500);
 $font_title: 2.2rem;
 $font-size_mt: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
-category_title:2.4rem, menu_link:1.9rem, food_title:2.2rem, food_subtitle:1.9rem, food_price:1.6rem, 
-food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
+category_title:2.4rem, menu_link:1.9rem, food_title:2.15rem, food_subtitle:1.8rem, food_price:1.6rem, 
+food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
 $button_food-number_mt: 4;
 $button_food-dur_mt: 850ms;
 $button_food-delay_mt: 930ms;
@@ -23,14 +24,15 @@ $button_food-delay_mt: 930ms;
 /*extensions*/
 .clickable_button{
     color: white;
-    font-weight: 500;
+    font-weight: map-get($font-weight_mt, menu_order);
     text-decoration: none;
     font-size: map-get($font-size_mt, menu_link);
     padding: 1.5rem;
     line-height: 2rem;
     border-radius: 3rem;
     border: 0rem;
-    background: linear-gradient(180deg, $secondary_color, $primary_color);
+    background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+    background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
     box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
     transform: scale(1);
     transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
@@ -59,7 +61,6 @@ body{
     height: 71vw;
 
     &__logo{
-        position: center;
         text-align: center;
         font-family: $font-family_particular;
         font-size: map-get($font-size_mt, header_logo);
@@ -125,8 +126,10 @@ body{
                 top: 2.4rem;
                 right: 2rem;
                 background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
                 background-clip: text;
                 -webkit-background-clip: text;
+                -ms-background-clip: text;
                 color: transparent;
                 opacity: 0;
                 transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
@@ -143,8 +146,10 @@ body{
                     top: 2.4rem;
                     right: 2rem;
                     background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                    background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
                     background-clip: text;
                     -webkit-background-clip: text;
+                    -ms-background-clip: text;
                     color: transparent;
                     opacity: 1;                
                 }
@@ -182,7 +187,7 @@ body{
 
 .food{
     width: 100%;
-    height: 11.7rem;
+    height: 10.4rem;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
@@ -201,9 +206,6 @@ body{
 
     &__description{
         width: 84%;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
         padding-left: 0.6rem;
         padding-right: 0rem;
         transition: width 350ms cubic-bezier(.02,.25,0,.58) 25ms;
@@ -211,6 +213,7 @@ body{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            line-height: 2.2rem;
             font-size: map-get($font-size_mt, food_title);
             font-weight: map-get($font-weight_mt, food_title);
         }
@@ -218,6 +221,7 @@ body{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
+            line-height: 1.9rem;
             font-size: map-get($font-size_mt, food_subtitle);
             font-weight: map-get($font-weight_mt, food_subtitle);
         }
@@ -237,11 +241,11 @@ body{
             background-color: white;
             box-shadow: -0.8rem -0.8rem 1rem white, 0.8rem 0.8rem 1rem white, 
             inset -0.8rem -0.8rem 1rem white, inset 0.8rem 0.8rem 1rem white;
-            font-size: 2.5rem;
+            font-size: map-get($font-size_mt, food_specif_check);
             height: 12.9rem;
             width: 6.7rem;
             margin-right: -7.7rem;
-            padding-top: 3.5rem;
+            padding: 3.5rem 0 0 1.6rem;
             position: relative;
             transition: margin-right 560ms cubic-bezier(.02,.25,0,.58) 25ms;
             overflow: hidden;
@@ -296,7 +300,7 @@ body{
     }
     &__nav{
         font-size: map-get($font-size_mt, footer_nav);
-        font-weight: 300;
+        font-weight: map-get($font-weight_mt, footer_nav);
         list-style-type: none;
         margin-left: 0;
         padding-left: 1rem;

@@ -14,7 +14,6 @@
 @import "./pages/project";
 
 $font-family_logo: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
-$font_title: 2.2rem;
 $grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #e9e8e8, ;
 $purple_color:#ece5f8;
 $primary_color: #9356dc;
@@ -22,6 +21,14 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
 function_text_three:nth($purple_color,1));
+$font-weight_rmf:(header_explication:400, header_link:500, functions_progress:600, functions_number:400, 
+functions_li:600, card_new:500, card_title:700, footer_nav:350);
+$font_title: 2.2rem;
+$font-size_rmf:(header_logo:4rem, location_place:1.7rem, location_icon:1.8rem, header_intro:$font_title, 
+header_icon:1.8rem, header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title, 
+functions_progress:1.4rem, functions_number:1rem, functions_li:1.3rem, function_icon:1.7rem, food_icon:1.7rem, 
+restaurants_block:$font_title, card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, 
+card_preference:2rem, footer_logo:2rem, footer_nav:1.5rem);
 @mixin button_brightness_change($color){
     filter: brightness(1.08);
     box-shadow: 0.4rem 0.4rem 0.3rem $color;
@@ -69,7 +76,7 @@ body{
     border-top-color: $primary_color;
     box-sizing: border-box;
     position: fixed;
-    animation: spin 4500ms 1 linear;
+    animation: spin 3500ms 1 linear;
     animation-fill-mode: forwards;
     &::before{
         content: "";
@@ -83,7 +90,7 @@ body{
         border-top-color: $third_color;
         box-sizing: border-box;
         position: absolute;
-        animation: spin-inv 2250ms 2 linear;
+        animation: spin-inv 1750ms 2 linear;
         animation-fill-mode: forwards;
     }
     &::after{
@@ -98,7 +105,7 @@ body{
         border-top-color: $secondary_color;
         box-sizing: border-box;
         position: absolute;
-        animation: spin 4800ms 1 linear;
+        animation: spin 3800ms 1 linear;
         animation-fill-mode: forwards;
     }
     &__center{
@@ -118,7 +125,7 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    60%{
+    70%{
         transform: rotate(230deg);
         opacity: 1;
     }
@@ -132,8 +139,8 @@ body{
         transform: rotate(0deg);
         opacity: 1;
     }
-    60%{
-        transform: rotate(-230deg);
+    50%{
+        transform: rotate(-180deg);
         opacity: 1;
     }
     100%{
@@ -142,17 +149,14 @@ body{
     }
 }
 
-
-
 .header{
     border: 0.1rem solid nth($grey_color, 5);
-    position: center;
     text-align: center;
     background-color: nth($grey_color, 5);
     padding-bottom: 6rem;
     &__logo{
         font-family: $font-family_logo;
-        font-size: 4rem;
+        font-size: map-get($font-size_rmf, header_logo);
         margin-top: 2.5rem;
         line-height: 0rem;
     }
@@ -169,40 +173,37 @@ body{
             font-size: 1.7rem;
         }
         i{
-            font-size: 1.8rem;
+            font-size: map-get($font-size_rmf, location_icon);
             padding: 1.9rem 1rem 0 0;
         }
     }
     &__intro{
-        font-size: $font_title;
+        font-size: map-get($font-size_rmf, header_intro);
     }
     &__explication{
-        font-size: 1.5rem;
-        font-weight: 400;
+        font-size: map-get($font-size_rmf, header_explication);
+        font-weight: map-get($font-weight_rmf, header_explication);
         margin-bottom: 4rem;
-    }
-    button{
-        font-size: 1.4rem;        
+    }     
+    a{
+        color: white;
+        font-weight: map-get($font-weight_rmf, header_link);
+        text-decoration: none;
+        font-size: map-get($font-size_rmf, header_link);
+        padding: 1.5rem;
         line-height: 2rem;
-        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-        border: 0rem;
         border-radius: 3rem;
-        background: linear-gradient(180deg, $secondary_color, $primary_color);
-        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+        border: 0rem;
+        background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+        background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+        box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+        transform: scale(1);
+        transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
         cursor: pointer;
         &:hover{
             @include button_brightness_change(nth($grey_color, 2))
         }
-        a{
-            color: white;
-            font-weight: 500;
-            text-decoration: none;
-        }
-    }    
-    
-    
-    
-
+    }
 }
 
 .container{
@@ -215,19 +216,19 @@ aside{
 
 .functions{
     &__title{
-        font-size: $font_title;
+        font-size: map-get($font-size_rmf, functions_title);
         margin-top: 2.6rem;
     }
     &__progress{
         list-style-type: none;
         margin-left: 0;
         padding-left: 0;
-        font-size: 1.4rem;
-        font-weight: 600;
+        font-size: map-get($font-size_rmf, functions_progress);
+        font-weight: map-get($font-weight_rmf, functions_progress);
         &__button, &__button_third{
             width: 93%;
             height: 7rem;
-            padding: 0rem 1.5rem 0rem 0;
+            padding: 1.2rem 1.5rem 0rem 4rem;
             margin: 2rem 2.3rem 2rem 1rem;
             border:0rem;
             border-radius: 2rem;
@@ -244,13 +245,13 @@ aside{
             .function_number{
                 position: absolute;
                 width: 2%;
-                font-size: 1rem;
-                font-weight: 400;
+                font-size: map-get($font-size_rmf, functions_number);
+                font-weight: map-get($font-weight_rmf, functions_number);
                 color: white;
                 border-radius: 3rem;
                 background-color: $primary_color;
                 padding: 0.4rem 1.2rem 0.3rem 0.7rem;
-                margin: 1.5rem 0 0 -0.8rem;
+                margin-left: -5rem;
             }
             .function_text{
                 background-color: map-get($background_color,function_text);
@@ -259,18 +260,18 @@ aside{
                 background-color: map-get($background_color,function_text_three);
             }
             li{
-                font-size: 1.3rem;
-                font-weight: 600;
+                font-size: map-get($font-size_rmf, functions_li);
+                font-weight: map-get($font-weight_rmf, functions_li);
             }
             i{
                 color: nth($grey_color, 2);
                 padding-left: 0rem;
                 margin-right: 2rem;
-                font-size: 1.7rem;
+                font-size: map-get($font-size_rmf, function_icon);
             }
             .food_icon{
                 color: $primary_color;
-                font-size: 1.7rem;
+                font-size: map-get($font-size_rmf, food_icon);
             }
         
     }
@@ -284,7 +285,7 @@ section{
 .restaurants_block{
     margin: 4rem 2rem 3rem 2rem;
     &__title{
-        font-size: $font_title;
+        font-size: map-get($font-size_rmf, restaurants_block);
     }
 }
 
@@ -298,8 +299,8 @@ section{
 
 .card{
     width: 100%;
-    height: 25rem;
-    font-size: 0.9rem;
+    height: 26.5rem;
+    font-size: map-get($font-size_rmf, card);
     margin-bottom: 30px;
     background-color: white;
     border-radius: 20px;
@@ -324,8 +325,8 @@ section{
         background-attachment: scroll;
         color: darken($third_color,42%);
         filter: brightness(110%);
-        font-size: 1.3rem;
-        font-weight: 500;
+        font-size: map-get($font-size_rmf, card_new);
+        font-weight: map-get($font-weight_rmf, card_new);
         padding: 0.55rem 0 0 1rem;
         border-radius: 0.3rem;
         z-index: 10;
@@ -333,35 +334,35 @@ section{
         top: 0.2rem;
     }
     &__description{
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        line-height: 0rem;
+        line-height: 0.15rem;
         padding-left: 1rem;
     }
     &__title{
-        font-size: 1.8rem;
+        font-size: map-get($font-size_rmf, card_title);
+        font-weight: map-get($font-weight_rmf, card_title);
     }
     &__location{
-        font-size: 1.3rem;
+        font-size: map-get($font-size_rmf, card_location);
     }
     &__preference{
         color: nth($grey_color, 2);
-        font-size: 2rem;
+        font-size: map-get($font-size_rmf, card_preference);
         cursor: pointer;
         &--no-active{
             position: absolute;
             right: 1.5rem;
-            bottom: 1.4rem;
+            bottom: 2rem;
             z-index: 1;
         }
         &--active{
             position:absolute;
             right: 1.5rem;
-            bottom: 1.4rem; 
+            bottom: 2rem; 
             background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
             background-clip: text;
             -webkit-background-clip: text;
+            -ms-background-clip: text;
             color: transparent;
             opacity: 0;
             transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms; 
@@ -371,16 +372,18 @@ section{
             &--no-active{
                 position: absolute;
                 right: 1.5rem;
-                bottom: 1.4rem;
+                bottom: 2rem;
                 z-index: -1;
             }
             &--active{
                 position:absolute;
                 right: 1.5rem;
-                bottom: 1.4rem;
+                bottom: 2rem;
                 background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
                 background-clip: text;
                 -webkit-background-clip: text;
+                -ms-background-clip: text;
                 color: transparent;
                 opacity: 1;                
             }
@@ -397,13 +400,13 @@ section{
     background-color: nth($grey_color,1);
     &__logo{
         font-family: $font-family_logo;
-        font-size: 2rem;
+        font-size: map-get($font-size_rmf, footer_logo);
         padding-left: 1rem;
         line-height: 0rem;
     }
     &__nav{
-        font-size: 1.5rem;
-        font-weight: 350;
+        font-size: map-get($font-size_rmf, footer_nav);
+        font-weight: map-get($font-weight_rmf, footer_nav);
         list-style-type: none;
         margin-left: 0;
         padding-left: 1rem;

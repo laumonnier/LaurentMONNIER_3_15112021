@@ -12,7 +12,8 @@
   line-height: 2rem;
   border-radius: 3rem;
   border: 0rem;
-  background: linear-gradient(180deg, #ff79da, #9356dc);
+  background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background: -ms-linear-gradient(180deg, #ff79da, #9356dc);
   box-shadow: 0.2rem 0.2rem 1rem #8b8a8a;
   transform: scale(1);
   transition: transform 150ms cubic-bezier(0.02, 0.25, 0, 0.58) 150ms;
@@ -30,7 +31,6 @@ body {
 
 .header {
   background-color: white;
-  background: 0.1rem solid white;
   margin-bottom: 0;
   padding-top: 0.1rem;
   width: 100%;
@@ -38,7 +38,6 @@ body {
   z-index: 10;
 }
 .header__logo {
-  position: center;
   text-align: center;
   font-family: "Shrikhand", sans-serif, Arial, "Trebuchet MS";
   font-size: 4rem;
@@ -120,8 +119,10 @@ body {
   top: 2.4rem;
   right: 2rem;
   background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background: -ms-linear-gradient(180deg, #ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
+  -ms-background-clip: text;
   color: transparent;
   opacity: 0;
   transition: opacity 750ms cubic-bezier(0.02, 0.25, 0.73, 0.23) 25ms;
@@ -137,8 +138,10 @@ body {
   top: 2.4rem;
   right: 2rem;
   background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+  background: -ms-linear-gradient(180deg, #ff79da, #9356dc);
   background-clip: text;
   -webkit-background-clip: text;
+  -ms-background-clip: text;
   color: transparent;
   opacity: 1;
 }
@@ -179,7 +182,7 @@ body {
   border-radius: 1.6rem;
   margin-bottom: 1.4rem;
   box-shadow: 0.4rem 0.4rem 0.3rem #808080;
-  transition: box-shadow cubic-bezier(0.33, 0.04, 0.17, 0.99) infinite;
+  transition: box-shadow cubic-bezier(0.33, 0.04, 0.17, 0.99);
   overflow: hidden;
   animation: button_food_md 650ms both linear;
 }
@@ -187,9 +190,7 @@ body {
   box-shadow: -0.2rem -0.2rem 1rem #99e2d0, 0.2rem 0.2rem 1rem #99e2d0;
 }
 .food__description {
-  width: 89%;
-  display: flex;
-  flex-direction: column;
+  width: 84%;
   text-align: left;
   padding-left: 0.6rem;
   padding-right: 0rem;
@@ -199,14 +200,15 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.6rem;
   font-size: 1.48rem;
   font-weight: 500;
-  line-height: 1.7rem;
 }
 .food__description__subtitle {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 1.4rem;
   font-size: 1.3rem;
   font-weight: 300;
 }
@@ -219,15 +221,15 @@ body {
 .food__specif__price {
   font-size: 1.2rem;
   font-weight: 700;
-  margin: 4rem 0rem 0rem 0;
+  margin: 4rem 2rem 0rem 0;
 }
 .food__specif__check {
   color: #99e2d0;
   background-color: white;
   font-size: 2.5rem;
   height: 7.4rem;
-  width: 6.7rem;
-  margin-right: -5.1rem;
+  width: 5.7rem;
+  margin-right: -6.7rem;
   margin-top: -0.2rem;
   padding-top: 2.3rem;
   position: relative;
