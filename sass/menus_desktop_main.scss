@@ -1,6 +1,21 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@import "./utils/extensions";
+@import "./utils/keyframes";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/container";
+@import "./layout/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
+
 $font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
 $font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
-$font_title: 2.2rem;
 $grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f6f4f4, ;
 $purple_color:#f1ecfa;
 $primary_color: #9356dc;
@@ -19,7 +34,7 @@ $button_food-delay_md: 730ms;
     box-sizing: border-box;
 }
 /*extensions*/
-.clickable_button{
+%clickable_button_md{
     color: white;
     font-weight: 500;
     text-decoration: none;
@@ -174,7 +189,7 @@ body{
         position: relative;
         top: 3rem;
         left: 42%;
-        @extend .clickable_button;    
+        @extend %clickable_button_md;    
     }
 }
 

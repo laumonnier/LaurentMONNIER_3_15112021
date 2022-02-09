@@ -2,6 +2,7 @@
 @import "./utils/mixins";
 @import "./utils/functions";
 @import "./utils/extensions";
+@import "./utils/keyframes";
 @import "./base/base";
 @import "./base/typography";
 @import "./components/buttons";
@@ -136,11 +137,11 @@
         &::before{
             content:"";
             position: absolute;
-            width: 0.4rem;
-            height: 2.7rem;
+            width: 2.7rem;
+            height: 0.4rem;
             bottom: 0.5rem;
             left: 0rem;
-            border-left: 0.4rem solid $third_color;
+            border-left: 3.9rem solid $third_color;
         }
     }    
 

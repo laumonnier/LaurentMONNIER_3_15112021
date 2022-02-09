@@ -2,6 +2,148 @@
 /*background-color variables*/
 /*font variables*/
 /*animations variables*/
+@keyframes turn-anim-button {
+  0% {
+    background: -webkit-linear-gradient(0deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(0deg, #ff79da, #9356dc);
+    animation-duration: 150ms;
+  }
+  3% {
+    background: -webkit-linear-gradient(12deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(12deg, #ff79da, #9356dc);
+    animation-duration: 148ms;
+  }
+  5% {
+    background: -webkit-linear-gradient(18deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(18deg, #ff79da, #9356dc);
+    animation-duration: 145ms;
+  }
+  7% {
+    background: -webkit-linear-gradient(25deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(25deg, #ff79da, #9356dc);
+    animation-duration: 142ms;
+  }
+  10% {
+    background: -webkit-linear-gradient(36deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(36deg, #ff79da, #9356dc);
+    animation-duration: 135ms;
+  }
+  13% {
+    background: -webkit-linear-gradient(48deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(48deg, #ff79da, #9356dc);
+    animation-duration: 130ms;
+  }
+  17% {
+    background: -webkit-linear-gradient(61deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(61deg, #ff79da, #9356dc);
+    animation-duration: 115ms;
+  }
+  21% {
+    background: -webkit-linear-gradient(75deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(75deg, #ff79da, #9356dc);
+    animation-duration: 90ms;
+  }
+  25% {
+    background: -webkit-linear-gradient(90deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(90deg, #ff79da, #9356dc);
+    animation-duration: 75ms;
+  }
+  30% {
+    background: -webkit-linear-gradient(106deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(106deg, #ff79da, #9356dc);
+    animation-duration: 90ms;
+  }
+  35% {
+    background: -webkit-linear-gradient(122deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(122deg, #ff79da, #9356dc);
+    animation-duration: 110ms;
+  }
+  39% {
+    background: -webkit-linear-gradient(136deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(136deg, #ff79da, #9356dc);
+    animation-duration: 127ms;
+  }
+  43% {
+    background: -webkit-linear-gradient(151deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(151deg, #ff79da, #9356dc);
+    animation-duration: 135ms;
+  }
+  47% {
+    background: -webkit-linear-gradient(167deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(167deg, #ff79da, #9356dc);
+    animation-duration: 148ms;
+  }
+  50% {
+    background: -webkit-linear-gradient(180deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(180deg, #ff79da, #9356dc);
+    animation-duration: 150ms;
+  }
+  54% {
+    background: -webkit-linear-gradient(194deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(194deg, #ff79da, #9356dc);
+    animation-duration: 148ms;
+  }
+  58% {
+    background: -webkit-linear-gradient(207deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(207deg, #ff79da, #9356dc);
+    animation-duration: 142ms;
+  }
+  64% {
+    background: -webkit-linear-gradient(221deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(221deg, #ff79da, #9356dc);
+    animation-duration: 130ms;
+  }
+  65% {
+    background: -webkit-linear-gradient(232deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(232deg, #ff79da, #9356dc);
+    animation-duration: 112ms;
+  }
+  70% {
+    background: -webkit-linear-gradient(250deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(250deg, #ff79da, #9356dc);
+    animation-duration: 90ms;
+  }
+  75% {
+    background: -webkit-linear-gradient(-90deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-90deg, #ff79da, #9356dc);
+    animation-duration: 75ms;
+  }
+  81% {
+    background: -webkit-linear-gradient(-72deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-72deg, #ff79da, #9356dc);
+    animation-duration: 90ms;
+  }
+  87% {
+    background: -webkit-linear-gradient(-51deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-51deg, #ff79da, #9356dc);
+    animation-duration: 115ms;
+  }
+  91% {
+    background: -webkit-linear-gradient(-33deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-33deg, #ff79da, #9356dc);
+    animation-duration: 125ms;
+  }
+  93% {
+    background: -webkit-linear-gradient(-26deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-26deg, #ff79da, #9356dc);
+    animation-duration: 132ms;
+  }
+  95% {
+    background: -webkit-linear-gradient(-18deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-18deg, #ff79da, #9356dc);
+    animation-duration: 145ms;
+  }
+  98% {
+    background: -webkit-linear-gradient(-6deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(-6deg, #ff79da, #9356dc);
+    animation-duration: 148ms;
+  }
+  100% {
+    background: -webkit-linear-gradient(0deg, #ff79da, #9356dc);
+    background: -ms-linear-gradient(0deg, #ff79da, #9356dc);
+    animation-duration: 150ms;
+  }
+}
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -15,15 +157,6 @@ body {
 }
 
 /*extensions*/
-.functions_text {
-  width: 93%;
-  padding: 2.4rem 1.5rem 2.4rem 0;
-  margin: 2rem 2.3rem 2rem 1rem;
-  border-radius: 2rem;
-  box-shadow: 0.3rem 0.3rem 1.2rem #e9e8e8;
-  border: 2px solid black;
-}
-
 /*End of extensions*/
 body {
   font-family: "Roboto", sans-serif, Arial, "Trebuchet MS", "Comic Sans MS";
@@ -203,13 +336,14 @@ aside {
   margin-left: 0;
   padding-left: 0;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0rem;
 }
 .functions__progress__button, .functions__progress__button_third {
-  width: 93%;
+  width: 95.5%;
   height: 7rem;
-  padding: 1.2rem 1.5rem 0rem 4rem;
-  margin: 2rem 2.3rem 2rem 1rem;
+  padding: 1.2rem 1.5rem 0rem 2.8rem;
+  margin: 2rem 2.3rem 2rem 0.8rem;
   border: 0rem;
   border-radius: 2rem;
   background-color: #e9e8e8;
@@ -232,7 +366,7 @@ aside {
   border-radius: 3rem;
   background-color: #9356dc;
   padding: 0.4rem 1.2rem 0.3rem 0.7rem;
-  margin-left: -5rem;
+  margin: 1.5rem 0 0 -3.8rem;
 }
 .functions__progress .function_text {
   background-color: #e9e8e8;
@@ -240,14 +374,9 @@ aside {
 .functions__progress .function_text_three {
   background-color: #ece5f8;
 }
-.functions__progress li {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
 .functions__progress i {
   color: #808080;
-  padding-left: 0rem;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
   font-size: 1.7rem;
 }
 .functions__progress .food_icon {

@@ -2,6 +2,7 @@
 @import "./utils/mixins";
 @import "./utils/functions";
 @import "./utils/extensions";
+@import "./utils/keyframes";
 @import "./base/base";
 @import "./base/typography";
 @import "./components/buttons";
@@ -21,13 +22,12 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
 function_text_three:nth($purple_color,1));
-$font-weight_rmf:(header_explication:400, header_link:500, functions_progress:600, functions_number:400, 
-functions_li:600, card_new:500, card_title:700, footer_nav:350);
-$font_title: 2.2rem;
-$font-size_rmf:(header_logo:4rem, location_place:1.7rem, location_icon:1.8rem, header_intro:$font_title, 
-header_icon:1.8rem, header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title, 
+$font-weight_rmf:(header_explication:400, header_link:500, functions_progress:700, functions_number:400, functions_li:500, card_new:500, card_title:700, footer_nav:350);
+$font_title_rmf: 2.2rem;
+$font-size_rmf:(header_logo:4rem, location_place:1.7rem, location_icon:1.8rem, header_intro:$font_title_rmf, 
+header_icon:1.8rem, header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rmf, 
 functions_progress:1.4rem, functions_number:1rem, functions_li:1.3rem, function_icon:1.7rem, food_icon:1.7rem, 
-restaurants_block:$font_title, card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, 
+restaurants_block:$font_title_rmf, card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, 
 card_preference:2rem, footer_logo:2rem, footer_nav:1.5rem);
 @mixin button_brightness_change($color){
     filter: brightness(1.08);
@@ -37,14 +37,7 @@ card_preference:2rem, footer_logo:2rem, footer_nav:1.5rem);
     box-sizing: border-box;
 }
 /*extensions*/
-.functions_text{
-    width: 93%;
-    padding: 2.4rem 1.5rem 2.4rem 0;
-    margin: 2rem 2.3rem 2rem 1rem;
-    border-radius: 2rem;
-    box-shadow: 0.3rem 0.3rem 1.2rem nth($grey_color, 5);
-    border: 2px solid black;
-}
+
 /*End of extensions*/
 body{
     font-family: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
@@ -225,11 +218,12 @@ aside{
         padding-left: 0;
         font-size: map-get($font-size_rmf, functions_progress);
         font-weight: map-get($font-weight_rmf, functions_progress);
+        letter-spacing: 0rem;
         &__button, &__button_third{
-            width: 93%;
+            width: 95.5%;
             height: 7rem;
-            padding: 1.2rem 1.5rem 0rem 4rem;
-            margin: 2rem 2.3rem 2rem 1rem;
+            padding: 1.2rem 1.5rem 0rem 2.8rem;
+            margin: 2rem 2.3rem 2rem 0.8rem;
             border:0rem;
             border-radius: 2rem;
             background-color: map-get($background_color, button);
@@ -251,7 +245,7 @@ aside{
                 border-radius: 3rem;
                 background-color: $primary_color;
                 padding: 0.4rem 1.2rem 0.3rem 0.7rem;
-                margin-left: -5rem;
+                margin: 1.5rem 0 0 -3.8rem;
             }
             .function_text{
                 background-color: map-get($background_color,function_text);
@@ -259,14 +253,9 @@ aside{
             .function_text_three{
                 background-color: map-get($background_color,function_text_three);
             }
-            li{
-                font-size: map-get($font-size_rmf, functions_li);
-                font-weight: map-get($font-weight_rmf, functions_li);
-            }
             i{
                 color: nth($grey_color, 2);
-                padding-left: 0rem;
-                margin-right: 2rem;
+                margin-right: 1.5rem;
                 font-size: map-get($font-size_rmf, function_icon);
             }
             .food_icon{

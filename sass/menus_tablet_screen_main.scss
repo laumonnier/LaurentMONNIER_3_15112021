@@ -1,3 +1,18 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/functions";
+@import "./utils/extensions";
+@import "./utils/keyframes";
+@import "./base/base";
+@import "./base/typography";
+@import "./components/buttons";
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/container";
+@import "./layout/form";
+@import "./pages/work";
+@import "./pages/about";
+@import "./pages/project";
 
 $font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
 $font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
@@ -9,7 +24,6 @@ $third_color: #99e2d0;
 $background-color_mt:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
 $font-weight_mt: (category_title:500, menu_order:500, food_title:500, food_subtitle:300, food_price:700, footer_nav:300, 
 nav:300, link:500);
-$font_title: 2.2rem;
 $font-size_mt: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
 category_title:2.4rem, menu_link:1.9rem, food_title:2.15rem, food_subtitle:1.8rem, food_price:1.6rem, 
 food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:2rem, footer_nav:1.5rem);
@@ -22,7 +36,7 @@ $button_food-delay_mt: 930ms;
 }
 
 /*extensions*/
-.clickable_button{
+%clickable_button_mt{
     color: white;
     font-weight: map-get($font-weight_mt, menu_order);
     text-decoration: none;
@@ -160,29 +174,22 @@ body{
         position: relative;
         top: 3rem;
         left: 36.5%;
-        @extend .clickable_button;      
+        @extend %clickable_button_mt;      
     }
 }
 
 .category
     .title{
+        width: 27%;
         @include text_transform;
         font-size: map-get($font-size_mt, category_title);
         text-align: center;
         font-weight: map-get($font-weight_mt, category_title);
         position: relative;
-        margin-top: 3.75rem;
+        margin: 3.75rem auto 2rem auto;
         line-height: 3.7rem;
         text-shadow: (0.5rem -0.4rem 0.4rem nth($grey_color,2));
-        &::after{
-            content:"";
-            position: absolute;
-            width: 5.6rem;
-            height: 0.5rem;
-            bottom: 0;
-            left: 45%;
-            border-bottom: 0.4rem solid $third_color;
-        }
+        border-bottom: 0.5rem solid $third_color;
     }
 
 .food{

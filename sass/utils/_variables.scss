@@ -12,10 +12,9 @@ $background-color_mmf:(function_text:nth($grey_color, 5), function_text_three:nt
 $font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
 $font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
 
-$font-weight_mmf: (category_title:300, menu_order:500, food_title:700, food_subtitle:500, food_price:700, nav:300, link:500, 
+$font-weight_mmf: (category_title:300, menu_order:500, food_title:700, food_subtitle:400, food_price:700, nav:300, link:500, 
 footer_nav:300);
 
-$font_title: 2.2rem;
 $font-size_mmf: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
 menu_link:1.4rem, food_title:1.6rem, food_subtitle:1.4rem, food_price:1.4rem, food_icon:2.5rem, footer_logo:2rem, 
 footer_nav:1.5rem);

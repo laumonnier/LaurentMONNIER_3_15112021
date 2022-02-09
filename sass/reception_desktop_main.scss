@@ -2,6 +2,7 @@
 @import "./utils/mixins";
 @import "./utils/functions";
 @import "./utils/extensions";
+@import "./utils/keyframes";
 @import "./base/base";
 @import "./base/typography";
 @import "./components/buttons";
@@ -22,12 +23,12 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 $background_color:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
 function_text_three:nth($purple_color,1));
-$font-weight_rd:(header_location:500, header_explication:400, header_progress:600, function_number:400, 
+$font-weight_rd:(header_location:500, header_explication:400, header_progress:600, functions_progress:600, function_number:400, 
 functions_li:600, card_new:500, card_title:700, footer_nav:350, );
-$font_title: 2.6rem;
-$font-size_rd:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title,
- header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title, functions_progress:1.6rem,
-  functions_number:1rem, functions_li:1.3rem, function_icon:1.9rem, food_icon:1.7rem, restaurants_block:$font_title,
+$font_title_rd: 2.6rem;
+$font-size_rd:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title_rd,
+ header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rd, functions_progress:1.6rem,
+  functions_number:1rem, functions_li:1.3rem, function_icon:1.9rem, food_icon:1.7rem, restaurants_block:$font_title_rd,
    card:0.9rem, card_title:1.8rem, card_location:1.3rem, card_preference:2rem, footer_logo:2rem, footer_nav:1.5rem);
 $button_funtion-dur: 10000ms;
 $button_function-delay: 1650ms;
@@ -44,15 +45,7 @@ $button_function-number: 3;
     box-sizing: border-box;
 }
 /*extensions*/
-.functions_text{
-    width: 93%;
-    padding: 2.4rem 1.5rem 2.4rem 0;
-    margin: 2rem 2.3rem 2rem 1rem;
-    border-radius: 2rem;
-    border: 0.1rem solid nth($grey_color, 4);
-    box-shadow: 0.4rem 0.4rem 0.3rem nth($grey_color, 2);
-}
-.clickable_link{
+%clickable_link_rd{
     width: 20rem;
     margin-left: auto;
     margin-right: auto;
@@ -68,6 +61,7 @@ $button_function-number: 3;
     transform: scale(1);
     transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
     cursor: pointer;
+    animation: turn-anim-button 3000ms both linear infinite;
     &:active{
         transform: scale(0.85);
     }
@@ -216,7 +210,7 @@ body{
         margin-bottom: 4rem;
     }
     &__link{
-        @extend .clickable_link;
+        @extend %clickable_link_rd;
         a{
             color: white;
             font-weight: 500;
@@ -249,7 +243,7 @@ aside{
         margin-bottom: 2rem;
         padding-left: 0;
         font-size: map-get($font-size_rd, functions_progress);
-        font-weight: map-get($font-size_rd, header_progress);
+        font-weight: map-get($font-weight_rd, functions_progress);
         &__anim{
             width: 60%;
             height: 6rem;
@@ -291,10 +285,6 @@ aside{
         .function_text{
             text-align: center;
             @include background-color_grey(5);
-        }
-        li{
-            font-size: map-get($font-size_rd, functions_li);
-            font-weight: map-get($font-weight_rd, functions_li);
         }
         i{
             color: nth($grey_color, 2);
