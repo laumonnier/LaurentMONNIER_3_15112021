@@ -1,0 +1,199 @@
+/*header*/
+@media (max-width: 767px) {
+    .header{
+        border: 0.1rem solid nth($grey_color, 5);
+        text-align: center;
+        background-color: nth($grey_color, 5);
+        padding-bottom: 6rem;
+        &__logo{
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_rmf, header_logo);
+            margin-top: 2.5rem;
+            line-height: 0rem;
+        }
+        &__location{
+            color: nth($grey_color,1);
+            height: 6rem;
+            background: nth($grey_color, 4);
+            box-shadow:(inset 0 0.3rem  0.4rem nth($grey_color,3));
+            display: flex;
+            justify-content: center;
+            align-content: flex-start;
+            margin-bottom: 4rem;
+            .location__place{
+                font-size: 1.7rem;
+            }
+            i{
+                font-size: map-get($font-size_rmf, location_icon);
+                padding: 1.9rem 1rem 0 0;
+            }
+        }
+        &__intro{
+            font-size: map-get($font-size_rmf, header_intro);
+        }
+        &__explication{
+            font-size: map-get($font-size_rmf, header_explication);
+            font-weight: map-get($font-weight_rmf, header_explication);
+            margin-bottom: 4rem;
+        }     
+        a{
+            color: white;
+            font-weight: map-get($font-weight_rmf, header_link);
+            text-decoration: none;
+            font-size: map-get($font-size_rmf, header_link);
+            padding: 1.5rem;
+            line-height: 2rem;
+            border-radius: 3rem;
+            border: 0rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+            transform: scale(1);
+            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+            cursor: pointer;
+            &:hover{
+                @include button_brightness_change(nth($grey_color, 2))
+            }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .header{
+        border: 0.1rem solid nth($grey_color, 5);
+        box-shadow: 0.6rem 0.6rem 0.3rem nth($grey_color, 3);
+        text-align: center;
+        @include background-color_grey(5);
+        padding: 2rem 0 6rem 0;
+        &__logo{
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_rt, header_logo);
+            margin-top: 2.5rem;
+            line-height: 0rem;
+        }
+        &__location{
+            color: nth($grey_color,1);
+            height: 6rem;
+            font-weight: map-get($font-weight_rt, header_location);
+            @include background-color_grey(4);
+            box-shadow:(inset 0 0.3rem  0.4rem nth($grey_color,3));
+            display: flex;
+            justify-content: center;
+            align-content: flex-start;
+            margin-bottom: 2rem;
+            .location__place{
+                font-size: map-get($font-size_rt, location_place);
+            }
+            i{
+                font-size: map-get($font-size_rt, location_icon);
+                padding-right: 1rem;
+                padding-top: 1.8rem;
+            }
+        }
+        &__intro{
+            font-size: map-get($font-size_rt, header_intro);
+            text-shadow: 0.3rem 0.3rem 0.3rem nth($grey_color, 2);
+        }
+        &__explication{
+            font-size: map-get($font-size_rt, header_explication);
+            font-weight: map-get($font-weight_rt, header_explication);
+            margin-bottom: 4rem;
+        }
+        &__link{
+            width: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: map-get($font-size_rt, header_link);
+            padding: 1.5rem;
+            line-height: 2rem;
+            border-radius: 3rem;
+            border: 0rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+            transform: scale(1);
+            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+            cursor: pointer;
+            &:active{
+                transform: scale(0.85);
+            }
+            a{
+                color: white;
+                font-weight: 500;
+                text-decoration: none;     
+            }
+            &:hover{
+                @include button_brightness_change(nth($grey_color, 2))
+            }
+        }        
+    }
+}
+@media screen and (min-width: 992px) {
+    .header{
+        border: 0.1rem solid nth($grey_color, 5);
+        box-shadow: 0.6rem 0.6rem 0.3rem nth($grey_color, 3);
+        text-align: center;
+        @include background-color_grey(5);
+        padding: 2rem 0 6rem 0;
+        &__logo{
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_rd, header_logo);
+            margin-top: 2.5rem;
+            line-height: 0rem;
+        }
+        &__location{
+            color: nth($grey_color,1);
+            height: 6rem;
+            font-weight: map-get($font-weight_rd, header_location);
+            @include background-color_grey(4);
+            box-shadow:(inset 0 0.3rem  0.4rem nth($grey_color,3));
+            display: flex;
+            justify-content: center;
+            align-content: flex-start;
+            margin-bottom: 2rem;
+            .location__place{
+                font-size: map-get($font-size_rd, location_place);
+            }
+            i{
+                font-size: map-get($font-size_rd, location_icon);
+                padding-right: 1rem;
+                padding-top: 1.8rem;
+            }
+        }
+        &__intro{
+            font-size: map-get($font-size_rd, header_intro);
+            text-shadow: 0.3rem 0.3rem 0.3rem nth($grey_color, 2);
+        }
+        &__explication{
+            font-size: map-get($font-size_rd, header_explication);
+            font-weight: map-get($font-weight_rd, header_explication);
+            margin-bottom: 4rem;
+        }
+        &__link{
+            width: 20rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: map-get($font-size_rd, header_link);
+            padding: 1.5rem;
+            line-height: 2rem;
+            border-radius: 3rem;
+            border: 0rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+            transform: scale(1);
+            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+            cursor: pointer;
+            animation: turn-anim-button 3000ms both linear infinite;
+            &:active{
+                transform: scale(0.85);
+            }
+            a{
+                color: white;
+                font-weight: 500;
+                text-decoration: none;
+            }
+        }    
+    }
+}
+

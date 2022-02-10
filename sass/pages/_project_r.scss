@@ -1,0 +1,433 @@
+/*restaurants_block*/
+@media (max-width: 767px) {
+    .restaurants_block{
+        margin: 4rem 2rem 3rem 2rem;
+        &__title{
+            font-size: map-get($font-size_rmf, restaurants_block);
+        }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .restaurants_block{
+        margin: 3rem 2rem 3rem 2rem;
+        &__title{
+            font-size: map-get($font-size_rt, restaurants_block);
+            text-decoration: underline $third_color;
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .restaurants_block{
+        margin: 1.7rem 2rem 1rem 2rem;
+        &__title{
+            font-size: map-get($font-size_rd, restaurants_block);
+            text-decoration: underline $third_color;
+        }
+    }
+}
+
+/*restaurants_box*/
+@media (max-width:991px) {
+    .restaurants_box{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .restaurants_box{
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+/*functions*/
+@media (max-width: 767px) {
+    .functions{
+        &__title{
+            font-size: map-get($font-size_rmf, functions_title);
+            margin-top: 2.6rem;
+        }
+        &__progress{
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+            font-size: map-get($font-size_rmf, functions_progress);
+            font-weight: map-get($font-weight_rmf, functions_progress);
+            letter-spacing: 0rem;
+            &__button, &__button_third{
+                width: 95.5%;
+                height: 7rem;
+                padding: 1.2rem 1.5rem 0rem 2.8rem;
+                margin: 2rem 2.3rem 2rem 0.8rem;
+                border:0rem;
+                border-radius: 2rem;
+                background-color: map-get($background_color_rmf, button);
+                box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+                cursor: pointer;
+                &_third{
+                    background-color: map-get($background_color_rmf, button_three);
+                }
+            }
+            &__button:hover, &__button_third:hover{
+                @include button_brightness_change(nth($grey_color, 2))   
+            }            
+                .function_number{
+                    position: absolute;
+                    width: 2%;
+                    font-size: map-get($font-size_rmf, functions_number);
+                    font-weight: map-get($font-weight_rmf, functions_number);
+                    color: white;
+                    border-radius: 3rem;
+                    background-color: $primary_color;
+                    padding: 0.4rem 1.2rem 0.3rem 0.7rem;
+                    margin: 1.5rem 0 0 -3.8rem;
+                }
+                .function_text{
+                    background-color: map-get($background_color_rmf,function_text);
+                }
+                .function_text_three{
+                    background-color: map-get($background_color_rmf,function_text_three);
+                }
+                i{
+                    color: nth($grey_color, 2);
+                    margin-right: 1.5rem;
+                    font-size: map-get($font-size_rmf, function_icon);
+                }
+                .food_icon{
+                    color: $primary_color;
+                    font-size: map-get($font-size_rmf, food_icon);
+                } 
+        }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .functions{
+        &__title{
+            font-size: map-get($font-size_rt, functions_title);
+            margin-top: 2.6rem;
+            text-decoration: underline $third_color;
+        }
+        &__progress{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            list-style-type: none;
+            margin-bottom: 2rem;
+            letter-spacing: 0rem;
+            padding-left: 0;
+            font-size: map-get($font-size_rt, functions_progress);
+            font-weight: map-get($font-weight_rt, functions_progress);
+            &__anim{
+                width: 60%;
+                height: 6rem;
+                padding: 0rem 1.5rem 0rem 0;
+                margin: 2rem 2.3rem 2rem 1rem;
+                border:0rem;
+                border-radius: 2rem;
+                background-color: map-get($background_color_rt, button);
+                box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+                cursor: pointer;
+                animation: button_function_rt $button_funtion-dur_rt forwards infinite cubic-bezier(1,-0.06,1,.17); 
+                @for $i from 1 through $button_function-number_rt{
+                    &--#{$i}{
+                        animation-delay: $button_function-delay_rt*$i;
+                        @if $i == 3 {
+                            animation: button_function_rt $button_funtion-dur_rt forwards infinite cubic-bezier(1,-0.06,1,.17), blink-anim_rt 5500ms both infinite linear;
+                            animation-delay: $button_function-delay_rt*$i; 
+                        }
+                    }
+                }
+            }
+            i{
+                padding: 0 2.3rem 0 1rem;
+            }
+            .function_number{
+                position: absolute;
+                width: 2%;
+                font-size: map-get($font-size_rt, functions_number);
+                font-weight: map-get($font-weight_rt, function_number);
+                color: white;
+                border-radius: 3rem;
+                background-color: $primary_color;
+                padding: 0.4rem 1.1rem 0.3rem 0.7rem;
+                margin: 2rem 0 0 -1rem;    
+            }
+            .function_text{
+                text-align: center;
+                @include background-color_grey(5);
+            }
+            i{
+                color: nth($grey_color, 2);
+                margin-left: 1.5rem;
+                font-size: map-get($font-size_rt, function_icon);
+            }
+            .food_icon{
+                font-size: map-get($font-size_rt, food_icon);
+            }
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .functions{
+        &__title{
+            font-size: map-get($font-size_rd, functions_title);
+            margin: 2.6rem 0 0 0rem;
+            text-decoration: underline $third_color;
+        }
+        &__progress{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            list-style-type: none;
+            width: 100%;
+            margin-bottom: 2rem;
+            padding-left: 0;
+            font-size: map-get($font-size_rd, functions_progress);
+            font-weight: map-get($font-weight_rd, functions_progress);
+            &__anim{
+                width: 60%;
+                height: 6rem;
+                text-align: center;
+                padding: 0rem 1.5rem 0rem 0;
+                margin: 2rem 2.3rem 2rem 1rem;
+                border:0rem;
+                border-radius: 2rem;
+                background-color: map-get($background_color_rd, button);
+                box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+                cursor: pointer;
+                animation: button_function_rd $button_funtion-dur_rd forwards infinite cubic-bezier(1,-0.06,1,.17); 
+                @for $i from 1 through $button_function-number_rd{
+                    &--#{$i}{
+                        animation-delay: $button_function-delay_rd*$i;
+                        @if $i == 3 {
+                            animation: button_function_rd $button_funtion-dur_rd forwards infinite cubic-bezier(1,-0.06,1,.17), blink-anim_rd 5500ms both infinite linear;
+                            animation-delay: $button_function-delay_rd*$i; 
+                        }
+                    }
+                }
+            }
+            i{
+                padding: 0 2.3rem 0 1rem;
+            }    
+            .function_number{
+                position: absolute;
+                width: 2.2%;
+                font-size: map-get($font-size_rd, functions_number);
+                font-weight: map-get($font-weight_rd, function_number);
+                color: white;
+                border: 0.2rem solid $primary_color;
+                border-radius: 3rem;
+                background-color: $primary_color;
+                padding: 0.2rem 1rem 0.2rem 0.5rem;
+                margin: -1.1rem 0 0 28%;
+            }
+            .function_text{
+                text-align: center;
+                @include background-color_grey(5);
+            }
+            i{
+                color: nth($grey_color, 2);
+                margin-left: 2.5rem;
+                font-size: map-get($font-size_rd, function_icon);
+            }           
+        }
+    }
+}
+
+/*card*/
+@media (max-width: 767px) {
+    .card{
+        width: 100%;
+        height: 26.5rem;
+        font-size: map-get($font-size_rmf, card);
+        margin-bottom: 2rem;
+        background-color: white;
+        border-radius: 1.25rem;
+        box-shadow: 0.1rem 0.1rem 1.25rem black;
+        position: relative;
+        &__image{ 
+            img{
+                width: 100%;
+                height: 20rem;
+                border-radius: 1.25rem 1.25rem 0 0 ;
+            }
+        }    
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        &__new{
+            width: 7.3rem;
+            height: 2.45rem;
+            background-color: $third_color;
+            position: absolute;
+            background-attachment: scroll;
+            color: darken($third_color,42%);
+            filter: brightness(110%);
+            font-size: map-get($font-size_rmf, card_new);
+            font-weight: map-get($font-weight_rmf, card_new);
+            padding: 0.55rem 0 0 1rem;
+            border-radius: 0.3rem;
+            z-index: 10;
+            right: 1.5rem;
+            top: 0.2rem;
+        }
+        &__description{
+            line-height: 0.15rem;
+            padding-left: 1rem;
+        }
+        &__title{
+            font-size: map-get($font-size_rmf, card_title);
+            font-weight: map-get($font-weight_rmf, card_title);
+        }
+        &__location{
+            font-size: map-get($font-size_rmf, card_location);
+        } 
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .card{
+        width: 100%;
+        height: 27rem;
+        font-size: map-get($font-size_rt, card);
+        margin-bottom: 2.7rem;
+        background-color: white;
+        border-radius: 1.25rem;
+        border: 0.2rem solid nth($grey_color, 3);
+        box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
+        transform: scale(1);
+        transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
+        position: relative;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
+            border: 0.3rem solid $third_color;
+            &:active{
+                transform: scale(1.02);
+                box-shadow: 0.4rem 0.4rem 0.23rem nth($grey_color, 2);
+            }
+        }
+        &__image{ 
+            img{
+                width: 100%;
+                height: 20rem;
+                border-radius: 1.25rem 1.25rem 0 0 ;
+            }
+        }    
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        &__new{
+            width: 7.3rem;
+            height: 2.45rem;
+            background-color: $third_color;
+            position: absolute;
+            background-attachment: scroll;
+            color: darken($third_color,42%);
+            filter: brightness(110%);
+            font-size: map-get($font-size_rt, card_new);
+            font-weight: map-get($font-weight_rt, card_new);
+            padding: 0.55rem 0 0 1rem;
+            border-radius: 0.3rem;
+            z-index: 10;
+            right: 1.5rem;
+            top: 0.2rem;
+        }
+        &__description{
+            line-height: 0.15rem;
+            padding-left: 1rem;
+        }
+        &__title{
+            font-size: map-get($font-size_rt, card_title);
+            font-weight: map-get($font-weight_rt, card_title);
+        }
+        &__location{
+            font-size: map-get($font-size_rt, card_location);
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .card{
+        width: 48%;
+        height: 23.7rem;
+        font-size: map-get($font-size_rd, card);
+        margin-bottom: 2.7rem;
+        background-color: white;
+        border-radius: 1.25rem;
+        border: 0.2rem solid nth($grey_color, 3);
+        box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
+        transform: scale(1);
+        transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
+        position: relative;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
+            border: 0.3rem solid $third_color;
+            &:active{
+                transform: scale(1.02);
+                box-shadow: 0.4rem 0.4rem 0.23rem nth($grey_color, 2);
+            }
+        }
+        &__image{ 
+            img{
+                width: 100%;
+                height: 17rem;
+                border-radius: 20px 20px 0 0 ;
+            }
+        }    
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        &__new{
+            width: 7.3rem;
+            height: 2.45rem;
+            background-color: $third_color;
+            position: absolute;
+            background-attachment: scroll;
+            color: darken($third_color,42%);
+            filter: brightness(110%);
+            font-size: 1.3rem;
+            font-weight: map-get($font-size_rd, card_new);
+            padding: 0.55rem 0 0 1rem;
+            border-radius: 0.3rem;
+            z-index: 10;
+            right: 1.5rem;
+            top: 0.2rem;
+        }
+        &__description{
+            line-height: 0.15rem;
+            padding-left: 1rem;
+        }
+        &__title{
+            font-weight: map-get($font-weight_rd, card_title);
+            font-size: map-get($font-size_rd, card_title);
+        }
+        &__location{
+            font-size: map-get($font-size_rd, card_location);
+        }
+    }
+}
+
+/**/
+@media (max-width: 767px) {
+    
+}
+@media (min-width:768px) and (max-width:991px) {
+    
+}
+@media screen and (min-width: 992px) {
+    
+}

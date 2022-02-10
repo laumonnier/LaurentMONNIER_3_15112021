@@ -1,0 +1,58 @@
+.page{
+    animation: page 3500ms cubic-bezier(.55,.07,.58,.99);
+    animation-fill-mode: forwards;
+}
+.loading_spinner{
+    width: 10rem;
+    height: 10rem;
+    left: calc(50% - 5rem);
+    top: calc(50% - 5rem);
+    border: 0.8rem solid transparent;
+    border-radius: 50%;
+    border-right-color: $primary_color;
+    border-top-color: $primary_color;
+    box-sizing: border-box;
+    position: fixed;
+    animation: spin 3500ms 1 linear;
+    animation-fill-mode: forwards;
+    &::before{
+        content: "";
+        width: 8.4rem;
+        height: 8.4rem;
+        left: 0.1rem;
+        top: -0.1rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $third_color;
+        border-top-color: $third_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin-inv 1750ms 2 linear;
+        animation-fill-mode: forwards;
+    }
+    &::after{
+        content: "";
+        width: 6.87rem;
+        height: 6.87rem;
+        left: 0.88rem;
+        top: 0.67rem;
+        border: 0.8rem solid transparent;
+        border-radius: 50%;
+        border-right-color: $secondary_color;
+        border-top-color: $secondary_color;
+        box-sizing: border-box;
+        position: absolute;
+        animation: spin 3800ms 1 linear;
+        animation-fill-mode: forwards;
+    }
+    &__center{
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        left: calc(50% - 0.75rem);
+        top: calc(50% - 0.79rem);
+        background: linear-gradient(0deg, $third_color, $secondary_color, $primary_color);
+        border: 0.1rem solid nth($grey_color,2);
+        position: fixed;
+    }
+}

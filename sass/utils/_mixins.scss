@@ -5,3 +5,9 @@
 @mixin text_transform {
     text-transform: uppercase;
 }
+@mixin space-icon($space) {
+    margin-right: $space;
+}
+@mixin background-color_grey($number){
+    background-color: nth($grey_color,$number);
+}

@@ -1,0 +1,99 @@
+/**/
+@media (max-width: 767px) {
+    .header{
+        background-color: white;
+        width: 100%;
+        height: 72vw;
+    
+        &__logo{
+            text-align: center;
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_mmf, header_logo);
+            padding: 1rem 0 1rem 0;
+            line-height: 0rem;
+        }
+        &__icon{
+            position: absolute;
+            font-size: map-get($font-size_mmf, header_icon);
+            margin-left: 2rem;
+        }
+        &__image
+            img{
+            width: 100%;
+            }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .header{
+        background-color: white;
+        width: 100%;
+        height: 71vw;
+    
+        &__logo{
+            text-align: center;
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_mt, header_logo);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            line-height: 0rem;
+        }
+        &__icon{
+            position: absolute;
+            font-size: map-get($font-size_mt, header_icon);
+            margin-left: 2.2rem;
+            border: 0.1rem solid $secondary_color;
+            border-radius: 3rem;
+            padding: 0.4rem;
+            background: linear-gradient(180deg, $secondary_color, $primary_color);
+            transition: transform 350ms cubic-bezier(.33,.04,.17,.99) 100ms;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.09);
+            }
+        }
+        &__image
+            img{
+            width: 100%;
+            }
+    }
+}
+@media screen and (min-width: 992px) {
+    .header{
+        background-color: white;
+        margin-bottom: 0;
+        padding-top: 0.1rem;
+        width: 100%;
+        height: 13rem;
+        z-index: 10;
+    
+        &__logo{
+            text-align: center;
+            font-family: $font-family_particular;
+            font-size: map-get($font-size_md, header_logo);
+            padding:2rem 0 1rem 0;
+            line-height: 0rem;
+        }
+        &__icon{
+            position: absolute;
+            font-size: map-get($font-size_md, header_icon);
+            margin: 5rem 0 0 2.2rem;
+            border: 0.1rem solid $secondary_color;
+            border-radius: 3rem;
+            padding: 0.4rem;
+            background: linear-gradient(180deg, $secondary_color, $primary_color);
+            transition: transform 350ms cubic-bezier(.33,.04,.17,.99) 100ms;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.09);
+            }
+        }
+        &__image
+            img{
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+            overflow: hidden;
+            }
+    }
+}

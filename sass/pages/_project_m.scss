@@ -1,0 +1,434 @@
+/*menu-block*/
+@media (max-width: 767px) {
+    .menu-block{
+        position: relative;
+        z-index: 1;
+        background-color: nth($grey_color, 5);
+        border-radius: 3rem 3rem 0 0;
+        border: 0.15rem solid nth($grey_color,2);
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .menu-block{
+        position: relative;
+        z-index: 1;
+        background-color: nth($grey_color, 5);
+        border-radius: 3rem 3rem 0 0;
+        border: 0.1rem solid nth($grey_color, 3);
+        box-shadow: 0.5rem -0.5rem 1rem nth($grey_color, 2), -0.5rem -0.5rem 1rem nth($grey_color, 2), inset -0.5rem 0rem 1rem nth($grey_color, 2);
+    }
+}
+@media screen and (min-width: 992px) {
+    .menu-block{
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        margin-top: 58vw;
+        border-radius: 3rem 3rem 0 0;
+        border: 0.2rem solid nth($grey_color, 2);
+        box-shadow: 0.2rem -0.2rem 1rem nth($grey_color, 2);
+    }
+}
+
+/*menu-box*/
+@media screen and (min-width: 992px){
+    .menu-box{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: nth($grey_color, 4);
+        border-radius: 2rem;
+        border: 0.2rem solid nth($grey_color, 2);
+        box-shadow: 0.5rem -0.5rem 0.5rem nth($grey_color, 2);
+    }
+}
+
+/*menu*/
+@media (max-width: 767px) {
+    .menu{
+        margin: 0 1.5rem 7rem 1.5rem;
+        box-sizing: border-box;
+        &__title-box{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            &__title{
+                font-family: $font-family_particular;
+                font-size: map-get($font-size_mmf, title-box_title);
+            }
+                
+        }
+        &__order{
+            position: relative;
+            color: white;
+            font-size: map-get($font-size_mmf, menu_link);
+            font-weight: map-get($font-weight_mmf, menu_order);
+            text-decoration: none;
+            padding: 1.5rem;
+            border: 0rem;
+            top: 3rem;
+            left: 31%;
+            line-height: 2rem;
+            border-radius: 3rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
+            cursor: pointer;
+        }    
+        &__order:hover{
+            @include button_brightness_change(nth($grey_color, 2))
+        }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .menu{
+        margin: 0 1.5rem 7rem 1.5rem;
+        box-sizing: border-box;
+        &__title-box{
+            position: relative;
+            padding-top: 1rem;
+            margin-bottom: 1rem;
+            &__title{
+                font-family: $font-family_particular;
+                font-size: map-get($font-size_mt, title-box_title);
+                padding-left: 1.5rem;
+            }
+        }
+        &__order{
+            position: relative;
+            top: 3rem;
+            left: 36.5%;
+            color: white;
+            font-weight: map-get($font-weight_mt, menu_order);
+            text-decoration: none;
+            font-size: map-get($font-size_mt, menu_link);
+            padding: 1.5rem;
+            line-height: 2rem;
+            border-radius: 3rem;
+            border: 0rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+            transform: scale(1);
+            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+            cursor: pointer;
+            &:active{
+                transform: scale(0.85);
+            };      
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .menu{
+        margin: 0 1.5rem 7rem 1.5rem;
+        box-sizing: border-box;
+        &__title-box{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            margin-bottom: 1rem;
+            &__title{
+                font-family: $font-family_particular;
+                font-size: map-get($font-size_md, title-box_title);
+                padding-left: 2rem;
+            }
+        }
+        &__order{
+            position: relative;
+            top: 3rem;
+            left: 42%;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: map-get($font-size_md, menu_link);
+            padding: 1.5rem;
+            line-height: 2rem;
+            border-radius: 3rem;
+            border: 0rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
+            transform: scale(1);
+            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
+            cursor: pointer;
+            &:active{
+                transform: scale(0.85);
+            }    
+        }
+    }
+}
+
+/*food*/
+.food{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    overflow: hidden;
+    &__description{
+        width: 84%;
+        padding-left: 0.6rem;
+        transition: width 350ms cubic-bezier(.02,.25,0,.58) 25ms;
+        &__title{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__subtitle{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    &__specif{
+        display: flex;
+        &__check{
+            position: relative;
+        }
+    }    
+}
+@media (max-width: 767px) {
+    .food{
+        height: 8.4rem;
+        border: 0.15rem solid nth($grey_color, 4);
+        border-radius: 1.6rem;
+        margin-bottom: 1.4rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);     
+        &__description{
+            &__title{
+                font-size: map-get($font-size_mmf, food_title);
+                font-weight: map-get($font-weight_mmf, food_title);
+            }
+            &__subtitle{
+                font-size: map-get($font-size_mmf, food_subtitle);
+                font-weight: map-get($font-weight_mmf, food_subtitle);   
+            }                
+        }
+        &:active .food__description{
+            width:64%;
+        }
+        &__specif{
+            &__price{
+                font-size: map-get($font-size_mmf, food_price);
+                font-weight: map-get($font-weight_mmf, food_price);
+                margin-top: 4.8rem;
+                padding-right: 2rem;
+            }
+            &__check{
+                color: white;
+                background-color: $third_color;
+                font-size: map-get($font-size_mmf, food_icon);
+                height: 8.4rem;
+                width: 6.7rem;
+                margin-right: -7.1rem;
+                padding: 2.7rem 0 0 2.1rem;
+                transition: margin-right 350ms cubic-bezier(.02,.25,0,.58) 25ms;
+                & i{
+                    transform: rotate(-360deg);
+                    transition: transform 690ms;
+                }
+            }
+    
+        }
+        &:active .food__specif__check{
+            margin-right: -0.4rem;
+            & i{
+                transform: rotate(0deg);
+            }
+        }
+        animation: button_food_mmf $button_food-dur_mmf both cubic-bezier(.02,.25,.73,.23); 
+        @for $i from 1 through $button_food-number_mmf{
+             &--#{$i}{
+                animation-delay: $button_food-delay_mmf*$i;
+            }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .food{
+        height: 10.4rem;
+        background-color: white;
+        border-radius: 1.6rem;
+        margin-bottom: 1.9rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
+        transition: background-color 220ms cubic-bezier(.33,.04,.17,.99) 100ms, box-shadow 450ms cubic-bezier(.33,.04,.17,.99) 250ms;
+        &:hover{
+            background-color: $third_color;
+            box-shadow: 0.4rem 0.4rem 0.7rem nth($grey_color,2);
+        }    
+    
+        &__description{
+            &__title{
+                line-height: 2.2rem;
+                font-size: map-get($font-size_mt, food_title);
+                font-weight: map-get($font-weight_mt, food_title);
+            }
+            &__subtitle{
+                line-height: 1.9rem;
+                font-size: map-get($font-size_mt, food_subtitle);
+                font-weight: map-get($font-weight_mt, food_subtitle);
+            }
+        }
+        &:active .food__description{
+            width:64%;
+        }
+        &__specif{
+            &__price{
+                font-size: map-get($font-size_mt, food_price);
+                font-weight: map-get($font-weight_mt, food_price);
+                margin: 6.3rem 3rem 0rem 0;
+            }
+            &__check{
+                color: $third_color;
+                background-color: white;
+                box-shadow: -0.8rem -0.8rem 1rem white, 0.8rem 0.8rem 1rem white, 
+                inset -0.8rem -0.8rem 1rem white, inset 0.8rem 0.8rem 1rem white;
+                font-size: map-get($font-size_mt, food_specif_check);
+                height: 12.9rem;
+                width: 6.7rem;
+                margin-right: -7.7rem;
+                padding: 3.5rem 0 0 1.6rem;
+                transition: margin-right 560ms cubic-bezier(.02,.25,0,.58) 25ms;
+                overflow: hidden;
+                & i{
+                    transform: rotate(-360deg);
+                    transition: transform 850ms;
+                }
+            }
+    
+        }
+        &:active .food__specif__check{
+            margin-right: -0.4rem;
+            & i{
+                transform: rotate(0deg);
+            }
+        }
+        animation: button_food_mt $button_food-dur_mt both cubic-bezier(.02,.25,.73,.23); 
+        @for $i from 1 through $button_food-number_mt{
+             &--#{$i}{
+                animation-delay: $button_food-delay_mt*$i;
+            }
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .food{
+        height: 7.2rem;
+        background-color: white;
+        border: 0.1rem solid nth($grey_color, 3);
+        border-radius: 1.6rem;
+        margin-bottom: 1.4rem;
+        box-shadow: 0.4rem 0.4rem 0.3rem nth($grey_color, 2);
+        transition: box-shadow  cubic-bezier(.33,.04,.17,.99);
+        &:hover{
+            box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color;
+        }
+        &__description{
+            &__title{
+                line-height: 1.7rem;
+                font-size: map-get($font-size_md, food_title);
+                font-weight: map-get($font-weight_md, food_title);
+            }
+            &__subtitle{
+                line-height: 1.4rem;
+                font-size: map-get($font-size_md, food_subtitle);
+                font-weight: map-get($font-weight_md, food_subtitle);
+            }
+        }
+        &:active .food__description{
+            width:70%;
+        }
+        &__specif{
+            &__price{
+                font-size: map-get($font-size_md, food_price);
+                font-weight: map-get($font-weight_md, food_price);
+                margin: 4rem 2rem 0rem 0 ;
+            }
+            &__check{
+                color: $third_color;
+                background-color: white;
+                font-size: map-get($font-size_md, food_specif_check);
+                height: 7.4rem;
+                width: 5.7rem;
+                margin-right: -6.7rem;
+                margin-top: -0.2rem;
+                padding-top: 2.3rem;
+                transition: margin-right 350ms cubic-bezier(.02,.25,0,.58) 25ms;
+                & i{
+                    transform: rotate(360deg);
+                    transition: transform 690ms;
+                }
+            }
+    
+        }
+        &:active .food__specif__check{
+            margin-right: -0.4rem;
+            & i{
+                transform: rotate(0deg);
+            }
+        }
+        animation: button_food_md $button_food-dur_md both linear; 
+        @for $i from 1 through $button_food-number_md{
+             &--#{$i}{
+                animation-delay: $button_food-delay_md*$i;
+            }
+        }
+    }
+}
+
+/*category*/
+@media (max-width: 767px) {
+    .category
+        .title{
+            @include text_transform;
+            font-weight: map-get($font-weight_mmf, category_title);
+            padding-left: 0.7rem;
+            position: relative;
+            line-height: 3.7rem;
+            &::before{
+                content:"";
+                position: absolute;
+                width: 2.7rem;
+                height: 0.4rem;
+                bottom: 0.5rem;
+                left: 0.7rem;
+                border-left: 3.9rem solid $third_color;
+            }
+        }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .category
+        .title{
+            width: 27%;
+            @include text_transform;
+            font-size: map-get($font-size_mt, category_title);
+            text-align: center;
+            font-weight: map-get($font-weight_mt, category_title);
+            position: relative;
+            margin: 3.75rem auto 2rem auto;
+            line-height: 3.7rem;
+            text-shadow: (0.5rem -0.4rem 0.4rem nth($grey_color,2));
+            border-bottom: 0.5rem solid $third_color;
+        }
+}
+@media screen and (min-width: 992px) {
+    .category{
+        margin: 0 0.4rem 2rem 0.4rem;
+        width: 48%;
+        .title{
+            @include text_transform;
+            width:41%;
+            font-size: map-get($font-size_md, category_title);
+            text-align: center;
+            font-weight: map-get($font-weight_md, category_title);
+            position: relative;
+            left: 27%;
+            margin: 2rem 0 1.5rem 1.5rem;
+            line-height: 3.7rem;
+            text-shadow: (0.5rem 0.4rem 0.28rem nth($grey_color,2));
+            border-bottom: 0.4rem solid $third_color;
+            }    
+    }
+}

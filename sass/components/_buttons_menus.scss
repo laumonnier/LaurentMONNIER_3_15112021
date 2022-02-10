@@ -1,0 +1,46 @@
+.menu__title-box__preference{
+    font-size: 2.4rem;
+    color: black;
+    cursor: pointer;
+    &--no-active{
+        position: absolute;
+        top: 2.4rem;
+        right: 2rem;
+        z-index: 1;
+        opacity: 1;
+        transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;
+    }
+    &--active{
+        position:absolute;
+        top: 2.4rem;
+        right: 2rem;
+        background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+        background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -ms-background-clip: text;
+        color: transparent;
+        opacity: 0;
+        transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
+    }
+    &:active .menu__title-box__preference{
+        &--no-active{
+            position: absolute;
+            top: 2.4rem;
+            right: 2rem;
+            opacity: 0;
+        }
+        &--active{
+            position:absolute;
+            top: 2.4rem;
+            right: 2rem;
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -ms-background-clip: text;
+            color: transparent;
+            opacity: 1;                
+        }
+    }
+}

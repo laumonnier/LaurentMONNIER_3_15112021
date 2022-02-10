@@ -1,3 +1,45 @@
+/*loading-spinner*/
+@keyframes page{
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    70%{
+        transform: rotate(230deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes spin-inv{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50%{
+        transform: rotate(-180deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+}
+
+/*restaurant_button animation*/
 @keyframes turn-anim-button{
     0%{
         background: -webkit-linear-gradient(0deg, $secondary_color, $primary_color);
@@ -138,5 +180,104 @@
         background: -webkit-linear-gradient(0deg, $secondary_color, $primary_color);
         background: -ms-linear-gradient(0deg, $secondary_color, $primary_color);
         animation-duration: 150ms;
+    }
+}
+
+/*animation button-food*/
+@keyframes button_food_mmf{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes button_food_mt{
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(0.8);
+        animation-timing-function: cubic-bezier(.55,.07,.58,.99);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes button_food_md{
+    0%{
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*animation appearance-button*/
+@keyframes button_function_rt{
+    0%{
+        opacity: 1;
+        animation-duration: 5545ms;
+    }
+    60%{
+        opacity: 0;
+        animation-duration: 4450ms;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes button_function_rd{
+    0%{
+        opacity: 1;
+        animation-duration: 5545ms;
+    }
+    60%{
+        opacity: 0;
+        animation-duration: 4450ms;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/*animation blink-button*/
+@keyframes blink-anim_rt{
+    0%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    25%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    50%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    75%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    100%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+}
+@keyframes blink-anim_rd{
+    0%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    25%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    50%{
+        box-shadow: 0rem 0rem 0rem $third_color;
+    }
+    75%{
+        box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color, inset -0.2rem -0.2rem 1rem $third_color, inset 0.2rem 0.2rem 1rem $third_color;
+    }
+    100%{
+        box-shadow: 0rem 0rem 0rem $third_color;
     }
 }

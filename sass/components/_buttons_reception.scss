@@ -1,0 +1,46 @@
+/*reception-preference*/
+.card__preference{
+    color: nth($grey_color, 2);
+        font-size: map-get($font-size_rmf, card_preference);
+        cursor: pointer;
+        &--no-active{
+            position: absolute;
+            right: 1.5rem;
+            bottom: 2rem;
+            z-index: 1;
+        }
+        &--active{
+            position:absolute;
+            right: 1.5rem;
+            bottom: 2rem; 
+            background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+            background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -ms-background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms; 
+        }
+        
+        &:active .card__preference{
+            &--no-active{
+                position: absolute;
+                right: 1.5rem;
+                bottom: 2rem;
+                z-index: -1;
+            }
+            &--active{
+                position:absolute;
+                right: 1.5rem;
+                bottom: 2rem;
+                background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
+                background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -ms-background-clip: text;
+                color: transparent;
+                opacity: 1;                
+            }
+        }
+}

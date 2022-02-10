@@ -6,20 +6,74 @@ $secondary_color: #ff79da;
 $third_color: #99e2d0;
 
 /*background-color variables*/
+$background_color_rmf:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
+function_text_three:nth($purple_color,1)); 
 $background-color_mmf:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$background_color_rt:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
+function_text_three:nth($purple_color,1));
+$background-color_mt:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
+$background_color_rd:(button:nth($grey_color, 5), button_three:nth($purple_color,1), function_text:nth($grey_color, 5), 
+function_text_three:nth($purple_color,1));
+$background-color_md:(function_text:nth($grey_color, 5), function_text_three:nth($purple_color,1));
 
 /*font variables*/
 $font-family_primary: 'Roboto',sans-serif, Arial, 'Trebuchet MS', 'Comic Sans MS';
 $font-family_particular: 'Shrikhand',sans-serif, Arial, 'Trebuchet MS';
 
+$font-weight_rmf:(header_explication:400, header_link:500, functions_progress:700, functions_number:400, functions_li:500, 
+card_new:500, card_title:700, footer_nav:300);
 $font-weight_mmf: (category_title:300, menu_order:500, food_title:700, food_subtitle:400, food_price:700, nav:300, link:500, 
 footer_nav:300);
+$font-weight_rt: (header_location:500, header_explication:400, functions_progress:500, function_number:400, 
+functions_li:600,card_new:500, card_title:700,footer_nav:300, );
+$font-weight_mt: (category_title:500, menu_order:500, food_title:500, food_subtitle:300, food_price:700, footer_nav:300, 
+nav:300, link:500);
+$font-weight_rd:(header_location:500, header_explication:400, header_progress:600, functions_progress:600, function_number:400, 
+functions_li:600, card_new:500, card_title:700, footer_nav:300, );
+$font-weight_md: (category_title:500, food_title:500, food_subtitle:300, food_price:700, footer_nav:300, nav:300, 
+link:500);
 
+$font_title_rmf: 2.2rem;
+$font-size_rmf:(header_logo:4rem, location_place:1.7rem, location_icon:1.8rem, header_intro:$font_title_rmf, 
+header_icon:1.8rem, header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rmf, 
+functions_progress:1.4rem, functions_number:1rem, functions_li:1.3rem, function_icon:1.7rem, food_icon:1.7rem, 
+restaurants_block:$font_title_rmf, card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, 
+card_preference:2rem, footer_logo:2rem, footer_nav:1.5rem);
 $font-size_mmf: (header_logo:4rem, header_icon:1.7rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
 menu_link:1.4rem, food_title:1.6rem, food_subtitle:1.4rem, food_price:1.4rem, food_icon:2.5rem, footer_logo:2rem, 
 footer_nav:1.5rem);
+$font_title_rt: 2.6rem;
+$font-size_rt:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title_rt,
+header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rt, functions_progress:1.6rem,
+functions_number:1rem, functions_li:1.3rem, function_icon:2.2rem, food_icon:1.7rem, restaurants_block:$font_title_rt,
+card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, card_preference:2rem, footer_logo:2.5rem,
+footer_nav:1.5rem);
+$font-size_mt: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
+category_title:2.4rem, menu_link:1.9rem, food_title:2.15rem, food_subtitle:1.8rem, food_price:1.6rem, 
+food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:2.5rem, footer_nav:1.5rem);
+$font_title_rd: 2.6rem;
+$font-size_rd:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title_rd,
+header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rd, functions_progress:1.6rem,
+functions_number:1rem, functions_li:1.3rem, function_icon:1.9rem, food_icon:1.7rem, restaurants_block:$font_title_rd,
+card:0.9rem, card_title:1.8rem, card_location:1.3rem, card_preference:2rem, footer_logo:3rem, footer_nav:1.7rem);
+$font-size_md: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
+category_title:2.4rem, menu_link:1.9rem, food_title:1.48rem, food_subtitle:1.30rem, food_price:1.2rem, 
+food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:3rem, footer_nav:1.7rem);
+    
 
 /*animations variables*/
-$button_food-number: 4;
-$button_food-dur: 300ms;
-$button_food-delay: 230ms;
+$button_food-number_mmf: 4;
+$button_food-dur_mmf: 300ms;
+$button_food-delay_mmf: 230ms;
+$button_food-number_mt: 4;
+$button_food-dur_mt: 850ms;
+$button_food-delay_mt: 930ms;
+$button_food-number_md: 4;
+$button_food-dur_md: 650ms;
+$button_food-delay_md: 730ms;
+$button_funtion-dur_rt: 10000ms;
+$button_function-delay_rt: 1650ms;
+$button_function-number_rt: 3;
+$button_funtion-dur_rd: 10000ms;
+$button_function-delay_rd: 1650ms;
+$button_function-number_rd: 3;

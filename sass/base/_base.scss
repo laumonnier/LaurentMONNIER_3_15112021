@@ -5,3 +5,11 @@
 body{
     font-family: $font-family_primary;
 }
+
+.container{
+    box-sizing: border-box;
+}
+
+aside{
+    margin: 0 2rem 0 2rem;
+}
