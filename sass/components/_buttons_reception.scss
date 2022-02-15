@@ -23,7 +23,7 @@
             transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms; 
         }
         
-        &:active .card__preference{
+        &:hover .card__preference{
             &--no-active{
                 position: absolute;
                 right: 1.5rem;

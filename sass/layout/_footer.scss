@@ -65,11 +65,6 @@
             &__partnership i{
                 @include space-icon(0.4rem);
             }
-            &__proposal, &__partnership, &__mentions{
-                &:hover{
-                    color: $third_color;
-                }
-            }
             &__contact{
                 a{
                     color: white;
@@ -108,11 +103,6 @@
             }        
             &__partnership i{
                 @include space-icon(0.4rem);
-            }    
-            &__proposal, &__partnership, &__mentions{
-                &:hover{
-                    color: $third_color;
-                }
             }   
             &__contact{
                 a{

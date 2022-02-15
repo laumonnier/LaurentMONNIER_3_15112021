@@ -23,7 +23,7 @@
         opacity: 0;
         transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   
     }
-    &:active .menu__title-box__preference{
+    &:hover .menu__title-box__preference{
         &--no-active{
             position: absolute;
             top: 2.4rem;

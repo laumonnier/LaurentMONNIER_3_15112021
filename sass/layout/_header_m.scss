@@ -41,15 +41,9 @@
             position: absolute;
             font-size: map-get($font-size_mt, header_icon);
             margin-left: 2.2rem;
-            border: 0.1rem solid $secondary_color;
             border-radius: 3rem;
             padding: 0.4rem;
-            background: linear-gradient(180deg, $secondary_color, $primary_color);
-            transition: transform 350ms cubic-bezier(.33,.04,.17,.99) 100ms;
             cursor: pointer;
-            &:hover{
-                transform: scale(1.09);
-            }
         }
         &__image
             img{
@@ -77,15 +71,9 @@
             position: absolute;
             font-size: map-get($font-size_md, header_icon);
             margin: 5rem 0 0 2.2rem;
-            border: 0.1rem solid $secondary_color;
             border-radius: 3rem;
             padding: 0.4rem;
-            background: linear-gradient(180deg, $secondary_color, $primary_color);
-            transition: transform 350ms cubic-bezier(.33,.04,.17,.99) 100ms;
             cursor: pointer;
-            &:hover{
-                transform: scale(1.09);
-            }
         }
         &__image
             img{

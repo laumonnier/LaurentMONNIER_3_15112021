@@ -137,16 +137,6 @@
                 background-color: map-get($background_color_rt, button);
                 box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
                 cursor: pointer;
-                animation: button_function_rt $button_funtion-dur_rt forwards infinite cubic-bezier(1,-0.06,1,.17); 
-                @for $i from 1 through $button_function-number_rt{
-                    &--#{$i}{
-                        animation-delay: $button_function-delay_rt*$i;
-                        @if $i == 3 {
-                            animation: button_function_rt $button_funtion-dur_rt forwards infinite cubic-bezier(1,-0.06,1,.17), blink-anim_rt 5500ms both infinite linear;
-                            animation-delay: $button_function-delay_rt*$i; 
-                        }
-                    }
-                }
             }
             i{
                 padding: 0 2.3rem 0 1rem;
@@ -206,16 +196,6 @@
                 background-color: map-get($background_color_rd, button);
                 box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 2);
                 cursor: pointer;
-                animation: button_function_rd $button_funtion-dur_rd forwards infinite cubic-bezier(1,-0.06,1,.17); 
-                @for $i from 1 through $button_function-number_rd{
-                    &--#{$i}{
-                        animation-delay: $button_function-delay_rd*$i;
-                        @if $i == 3 {
-                            animation: button_function_rd $button_funtion-dur_rd forwards infinite cubic-bezier(1,-0.06,1,.17), blink-anim_rd 5500ms both infinite linear;
-                            animation-delay: $button_function-delay_rd*$i; 
-                        }
-                    }
-                }
             }
             i{
                 padding: 0 2.3rem 0 1rem;
@@ -306,18 +286,7 @@
         border-radius: 1.25rem;
         border: 0.2rem solid nth($grey_color, 3);
         box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
-        transform: scale(1);
-        transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
         position: relative;
-        &:hover{
-            transform: scale(1.05);
-            box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
-            border: 0.3rem solid $third_color;
-            &:active{
-                transform: scale(1.02);
-                box-shadow: 0.4rem 0.4rem 0.23rem nth($grey_color, 2);
-            }
-        }
         &__image{ 
             img{
                 width: 100%;
@@ -368,18 +337,7 @@
         border-radius: 1.25rem;
         border: 0.2rem solid nth($grey_color, 3);
         box-shadow: 0.5rem 0.5rem 0.3rem nth($grey_color, 2);
-        transform: scale(1);
-        transition: all 200ms cubic-bezier(.02,.25,0,.58) 150ms;
         position: relative;
-        &:hover{
-            transform: scale(1.05);
-            box-shadow: 0.5rem 0.5rem 0.8rem nth($grey_color, 2);
-            border: 0.3rem solid $third_color;
-            &:active{
-                transform: scale(1.02);
-                box-shadow: 0.4rem 0.4rem 0.23rem nth($grey_color, 2);
-            }
-        }
         &__image{ 
             img{
                 width: 100%;

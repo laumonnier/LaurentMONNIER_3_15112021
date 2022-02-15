@@ -50,7 +50,7 @@ card:0.9rem, card_new:1.3rem, card_title:1.8rem, card_location:1.3rem, card_pref
 footer_nav:1.5rem);
 $font-size_mt: (header_logo:4rem, header_icon:2rem, title-box_title:2.6rem, title-box_icon:2.4rem, 
 category_title:2.4rem, menu_link:1.9rem, food_title:2.15rem, food_subtitle:1.8rem, food_price:1.6rem, 
-food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:2.5rem, footer_nav:1.5rem);
+food_specif_check:3.5rem, food_icon:1.9rem, footer_logo:2.5rem, footer_nav:1.5rem);
 $font_title_rd: 2.6rem;
 $font-size_rd:(header_logo:4rem, location_place:1.7rem, location_icon:2rem, header_intro:$font_title_rd,
 header_explication:1.5rem, header_link:1.4rem, functions_title:$font_title_rd, functions_progress:1.6rem,
@@ -62,15 +62,9 @@ food_specif_check:2.5rem, food_icon:1.9rem, footer_logo:3rem, footer_nav:1.7rem)
     
 
 /*animations variables*/
-$button_food-number_mmf: 4;
-$button_food-dur_mmf: 300ms;
-$button_food-delay_mmf: 230ms;
-$button_food-number_mt: 4;
-$button_food-dur_mt: 850ms;
-$button_food-delay_mt: 930ms;
-$button_food-number_md: 4;
-$button_food-dur_md: 650ms;
-$button_food-delay_md: 730ms;
+$button_food-number: 4;
+$button_food-dur: 300ms;
+$button_food-delay: 230ms;
 $button_funtion-dur_rt: 10000ms;
 $button_function-delay_rt: 1650ms;
 $button_function-number_rt: 3;

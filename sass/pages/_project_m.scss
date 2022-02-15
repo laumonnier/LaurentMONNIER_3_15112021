@@ -109,12 +109,7 @@
             background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
             background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
             box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
-            transform: scale(1);
-            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
-            cursor: pointer;
-            &:active{
-                transform: scale(0.85);
-            };      
+            cursor: pointer;      
         }
     }
 }
@@ -148,12 +143,7 @@
             background: -webkit-linear-gradient(180deg, $secondary_color, $primary_color);
             background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
             box-shadow: 0.2rem 0.2rem 1rem nth($grey_color, 3);
-            transform: scale(1);
-            transition: transform 150ms cubic-bezier(.02,.25,0,.58) 150ms;
-            cursor: pointer;
-            &:active{
-                transform: scale(0.85);
-            }    
+            cursor: pointer;    
         }
     }
 }
@@ -238,27 +228,21 @@
                 transform: rotate(0deg);
             }
         }
-        animation: button_food_mmf $button_food-dur_mmf both cubic-bezier(.02,.25,.73,.23); 
-        @for $i from 1 through $button_food-number_mmf{
+        animation: button_food $button_food-dur both cubic-bezier(.02,.25,.73,.23); 
+        @for $i from 1 through $button_food-number{
              &--#{$i}{
-                animation-delay: $button_food-delay_mmf*$i;
+                animation-delay: $button_food-delay*$i;
             }
         }
     }
 }
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:768px) and (max-width:991px) {     
     .food{
         height: 10.4rem;
-        background-color: white;
+        border: 0.15rem solid nth($grey_color, 4);
         border-radius: 1.6rem;
         margin-bottom: 1.9rem;
-        box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);
-        transition: background-color 220ms cubic-bezier(.33,.04,.17,.99) 100ms, box-shadow 450ms cubic-bezier(.33,.04,.17,.99) 250ms;
-        &:hover{
-            background-color: $third_color;
-            box-shadow: 0.4rem 0.4rem 0.7rem nth($grey_color,2);
-        }    
-    
+        box-shadow: 0.2rem 0.2rem 0.5rem nth($grey_color, 2);    
         &__description{
             &__title{
                 line-height: 2.2rem;
@@ -281,20 +265,18 @@
                 margin: 6.3rem 3rem 0rem 0;
             }
             &__check{
-                color: $third_color;
-                background-color: white;
-                box-shadow: -0.8rem -0.8rem 1rem white, 0.8rem 0.8rem 1rem white, 
-                inset -0.8rem -0.8rem 1rem white, inset 0.8rem 0.8rem 1rem white;
+                color: white;
+                background-color: $third_color;
                 font-size: map-get($font-size_mt, food_specif_check);
                 height: 12.9rem;
-                width: 6.7rem;
-                margin-right: -7.7rem;
-                padding: 3.5rem 0 0 1.6rem;
-                transition: margin-right 560ms cubic-bezier(.02,.25,0,.58) 25ms;
+                width: 8.7rem;
+                margin-right: -10rem;
+                padding: 2.8rem 0 0 2.5rem;
+                transition: margin-right 350ms cubic-bezier(.02,.25,0,.58) 25ms;
                 overflow: hidden;
                 & i{
                     transform: rotate(-360deg);
-                    transition: transform 850ms;
+                    transition: transform 690ms;
                 }
             }
     
@@ -305,10 +287,10 @@
                 transform: rotate(0deg);
             }
         }
-        animation: button_food_mt $button_food-dur_mt both cubic-bezier(.02,.25,.73,.23); 
-        @for $i from 1 through $button_food-number_mt{
+        animation: button_food $button_food-dur both cubic-bezier(.02,.25,.73,.23); 
+        @for $i from 1 through $button_food-number{
              &--#{$i}{
-                animation-delay: $button_food-delay_mt*$i;
+                animation-delay: $button_food-delay*$i;
             }
         }
     }
@@ -322,9 +304,6 @@
         margin-bottom: 1.4rem;
         box-shadow: 0.4rem 0.4rem 0.3rem nth($grey_color, 2);
         transition: box-shadow  cubic-bezier(.33,.04,.17,.99);
-        &:hover{
-            box-shadow: -0.2rem -0.2rem 1rem $third_color, 0.2rem 0.2rem 1rem $third_color;
-        }
         &__description{
             &__title{
                 line-height: 1.7rem;
@@ -347,17 +326,17 @@
                 margin: 4rem 2rem 0rem 0 ;
             }
             &__check{
-                color: $third_color;
-                background-color: white;
+                color: white;
+                background-color: $third_color;
                 font-size: map-get($font-size_md, food_specif_check);
                 height: 7.4rem;
                 width: 5.7rem;
                 margin-right: -6.7rem;
                 margin-top: -0.2rem;
-                padding-top: 2.3rem;
+                padding: 2.3rem 0 0 1.55rem;
                 transition: margin-right 350ms cubic-bezier(.02,.25,0,.58) 25ms;
                 & i{
-                    transform: rotate(360deg);
+                    transform: rotate(-360deg);
                     transition: transform 690ms;
                 }
             }
@@ -369,10 +348,10 @@
                 transform: rotate(0deg);
             }
         }
-        animation: button_food_md $button_food-dur_md both linear; 
-        @for $i from 1 through $button_food-number_md{
+        animation: button_food $button_food-dur both cubic-bezier(.02,.25,.73,.23); 
+        @for $i from 1 through $button_food-number{
              &--#{$i}{
-                animation-delay: $button_food-delay_md*$i;
+                animation-delay: $button_food-delay*$i;
             }
         }
     }
