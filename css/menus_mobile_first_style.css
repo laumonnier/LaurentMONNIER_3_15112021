@@ -582,7 +582,7 @@ aside {
     border-radius: 1.6rem;
     margin-bottom: 1.4rem;
     box-shadow: 0.2rem 0.2rem 0.5rem #808080;
-    animation: button_food 300ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
+    animation: button_food 500ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
   }
   .food__description__title {
     font-size: 1.6rem;
@@ -622,16 +622,16 @@ aside {
     transform: rotate(0deg);
   }
   .food--1 {
-    animation-delay: 230ms;
+    animation-delay: 500ms;
   }
   .food--2 {
-    animation-delay: 460ms;
+    animation-delay: 1000ms;
   }
   .food--3 {
-    animation-delay: 690ms;
+    animation-delay: 1500ms;
   }
   .food--4 {
-    animation-delay: 920ms;
+    animation-delay: 2000ms;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -641,7 +641,7 @@ aside {
     border-radius: 1.6rem;
     margin-bottom: 1.9rem;
     box-shadow: 0.2rem 0.2rem 0.5rem #808080;
-    animation: button_food 300ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
+    animation: button_food 500ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
   }
   .food__description__title {
     line-height: 2.2rem;
@@ -683,16 +683,16 @@ aside {
     transform: rotate(0deg);
   }
   .food--1 {
-    animation-delay: 230ms;
+    animation-delay: 500ms;
   }
   .food--2 {
-    animation-delay: 460ms;
+    animation-delay: 1000ms;
   }
   .food--3 {
-    animation-delay: 690ms;
+    animation-delay: 1500ms;
   }
   .food--4 {
-    animation-delay: 920ms;
+    animation-delay: 2000ms;
   }
 }
 @media screen and (min-width: 992px) {
@@ -704,7 +704,7 @@ aside {
     margin-bottom: 1.4rem;
     box-shadow: 0.4rem 0.4rem 0.3rem #808080;
     transition: box-shadow cubic-bezier(0.33, 0.04, 0.17, 0.99);
-    animation: button_food 300ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
+    animation: button_food 500ms both cubic-bezier(0.02, 0.25, 0.73, 0.23);
   }
   .food__description__title {
     line-height: 1.7rem;
@@ -746,16 +746,16 @@ aside {
     transform: rotate(0deg);
   }
   .food--1 {
-    animation-delay: 230ms;
+    animation-delay: 500ms;
   }
   .food--2 {
-    animation-delay: 460ms;
+    animation-delay: 1000ms;
   }
   .food--3 {
-    animation-delay: 690ms;
+    animation-delay: 1500ms;
   }
   .food--4 {
-    animation-delay: 920ms;
+    animation-delay: 2000ms;
   }
 }
 /*category*/
