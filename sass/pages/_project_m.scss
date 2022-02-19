@@ -196,7 +196,7 @@
                 font-weight: map-get($font-weight_mmf, food_subtitle);   
             }                
         }
-        &:active .food__description{
+        &:hover .food__description{
             width:64%;
         }
         &__specif{
@@ -222,7 +222,7 @@
             }
     
         }
-        &:active .food__specif__check{
+        &:hover .food__specif__check{
             margin-right: -0.4rem;
             & i{
                 transform: rotate(0deg);
@@ -255,7 +255,7 @@
                 font-weight: map-get($font-weight_mt, food_subtitle);
             }
         }
-        &:active .food__description{
+        &:hover .food__description{
             width:64%;
         }
         &__specif{
@@ -281,7 +281,7 @@
             }
     
         }
-        &:active .food__specif__check{
+        &:hover .food__specif__check{
             margin-right: -0.4rem;
             & i{
                 transform: rotate(0deg);

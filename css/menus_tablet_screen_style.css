@@ -592,7 +592,7 @@ aside {
     font-size: 1.4rem;
     font-weight: 400;
   }
-  .food:active .food__description {
+  .food:hover .food__description {
     width: 64%;
   }
   .food__specif__price {
@@ -615,10 +615,10 @@ aside {
     transform: rotate(-360deg);
     transition: transform 690ms;
   }
-  .food:active .food__specif__check {
+  .food:hover .food__specif__check {
     margin-right: -0.4rem;
   }
-  .food:active .food__specif__check i {
+  .food:hover .food__specif__check i {
     transform: rotate(0deg);
   }
   .food--1 {
@@ -653,7 +653,7 @@ aside {
     font-size: 1.8rem;
     font-weight: 300;
   }
-  .food:active .food__description {
+  .food:hover .food__description {
     width: 64%;
   }
   .food__specif__price {
@@ -676,10 +676,10 @@ aside {
     transform: rotate(-360deg);
     transition: transform 690ms;
   }
-  .food:active .food__specif__check {
+  .food:hover .food__specif__check {
     margin-right: -0.4rem;
   }
-  .food:active .food__specif__check i {
+  .food:hover .food__specif__check i {
     transform: rotate(0deg);
   }
   .food--1 {
