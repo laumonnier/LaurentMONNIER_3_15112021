@@ -18,7 +18,7 @@
         background: -ms-linear-gradient(180deg, $secondary_color, $primary_color);
         background-clip: text;
         -webkit-background-clip: text;
-        -ms-background-clip: text;
+        -ms-background-clip: text;   
         color: transparent;
         opacity: 0;
         transition: opacity 750ms cubic-bezier(.02,.25,.73,.23) 25ms;   

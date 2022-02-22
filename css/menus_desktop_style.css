@@ -292,7 +292,8 @@ aside {
     padding-bottom: 1rem;
     line-height: 0rem;
   }
-  .header__icon {
+  .header a {
+    color: black;
     position: absolute;
     font-size: 2rem;
     margin-left: 2.2rem;
@@ -320,7 +321,8 @@ aside {
     padding: 2rem 0 1rem 0;
     line-height: 0rem;
   }
-  .header__icon {
+  .header a {
+    color: black;
     position: absolute;
     font-size: 2rem;
     margin: 5rem 0 0 2.2rem;

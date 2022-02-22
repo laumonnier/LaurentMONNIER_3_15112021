@@ -20,8 +20,10 @@
             justify-content: center;
             align-content: flex-start;
             margin-bottom: 4rem;
-            .location__place{
-                font-size: 1.7rem;
+            #location__place{
+                font-size: map-get($font-size_rd, location_place);
+                background-color: transparent;
+                border: transparent;
             }
             i{
                 font-size: map-get($font-size_rmf, location_icon);
@@ -80,8 +82,10 @@
             justify-content: center;
             align-content: flex-start;
             margin-bottom: 2rem;
-            .location__place{
-                font-size: map-get($font-size_rt, location_place);
+            #location__place{
+                font-size: map-get($font-size_rd, location_place);
+                background-color: transparent;
+                border: transparent;
             }
             i{
                 font-size: map-get($font-size_rt, location_icon);
@@ -145,8 +149,10 @@
             justify-content: center;
             align-content: flex-start;
             margin-bottom: 2rem;
-            .location__place{
+            #location__place{
                 font-size: map-get($font-size_rd, location_place);
+                background-color: transparent;
+                border: transparent;
             }
             i{
                 font-size: map-get($font-size_rd, location_icon);

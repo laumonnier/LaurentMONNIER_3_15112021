@@ -12,7 +12,8 @@
             padding: 1rem 0 1rem 0;
             line-height: 0rem;
         }
-        &__icon{
+        a{
+            color: black;
             position: absolute;
             font-size: map-get($font-size_mmf, header_icon);
             margin-left: 2rem;
@@ -37,7 +38,8 @@
             padding-bottom: 1rem;
             line-height: 0rem;
         }
-        &__icon{
+        a{
+            color: black;
             position: absolute;
             font-size: map-get($font-size_mt, header_icon);
             margin-left: 2.2rem;
@@ -67,7 +69,8 @@
             padding:2rem 0 1rem 0;
             line-height: 0rem;
         }
-        &__icon{
+        a{
+            color: black;
             position: absolute;
             font-size: map-get($font-size_md, header_icon);
             margin: 5rem 0 0 2.2rem;

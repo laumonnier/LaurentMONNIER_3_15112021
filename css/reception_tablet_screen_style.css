@@ -283,8 +283,10 @@ section {
     align-content: flex-start;
     margin-bottom: 4rem;
   }
-  .header__location .location__place {
+  .header__location #location__place {
     font-size: 1.7rem;
+    background-color: transparent;
+    border: transparent;
   }
   .header__location i {
     font-size: 1.8rem;
@@ -344,8 +346,10 @@ section {
     align-content: flex-start;
     margin-bottom: 2rem;
   }
-  .header__location .location__place {
+  .header__location #location__place {
     font-size: 1.7rem;
+    background-color: transparent;
+    border: transparent;
   }
   .header__location i {
     font-size: 2rem;
@@ -410,8 +414,10 @@ section {
     align-content: flex-start;
     margin-bottom: 2rem;
   }
-  .header__location .location__place {
+  .header__location #location__place {
     font-size: 1.7rem;
+    background-color: transparent;
+    border: transparent;
   }
   .header__location i {
     font-size: 2rem;
